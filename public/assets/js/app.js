@@ -21279,7 +21279,7 @@ process.umask = function() { return 0; };
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// Promise = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"/js/app": 0
+/******/ 			"/assets/js/app": 0
 /******/ 		};
 /******/ 		
 /******/ 		var deferredModules = [
