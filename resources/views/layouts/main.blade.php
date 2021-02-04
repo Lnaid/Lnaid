@@ -19,7 +19,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ mix('assets/css/app.css') }}">
+        <!-- <link rel="stylesheet" href="{{ mix('assets/css/app.css') }}"> -->
 
         <!-- Core Stylesheet -->
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
@@ -32,7 +32,7 @@
         <!-- livewireStyles -->
 
         <!-- Scripts -->
-        <script src="{{ mix('assets/js/app.js') }}" defer></script>
+        <!-- <script src="{{ mix('assets/js/app.js') }}" defer></script> -->
     </head>
 
     <body class="light-version font-sans antialiased">

@@ -46,14 +46,14 @@
                        
                         <div class="col-xs-12">
                             <div class="article special">
-                                <img src="img/icons/n3.png" class="mb-10" alt="">
+                                <img src="{{ asset('assets/img/icons/n3.png') }}" class="mb-10" alt="">
                                 <h3 class="article__title">Financial Loans</h3> 
                                 <p>Lorem ipsum dolor sit amet, conse ctetur adipi sicing elit</p>               
                             </div>
                         </div>
                         <div class="col-xs-12">
                             <div class="article special">
-                                <img src="img/icons/n5.png" class="mb-10" alt="">
+                                <img src="{{ asset('assets/img/icons/n5.png') }}" class="mb-10" alt="">
                                 <h3 class="article__title">Quick decisions</h3> 
                                 <p>Lorem ipsum dolor sit amet, conse ctetur adipi sicing elit</p>                
                             </div>
@@ -65,14 +65,14 @@
                         
                         <div class="col-xs-12">
                             <div class="article special mts-50">
-                                <img src="img/icons/n6.png" class="mb-10" alt="">
+                                <img src="{{ asset('assets/img/icons/n6.png') }}" class="mb-10" alt="">
                                 <h3 class="article__title">Lowest bank fees</h3> 
                                 <p>Lorem ipsum dolor sit amet, conse ctetur adipi sicing elit</p>                
                             </div>
                         </div>
                         <div class="col-xs-12">
                             <div class="article special">
-                                <img src="img/icons/n7.png" class="mb-10" alt="">
+                                <img src="{{ asset('assets/img/icons/n7.png') }}" class="mb-10" alt="">
                                 <h3 class="article__title">Direct payments</h3> 
                                 <p>Lorem ipsum dolor sit amet, conse ctetur adipi sicing elit</p>               
                             </div>
@@ -111,7 +111,7 @@
                         <div class="service_single_content transparent text-center wow fadeInUp" data-wow-delay="0.2s">
                             <!-- Icon -->
                             <div class="how_icon">
-                                <img src="img/icons/h1.png" class="colored-icon" alt="">
+                                <img src="{{ asset('assets/img/icons/h1.png') }}" class="colored-icon" alt="">
                             </div>
                             <h6>Select amount and terms</h6>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla neque quam</p>
@@ -122,7 +122,7 @@
                         <div class="service_single_content transparent text-center wow wow fadeInUp" data-wow-delay="0.3s">
                             <!-- Icon -->
                             <div class="how_icon">
-                                <img src="img/icons/h2.png" class="colored-icon" alt="">
+                                <img src="{{ asset('assets/img/icons/h2.png') }}" class="colored-icon" alt="">
                             </div>
                             <h6>Enter your personal information</h6>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla neque quam</p>
@@ -133,7 +133,7 @@
                         <div class="service_single_content transparent text-center wow fadeInUp">
                             <!-- Icon -->
                             <div class="how_icon">
-                                <img src="img/icons/h3.png" class="colored-icon" alt="">
+                                <img src="{{ asset('assets/img/icons/h3.png') }}" class="colored-icon" alt="">
                             </div>
                             <h6>Get Loan Approved in 48 hours</h6>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla neque quam</p>
@@ -158,7 +158,7 @@
                             <div class="services-block-four mt-30">
                                 <div class="inner-box">
                                     <div class="icon-img-box">
-                                        <img src="img/icons/d1.png" alt="">
+                                        <img src="{{ asset('assets/img/icons/d1.png') }}" alt="">
                                     </div>
                                     <h3><a href="#">No prepayment or hidden fees</a></h3>
                                     <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium modi assumenda non suscipit arcu. Quisque.</div>
@@ -168,7 +168,7 @@
                             <div class="services-block-four">
                                 <div class="inner-box">
                                     <div class="icon-img-box">
-                                        <img src="img/icons/d2.png" alt="">
+                                        <img src="{{ asset('assets/img/icons/d2.png') }}" alt="">
                                     </div>
                                     <h3><a href="#">Direct Funds & Quick Loan approvals</a></h3>
                                     <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit skaj gjska consectetur adipisicing elit non suscipit arcu. Quisque.</div>
@@ -178,7 +178,7 @@
                             <div class="services-block-four" style="margin-bottom:0">
                                 <div class="inner-box">
                                     <div class="icon-img-box">
-                                        <img src="img/icons/d3.png" alt="">
+                                        <img src=" {{ asset('assets/img/icons/d3.png')}} " alt="">
                                     </div>
                                     <h3><a href="#">Lots of Financial Options</a></h3>
                                     <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium modi non suscipit arcu. Quisque.</div>
@@ -203,7 +203,7 @@
                 <div class="row align-items-center">
                     <div class="col-12 col-lg-6 offset-lg-0 col-md-12 no-padding-left">
                         <div class="welcome-meter about-sec-wrapper wow fadeInUp" data-wow-delay="0.4s">
-                            <img src="img/core-img/about-sec1.png" class="about-i" alt="">
+                            <img src=" {{ asset('assets/img/core-img/about-sec1.png')}} " class="about-i" alt="">
                         </div>
                     </div>
                     
@@ -219,25 +219,25 @@
                                     
                                     <div class="col-md-12">
                                         <div class="side-feature-list-item">
-                                            <img src="img/icons/check.png" class="check-mark-icon" alt="">
+                                            <img src=" {{asset('/assets/img/icons/check.png')}} " class="check-mark-icon" alt="">
                                             <div class="foot-c-info">Lorem ipsum dolor sit amet, consectetur</div>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="side-feature-list-item">
-                                            <img src="img/icons/check.png" class="check-mark-icon" alt="">
+                                            <img src="{{ asset('assets/img/icons/check.png') }}" class="check-mark-icon" alt="">
                                             <div class="foot-c-info">adipiscing elit. Duis at dictum risus,</div>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="side-feature-list-item">
-                                            <img src="img/icons/check.png" class="check-mark-icon" alt="">
+                                            <img src="{{ asset('assets/img/icons/check.png') }}" class="check-mark-icon" alt="">
                                             <div class="foot-c-info">Duis at dictum risus, non suscipit arcu. Quisque</div>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="side-feature-list-item">
-                                            <img src="img/icons/check.png" class="check-mark-icon" alt="">
+                                            <img src="{{ asset('assets/img/icons/check.png') }}" class="check-mark-icon" alt="">
                                             <div class="foot-c-info">It is a long established fact that a reader will</div>
                                         </div>
                                     </div>
@@ -271,7 +271,7 @@
                         <div class="service_single_content v2 text-center wow fadeInUp" data-wow-delay="0.2s">
                            
                             <div class="serv_icon">
-                                <img src="img/icons/s1.png" alt="">
+                                <img src="{{ asset('assets/img/icons/s1.png') }}" alt="">
                             </div>
                             <div class="service-content">
                                 <h6 class=" bold">Online banking & Loans</h6>
@@ -284,7 +284,7 @@
                         <div class="service_single_content v2 text-center wow fadeInUp" data-wow-delay="0.2s">
                            
                             <div class="serv_icon">
-                                <img src="img/icons/s2.png" alt="">
+                                <img src="{{ asset('assets/img/icons/s2.png') }}" alt="">
                             </div>
                             <div class="service-content">
                                 <h6 class="bold">Personal Loan & Funding</h6>
@@ -297,7 +297,7 @@
                         <div class="service_single_content v2 text-center wow fadeInUp" data-wow-delay="0.2s">
                            
                             <div class="serv_icon">
-                                <img src="img/icons/s3.png" alt="">
+                                <img src="{{ asset('assets/img/icons/s3.png') }}" alt="">
                             </div>
                             <div class="service-content">
                                 <h6 class=" bold">Financial Bonus system</h6>
@@ -310,7 +310,7 @@
                         <div class="service_single_content v2 text-center wow fadeInUp" data-wow-delay="0.4s">
                            
                             <div class="serv_icon">
-                                <img src="img/icons/s4.png" alt="">
+                                <img src="{{ asset('assets/img/icons/s4.png') }}" alt="">
                             </div>
                             <div class="service-content">
                                 <h6 class=" bold">Financial & Business Loans</h6>
@@ -323,7 +323,7 @@
                         <div class="service_single_content v2 text-center wow fadeInUp" data-wow-delay="0.4s">
                            
                             <div class="serv_icon">
-                                <img src="img/icons/s5.png" alt="">
+                                <img src="{{ asset('assets/img/icons/s5.png') }}" alt="">
                             </div>
                             <div class="service-content">
                                 <h6 class=" bold">Education Loans</h6>
@@ -336,7 +336,7 @@
                         <div class="service_single_content v2 text-center wow fadeInUp" data-wow-delay="0.4s">
                            
                             <div class="serv_icon">
-                                <img src="img/icons/s6.png" alt="">
+                                <img src="{{ asset('assets/img/icons/s6.png') }}" alt="">
                             </div>
                             <div class="service-content">
                                 <h6 class=" bold">House & Property Loans</h6>
@@ -362,7 +362,7 @@
                 <div class="row align-items-center">
                     <div class="col-12 col-lg-6 offset-lg-0 col-md-8 offset-md-2 col-sm-10 offset-sm-1">
                         <div class="welcome-meter wow fadeInUp" data-wow-delay="0.4s">
-                            <img src="img/core-img/about-1.png" alt="">
+                            <img src="{{ asset('assets/img/core-img/about-1.png') }}" alt="">
                             
                         </div>
                     </div>

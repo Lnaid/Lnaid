@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="banner">
         <div class="container">
             <!-- Brand -->
-            <a class="navbar-brand" href="#"><span><img src="img/core-img/logo.png" alt="logo"></span> Lnaid</a>
+            <a class="navbar-brand" href="#"><span><img src="{{ asset('assets/img/core-img/logo.png') }}" alt="logo"></span> Lnaid</a>
 
             <!-- Toggler/collapsibe Button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
