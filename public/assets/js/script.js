@@ -62,6 +62,36 @@
                 $(this).html(index);
             }
         });
+
+
+        // Main intro slides
+        $(".intro_slides").owlCarousel({
+            responsive: {
+            0: {
+                items: 1
+            },
+            991: {
+                    items: 1
+                },
+            767:{
+                    items: 1
+                },
+            },
+            loop: true,
+            autoplay: true,
+            smartSpeed: 1000,
+            dots: false
+        });
+
+        var dot = $('.intro_slides .owl-dot');
+        dot.each(function () {
+            var index = $(this).index() + 1;
+            if (index < 10) {
+                $(this).html('0').append(index);
+            } else {
+                $(this).html(index);
+            }
+        });
     }
 
     // :: Magnific-popup Video Active Code

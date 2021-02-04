@@ -5246,3 +5246,67 @@ body.light-version {
 .post-a-comment-area {
     padding-bottom: 100px;
 }
+
+
+/*Airon Multi Button*/
+/*.multi-button {
+  filter: drop-shadow(3px 10px 15px rgba(0, 0, 0, 0.45));
+}*/
+/*.multi-button button{
+  height: 50px;
+  width: 100px;
+  background: linear-gradient(to bottom, #c31e39, #c31e39);
+  font-weight: bold;
+  color: white;
+  font-size: 0.9rem;
+  border: none;
+  margin: -5px; 
+  padding: 0;
+  stroke: black;
+  outline: none;
+}*/
+/*.multi-button :nth-child(1){
+  border-radius: 10px 0 0 10px;
+}
+.multi-button :nth-child(3){
+  border-radius: 0 20px 20px 0;
+}
+button:hover{
+  cursor: pointer;
+  filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.45));
+}
+button:active{
+  filter: none;
+  transform: scale(.95);
+}*/
+
+.multi-button {
+  /*filter: drop-shadow(3px 10px 15px rgba(0, 0, 0, 0.45));*/
+}
+.multi-button button{
+  height: 50px;
+  width: 100px;
+  background: none;
+ /* font-weight: bold;*/
+  color: black;
+  font-size: 0.9rem;
+  border: thin solid gray;
+  margin: -5px; 
+  padding: 0;
+  stroke: black;
+  outline: none;
+}
+.multi-button :nth-child(1){
+  border-radius: 7px 0 0 7px;
+}
+.multi-button :nth-child(3){
+  border-radius: 0 20px 20px 0;
+}
+button:hover{
+  cursor: pointer;
+  filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.45));
+}
+button:active{
+  filter: none;
+  transform: scale(.95);
+}

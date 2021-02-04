@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-
         <meta charset="UTF-8">
+        <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
         <meta name="description" content="">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,7 +16,7 @@
         <link rel="icon" href="{{ asset('assets/img/core-img/favicon.ico') }}">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+        <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"> -->
 
         <!-- Styles -->
         <!-- <link rel="stylesheet" href="{{ mix('assets/css/app.css') }}"> -->
@@ -29,23 +29,24 @@
 
         @stack('css')
 
-        <!-- livewireStyles -->
-
-        <!-- Scripts -->
-        <!-- <script src="{{ mix('assets/js/app.js') }}" defer></script> -->
     </head>
 
     <body class="light-version font-sans antialiased">
-        <!-- <x-jet-banner /> -->
+        <!-- Preloader -->
+        <!-- <div id="preloader">
+            <div class="preload-content">
+                <div id="loader-load"></div>
+            </div>
+        </div> -->
+
+      
 
         <div class="min-h-screen bg-gray-100">
             <!-- Navigation -->
             @include('partials.main-nav')
 
             <!-- Page Content -->
-            <main>
-                @yield('content')
-            </main>
+            @yield('content')
 
             @include('partials.main-footer')
 
