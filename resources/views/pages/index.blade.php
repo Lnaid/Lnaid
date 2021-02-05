@@ -1,4 +1,4 @@
-<x-main-layout>
+@extends('layouts.main')
    @section('content')
 
         <!-- ##### Welcome Area Start ##### -->
@@ -212,4 +212,4 @@
         <!-- Testimonial End -->
 
     @endSection
-</x-main-layout>
+

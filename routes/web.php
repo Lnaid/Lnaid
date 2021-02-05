@@ -13,13 +13,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/test', function () {
-    return view('pages.test');
+// Guest Routes
+Route::group(['middleware'=>['web', 'guest'], 'namespace' => 'App\Http\Controllers\Auth'], function(){
+	Route::get('/', function () {
+    	return view('pages.index');
+	});
+
+	Route::get('/signup', function(){
+		return view('auth.student-signup2');
+	})->name('signup');
+
+	// Route::get('/signin', 'AuthController@signInForm')->name('signin');
+	// Route::post('/signin', 'AuthController@signIn')->name('signin.store');
+	// Route::post('/signup', 'AuthController@signup')->name('signup.store');
 });
 
-Route::get('/', function () {
-    return view('pages.index');
-});
+
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard/student/index');
