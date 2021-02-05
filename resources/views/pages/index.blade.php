@@ -169,19 +169,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <!-- Content -->
-                        <div class="service_single_content v2 text-center wow fadeInUp" data-wow-delay="0.2s">
-                           
-                            <div class="serv_icon">
-                                <img src="{{ asset('assets/img/icons/s2.png') }}" alt="">
-                            </div>
-                            <div class="service-content">
-                                <h6 class="bold">Accomodation</h6>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla neque quam, maxi ut accumsan ut, posuere sit Lorem ipsum</p>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div class="col-12 col-md-6 col-lg-4">
                         <!-- Content -->
                         <div class="service_single_content v2 text-center wow fadeInUp" data-wow-delay="0.2s">
@@ -190,24 +178,12 @@
                                 <img src="{{ asset('assets/img/icons/s3.png') }}" alt="">
                             </div>
                             <div class="service-content">
-                                <h6 class=" bold">Misc</h6>
+                                <h6 class=" bold">Learning Resource</h6>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla neque quam, maxi ut accumsan ut, posuere sit Lorem ipsum</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <!-- Content -->
-                        <div class="service_single_content v2 text-center wow fadeInUp" data-wow-delay="0.4s">
-                           
-                            <div class="serv_icon">
-                                <img src="{{ asset('assets/img/icons/s4.png') }}" alt="">
-                            </div>
-                            <div class="service-content">
-                                <h6 class=" bold">Misc</h6>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla neque quam, maxi ut accumsan ut, posuere sit Lorem ipsum</p>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div class="col-12 col-md-6 col-lg-4">
                         <!-- Content -->
                         <div class="service_single_content v2 text-center wow fadeInUp" data-wow-delay="0.4s">
@@ -216,24 +192,12 @@
                                 <img src="{{ asset('assets/img/icons/s5.png') }}" alt="">
                             </div>
                             <div class="service-content">
-                                <h6 class=" bold">Learning Resource</h6>
+                                <h6 class=" bold">Misc</h6>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla neque quam, maxi ut accumsan ut, posuere sit Lorem ipsum</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <!-- Content -->
-                        <div class="service_single_content v2 text-center wow fadeInUp" data-wow-delay="0.4s">
-                           
-                            <div class="serv_icon">
-                                <img src="{{ asset('assets/img/icons/s6.png') }}" alt="">
-                            </div>
-                            <div class="service-content">
-                                <h6 class=" bold">Tuition</h6>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla neque quam, maxi ut accumsan ut, posuere sit Lorem ipsum</p>
-                            </div>
-                        </div>
-                    </div>
+                    
                     
 
                 </div>

@@ -29,7 +29,8 @@ class CreateUsersTable extends Migration
             $table->text('profile_photo_path')->nullable();
             $table->text('cover_photo_path')->nullable();
             $table->string('presence')->nullable()->default('online');
-            $table->string('status')->nullable()->default('active');
+            $table->string('account_status')->nullable()->default('active');
+             $table->string('account_type')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
