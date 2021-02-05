@@ -22,11 +22,14 @@ class CreateRequestsTable extends Migration
             $table->string('slug')->nullable();
             $table->unsignedBigInteger('amount')->nullable();
             $table->string('category_id')->nullable();
+
+            $table->string('priority')->nullable()->defualt('low'); //low, medium, high
+            $table->string('visibility')->nullable()->defualt('university'); //private or public - private defualts to university domain
             $table->string('description')->nullable();
             $table->string('currency_id')->nullable();
             $table->timestamps();
-            $table->softDeletes();
 
+            $table->softDeletes();
             $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
             $table->foreign('school_id')->references('id')->on('schools');
         });
