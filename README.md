@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src=https://github.com/AironDev/Lnaid/blob/main/public/assets/img/demos/landing.png"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://github.com/AironDev/Lnaid/blob/main/public/assets/img/demos/landing.png"></a></p>
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
