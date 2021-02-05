@@ -21,7 +21,7 @@ class CreateStudentVerificationsTable extends Migration
             $table->boolean('department')->default(false);
             $table->boolean('faculty')->default(false);
             $table->boolean('level')->default(false);
-            $table->boolean('school_id')->default(false);
+            $table->boolean('school')->default(false);
             $table->string('notes')->nullable();
             $table->softDeletes();
 
