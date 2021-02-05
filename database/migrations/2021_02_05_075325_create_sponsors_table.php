@@ -20,7 +20,7 @@ class CreateSponsorsTable extends Migration
             $table->string('name')->nullable();
             $table->string('slug')->nullable()->index();
             $table->text('address')->nullable();
-            $table->text('about')->nullable();
+            $table->text('about')->nullable(); //rich text here
             $table->string('email')->unique();
             $table->string('phone_1')->nullable();
             $table->string('phone_2')->nullable();
