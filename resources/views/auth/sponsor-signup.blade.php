@@ -7,7 +7,9 @@
             <!-- MultiStep Form -->
             <div class="row" style="margin-top: 80px">
                 <div class="col-md-6 col-md-offset-3">
-                    <form id="msform">
+                    <form id="msform" action="{{ route('store.sponsor') }}" method="POST" name="sponsor-signup">
+                        @method('post')
+                        @csrf
                         <!-- progressbar -->
                         <ul id="progressbar">
                             <li class="active">General Details</li>
@@ -18,7 +20,8 @@
                         <fieldset>
                             <h2 class="fs-title">General Details</h2>
                             <h3 class="fs-subtitle">Tell us something more about you</h3>
-                            <input type="text" name="fname" placeholder="Name" required="required" />
+                            <input type="text" name="fname" placeholder="Name" required="required" id="fname" />
+                            <p id="fname-err" class="input-err"></p>
                             <select>
                                 <option>Individual</option>
                                 <option>Corporate Body</option>
@@ -40,7 +43,7 @@
                         <fieldset>
                             <h2 class="fs-title">Create your account</h2>
                             <h3 class="fs-subtitle">Fill in your credentials</h3>
-                            <input type="text" name="email" placeholder="Email"/>
+                            <input type="text" name="email" required="required" placeholder="Email"/>
                             <input type="password" name="pass" placeholder="Password"/>
                             <input type="password" name="cpass" placeholder="Confirm Password"/>
                             <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
@@ -55,6 +58,7 @@
 
     @endSection
     @push('js')
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
         <script src="{{ asset('assets/js/ms-script2.js') }}"></script>
     @endPush
 

@@ -14,24 +14,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Guest Routes
-Route::group(['middleware'=>['web', 'guest'], 'namespace' => 'App\Http\Controllers\Auth'], function(){
+Route::group(['middleware'=>['web', 'guest'], 'namespace' => 'App\Http\Controllers'], function(){
 	Route::get('/', function () {
     	return view('pages.index');
 	});
 
-	Route::get('/signup-sponsor', function(){
-		return view('auth.sponsor-signup');
-	})->name('signup.sponsor');
+	
+	Route::get('/signup-sponsor', 'AuthController@createSponsor')->name('signup.sponsor');
+	Route::get('/signup-alumni', 'AuthController@createAlumni')->name('signup.alumni');
+	Route::get('/signup-student', 'AuthController@createStudent')->name('signup.student');
 
-	Route::get('/signup-alumni', function(){
-		return view('auth.student-signup2');
-	})->name('signup.alumni');
+	Route::post('/signup-sponsor', 'AuthController@storeSponsor')->name('store.sponsor');
 
-	Route::get('/signup-student', function(){
-		return view('auth.student-signup');
-	})->name('signup.student');
-
-	// Route::get('/signin', 'AuthController@signInForm')->name('signin');
 	// Route::post('/signin', 'AuthController@signIn')->name('signin.store');
 	// Route::post('/signup', 'AuthController@signup')->name('signup.store');
 });
