@@ -16,7 +16,7 @@ class CreateSponsorsTable extends Migration
         Schema::create('sponsors', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id')->index();
-            $table->string('type'); //individual, company, ngo, governmenet
+            $table->string('type'); //individual, corporate body
             $table->string('name')->nullable();
             $table->string('slug')->nullable()->index();
             $table->text('address')->nullable();

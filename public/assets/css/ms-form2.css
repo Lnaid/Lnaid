@@ -49,7 +49,7 @@ body {
 }
 
 /*inputs*/
-#msform input, #msform textarea {
+#msform input, #msform textarea, #msform select {
     padding: 15px;
     border: 1px solid #ccc;
     border-radius: 0px;
@@ -61,7 +61,7 @@ body {
     font-size: 13px;
 }
 
-#msform input:focus, #msform textarea:focus {
+#msform input:focus, #msform textarea:focus,  #msform select:focus {
     -moz-box-shadow: none !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;

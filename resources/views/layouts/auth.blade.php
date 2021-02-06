@@ -33,11 +33,11 @@
 
     <body class="font-sans antialiased">
         <!-- Preloader -->
-        <!-- <div id="preloader">
+        <div id="preloader">
             <div class="preload-content">
                 <div id="loader-load"></div>
             </div>
-        </div> -->
+        </div>
 
       
 

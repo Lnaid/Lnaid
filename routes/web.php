@@ -19,9 +19,17 @@ Route::group(['middleware'=>['web', 'guest'], 'namespace' => 'App\Http\Controlle
     	return view('pages.index');
 	});
 
-	Route::get('/signup', function(){
+	Route::get('/signup-sponsor', function(){
+		return view('auth.sponsor-signup');
+	})->name('signup.sponsor');
+
+	Route::get('/signup-alumni', function(){
 		return view('auth.student-signup2');
-	})->name('signup');
+	})->name('signup.alumni');
+
+	Route::get('/signup-student', function(){
+		return view('auth.student-signup');
+	})->name('signup.student');
 
 	// Route::get('/signin', 'AuthController@signInForm')->name('signin');
 	// Route::post('/signin', 'AuthController@signIn')->name('signin.store');
