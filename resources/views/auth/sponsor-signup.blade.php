@@ -21,13 +21,12 @@
                             <h2 class="fs-title">General Details</h2>
                             <h3 class="fs-subtitle">Tell us something more about you</h3>
                             <input type="text" name="fname" placeholder="Name" required="required" id="fname" />
-                            <p id="fname-err" class="input-err"></p>
                             <select>
                                 <option>Individual</option>
                                 <option>Corporate Body</option>
                             </select>
                             <input type="text" name="phone" placeholder="Phone"/>
-                            <input type="text" name="location" placeholder="Location"/>
+                            <input type="text" required="required" name="location" placeholder="Location"/>
                             <input type="button" name="next" class="next action-button" value="Next"/>
                         </fieldset>
                         <fieldset>
@@ -44,7 +43,7 @@
                             <h2 class="fs-title">Create your account</h2>
                             <h3 class="fs-subtitle">Fill in your credentials</h3>
                             <input type="text" name="email" required="required" placeholder="Email"/>
-                            <input type="password" name="pass" placeholder="Password"/>
+                            <input type="password" name="pass" id="pass" placeholder="Password"/>
                             <input type="password" name="cpass" placeholder="Confirm Password"/>
                             <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
                             <input type="submit" name="submit" class="submit action-button" value="Submit"/>

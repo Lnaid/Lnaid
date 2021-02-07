@@ -3,9 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Http\Requests\StoreSponsorRequest;
 
 class AuthController extends Controller
-{
+{   
+    
+
     /**
      * Display a listing of the resource.
      *
@@ -56,10 +60,11 @@ class AuthController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function storeSponsor(Request $request)
+    public function storeSponsor(StoreSponsorRequest $request)
     {
-        //
-       return dd($request);
+        $validatedData = $request->validated();
+        $sponsor = new User;
+        return $sponsor->createSponsor($validatedData);
     }
 
     /**

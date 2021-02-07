@@ -20,17 +20,26 @@ $(document).ready(function(){
           // by the built-in "email" rule
           email: true
         },
-        password: {
+        pass: {
           required: true,
-          minlength: 5
+          minlength: 8
+        },
+
+        cpass: {
+            required: true,
+            equalTo: "#pass"
         }
       },
       // Specify validation error messages
       messages: {
         fname: "Please enter your firstname",
-        password: {
+        pass: {
           required: "Please provide a password",
-          minlength: "Your password must be at least 5 characters long"
+        },
+
+        cpass: {
+          required: "Please confirm your password",
+          equalTo: "Password didn't match"
         },
         email: "Please enter a valid email address"
       },
