@@ -20,7 +20,7 @@
 
     </head>
 
-    <body class="text-left font-sans antialiased">
+    <body class="text-left dark-theme ">
         <!-- Preloader -->
         <!-- <div id="preloader">
             <div class="preload-content">
@@ -29,12 +29,13 @@
         </div> -->
 
       
-        <div class="app-admin-wrap layout-horizontal-bar">
+        <div class="app-admin-wrap layout-sidebar-large">
             <!-- Navigation -->
-            @include('partials.sponsor.top-menu')
-            @include('partials.sponsor.main-menu')
+            @include('partials.admin.main-header')
+            <!-- Sidebar -->
+            @include('partials.admin.sidebar')
 
-            <div class="main-content-wrap d-flex flex-column">
+            <div class="main-content-wrap sidenav-open d-flex flex-column">
                 <!-- Page Content -->
                 @yield('content')
                 @include('partials.dash-footer')
@@ -47,11 +48,15 @@
         <script src="{{ asset('assets/dashboard/js/plugins/bootstrap.bundle.min.js') }}"></script>
         <script src="{{ asset('assets/dashboard/js/plugins/perfect-scrollbar.min.js') }}"></script>
         <script src="{{ asset('assets/dashboard/js/scripts/script.min.js') }}"></script>
-        <script src="{{ asset('assets/dashboard/js/scripts/sidebar-horizontal.script.js') }}"></script>
+        <script src="{{ asset('assets/dashboard/js/scripts/sidebar.large.script.min.js') }}"></script>
         <script src="{{ asset('assets/dashboard/js/plugins/echarts.min.js') }}"></script>
         <script src="{{ asset('assets/dashboard/js/scripts/echart.options.min.js') }}"></script>
         <script src="{{ asset('assets/dashboard/js/plugins/datatables.min.js') }}"></script>
-        <script src="{{ asset('assets/dashboard/js/scripts/dashboard.v2.script.min.js') }}"></script>
+        <script src="{{ asset('assets/dashboard/js/scripts/dashboard.v4.script.min.js') }}"></script>
+        <script src="{{ asset('assets/dashboard/js/scripts/widgets-statistics.min.js') }}"></script>
+        <script src="{{ asset('assets/dashboard/js/plugins/apexcharts.min.js') }}"></script>
+        <script src="{{ asset('assets/dashboard/js/scripts/apexSparklineChart.script.min.js') }}"></script>
+
 
 
         @stack('modals')
