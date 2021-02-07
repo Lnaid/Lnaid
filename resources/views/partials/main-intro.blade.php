@@ -29,9 +29,9 @@
         <a href="#" class="btn info-btn green-btn mr-3">get started</a>
         <!-- <a href="#" class="btn info-btn green-btn mr-3">Contact Us</a> -->
         <div class="multi-button float-right">
-          <button class="btn  ">Student</button>
-          <button class="btn  ">Sponsor</button>
-          <button class="btn ">Alumni</button>
+          <a class="btn  ">Student</a>
+          <a class="btn" href="{{ route('signup.sponsor')}}"><span>Sponsor</span></a>
+          <a class="btn ">Alumni</a>
         </div>
     </div>
 

@@ -31,6 +31,13 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'username',
+        'phone',
+        'profile_photo_path',
+        'cover_photo_path',
+        'account_type',
+        'account_status',
+        'presence',
     ];
 
     /**
@@ -41,6 +48,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        'api_token',
         'two_factor_recovery_codes',
         'two_factor_secret',
     ];
@@ -52,6 +60,7 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'phone_verified_at' => 'datetime',
     ];
 
     /**
@@ -62,4 +71,12 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+
+    /**
+     * Hash the password on save/update.
+    */
+    public function setPasswordAttribute($value) {
+        $this->attributes['password'] = bcrypt($value);
+    }
 }

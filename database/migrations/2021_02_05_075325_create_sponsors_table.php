@@ -16,12 +16,12 @@ class CreateSponsorsTable extends Migration
         Schema::create('sponsors', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id')->index();
-            $table->string('type'); //individual, corporate body
-            $table->string('name')->nullable();
+            $table->string('sponsor_type')->nullable(); //individual, corporate body
+            $table->string('display_name')->nullable();
             $table->string('slug')->nullable()->index();
-            $table->text('address')->nullable();
+            $table->text('location')->nullable();
             $table->text('about')->nullable(); //rich text here
-            $table->string('email')->unique();
+            $table->string('work_email')->nullable();
             $table->string('phone_1')->nullable();
             $table->string('phone_2')->nullable();
             $table->string('website')->nullable();

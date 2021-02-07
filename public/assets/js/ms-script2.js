@@ -13,31 +13,31 @@ $(document).ready(function(){
         // The key name on the left side is the name attribute
         // of an input field. Validation rules are defined
         // on the right side
-        fname: "required",
+        name: "required",
         email: {
           required: true,
           // Specify that email should be validated
           // by the built-in "email" rule
           email: true
         },
-        pass: {
+        password: {
           required: true,
           minlength: 8
         },
 
-        cpass: {
+        confirm_password: {
             required: true,
             equalTo: "#pass"
         }
       },
       // Specify validation error messages
       messages: {
-        fname: "Please enter your firstname",
+        name: "Please enter your firstname",
         pass: {
           required: "Please provide a password",
         },
 
-        cpass: {
+        confirm_password: {
           required: "Please confirm your password",
           equalTo: "Password didn't match"
         },

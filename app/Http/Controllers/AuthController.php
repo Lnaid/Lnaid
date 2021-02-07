@@ -63,8 +63,12 @@ class AuthController extends Controller
     public function storeSponsor(StoreSponsorRequest $request)
     {
         $validatedData = $request->validated();
-        $sponsor = new User;
-        return $sponsor->createSponsor($validatedData);
+        $account = new User;
+        $account->createSponsor($validatedData);
+
+        return redirect('/')->with('success', 'Welcome to Lnaid ');
+
+
     }
 
     /**

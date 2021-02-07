@@ -17,7 +17,6 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('username')->unique()->nullable()->index();
-            $table->string('display_name')->nullable();
             $table->string('email')->unique();
             $table->string('phone')->unique()->nullable();
             $table->timestamp('phone_verified_at')->nullable();
@@ -30,7 +29,7 @@ class CreateUsersTable extends Migration
             $table->text('cover_photo_path')->nullable();
             $table->string('presence')->nullable()->default('online');
             $table->string('account_status')->nullable()->default('active');
-             $table->string('account_type')->nullable();
+             $table->string('account_type')->nullable(); //student, sponsor, alumni
             $table->timestamps();
             $table->softDeletes();
         });

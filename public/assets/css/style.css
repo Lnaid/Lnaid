@@ -5283,7 +5283,7 @@ button:active{
 .multi-button {
   /*filter: drop-shadow(3px 10px 15px rgba(0, 0, 0, 0.45));*/
 }
-.multi-button button{
+.multi-button a{
   height: 50px;
   width: 100px;
   background: none;
@@ -5292,7 +5292,7 @@ button:active{
   font-size: 0.9rem;
   border: thin solid gray;
   margin: -5px; 
-  padding: 0;
+  padding: 15px;
   stroke: black;
   outline: none;
 }
@@ -5302,11 +5302,11 @@ button:active{
 .multi-button :nth-child(3){
   border-radius: 0 20px 20px 0;
 }
-button:hover{
+a:hover{
   cursor: pointer;
   filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.45));
 }
-button:active{
+a:active{
   filter: none;
   transform: scale(.95);
 }
