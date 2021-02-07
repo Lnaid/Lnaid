@@ -15,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 // Guest Routes
 Route::group(['middleware'=>['web', 'guest'], 'namespace' => 'App\Http\Controllers'], function(){
+
+	Route::get('/test', function () {
+    	return view('dashboard.sponsor.index');
+	});
+
 	Route::get('/', function () {
     	return view('pages.index');
 	});

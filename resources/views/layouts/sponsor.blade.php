@@ -13,8 +13,8 @@
         <link rel="icon" href="{{ asset('assets/img/core-img/favicon.ico') }}">
 
         <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,400i,600,700,800,900" rel="stylesheet" />
-        <link href="../../dist-assets/css/themes/lite-purple.min.css" rel="stylesheet" />
-        <link href="../../dist-assets/css/plugins/perfect-scrollbar.min.css" rel="stylesheet" />
+        <link href="{{ asset('assets/dashboard/css/themes/lite-purple.min.css') }}" rel="stylesheet" />
+        <link href="{{ asset('assets/css/plugins/perfect-scrollbar.min.css') }}" rel="stylesheet" />
 
         @stack('css')
 
@@ -34,23 +34,24 @@
             @include('partials.sponsor.top-menu')
             @include('partials.sponsor.main-menu')
 
-            <!-- Page Content -->
-            @yield('content')
-
-            @include('partials.sponsor-footer')
+            <div class="main-content-wrap d-flex flex-column">
+                <!-- Page Content -->
+                @yield('content')
+                @include('partials.sponsor.footer')
+            </div>
 
         </div>
 
         <!-- ########## All JS ########## -->
-        <script src="../../dist-assets/js/plugins/jquery-3.3.1.min.js"></script>
-        <script src="../../dist-assets/js/plugins/bootstrap.bundle.min.js"></script>
-        <script src="../../dist-assets/js/plugins/perfect-scrollbar.min.js"></script>
-        <script src="../../dist-assets/js/scripts/script.min.js"></script>
-        <script src="../../dist-assets/js/scripts/sidebar-horizontal.script.js"></script>
-        <script src="../../dist-assets/js/plugins/echarts.min.js"></script>
-        <script src="../../dist-assets/js/scripts/echart.options.min.js"></script>
-        <script src="../../dist-assets/js/plugins/datatables.min.js"></script>
-        <script src="../../dist-assets/js/scripts/dashboard.v2.script.min.js"></script>
+        <script src="{{ asset('assets/dashboard/js/plugins/jquery-3.3.1.min.js') }}"></script>
+        <script src="{{ asset('assets/dashboard/js/plugins/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset('assets/dashboard/js/plugins/perfect-scrollbar.min.js') }}"></script>
+        <script src="{{ asset('assets/dashboard/js/scripts/script.min.js') }}"></script>
+        <script src="{{ asset('assets/dashboard/js/scripts/sidebar-horizontal.script.js') }}"></script>
+        <script src="{{ asset('assets/dashboard/js/plugins/echarts.min.js') }}"></script>
+        <script src="{{ asset('assets/dashboard/js/scripts/echart.options.min.js') }}"></script>
+        <script src="{{ asset('assets/dashboard/js/plugins/datatables.min.js') }}"></script>
+        <script src="{{ asset('assets/dashboard/js/scripts/dashboard.v2.script.min.js') }}"></script>
 
 
         @stack('modals')
