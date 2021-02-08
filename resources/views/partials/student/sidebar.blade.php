@@ -2,16 +2,16 @@
 <div class="side-content-wrap">
     <div class="sidebar-left open rtl-ps-none" data-perfect-scrollbar="" data-suppress-scroll-x="true">
         <ul class="navigation-left">
-            <li class="nav-item"><a class="nav-item-hold" href="/overview" title="Overview"><i class="nav-icon i-Bar-Chart"></i><span class="nav-text">Overview</span></a>
+            <li class="nav-item"><a class="nav-item-hold" href="{{ route('student.index') }}" title="Overview"><i class="nav-icon i-Bar-Chart"></i><span class="nav-text">Overview</span></a>
                 <div class="triangle"></div>
             </li>
-            <li class="nav-item"><a class="nav-item-hold" href="/fund-request" title="Fund Requests"><i class="nav-icon i-Computer-Secure"></i><span class="nav-text">Fund Requests</span></a>
+            <li class="nav-item"><a class="nav-item-hold" href="{{ route('student.fund-request') }}" title="Fund Requests"><i class="nav-icon i-Computer-Secure"></i><span class="nav-text">Fund Requests</span></a>
                 <div class="triangle"></div>
             </li>
-            <li class="nav-item"><a class="nav-item-hold" href="/verification" title="Verification"><i class="nav-icon i-File-Clipboard-File--Text"></i><span class="nav-text">Verification</span></a>
+            <li class="nav-item"><a class="nav-item-hold" href="{{ route('student.verification') }}" title="Verification"><i class="nav-icon i-File-Clipboard-File--Text"></i><span class="nav-text">Verification</span></a>
                 <div class="triangle"></div>
             </li>
-            <li class="nav-item"><a class="nav-item-hold" href="/profile" title="Profile"><i class="nav-icon i-Administrator"></i><span class="nav-text">Profile</span></a>
+            <li class="nav-item"><a class="nav-item-hold" href="{{ route('student.profile') }}" title="Profile"><i class="nav-icon i-Administrator"></i><span class="nav-text">Profile</span></a>
                 <div class="triangle"></div>
             </li>
         </ul>

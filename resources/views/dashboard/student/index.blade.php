@@ -6,140 +6,76 @@
 
         <!-- ============ Body content start ============= -->
         <div class="main-content">
-            <div class="breadcrumb">
-                <h1 class="mr-2">Dashboard</h1>
-                <ul>
-                    <li><a href="#">Go back</a></li>
-                    <li>Dashboard</li>
-                </ul>
-            </div>
+            @include('partials.breadcrumb')
             <div class="separator-breadcrumb border-top"></div>
             <div class="row mb-4">
-                <div class="col-md-3 col-lg-3">
-                    <div class="card mb-4 o-hidden">
-                        <div class="card-body ul-card__widget-chart">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <span class="badge badge-success">
-                                        <i class="nav-icon i-Bar-Chart"></i>
-                                    </span>
-                                </div>
-                                <div class="col-md-6">
-                                   <div class="ul-widget__chart-info">
-                                        <h5 class="heading">Amount Requested</h5>
-                                        <div class="ul-widget__chart-number">
-                                            <h2 class="t-font-boldest">$1000</h2>
-                                        </div>
-                                    </div> 
-                                </div>          
-                            </div>      
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="card card-icon-bg card-icon-bg-primary o-hidden mb-4">
+                        <div class="card-body text-center"><i class="i-Money-2"></i>
+                            <div class="content">
+                                <p class="text-muted mt-2 mb-0">Amount Requested</p>
+                                <p class="text-primary text-24 line-height-1 mb-2">0.00</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-lg-3">
-                    <div class="card mb-4 o-hidden">
-                        <div class="card-body ul-card__widget-chart">
-                            <div class="row">
-                                <div class="col-md-3"></div>
-                                <div class="col-md-6">
-                                    <div class="ul-widget__chart-info">
-                                        <h5 class="heading">Amount Received</h5>
-                                        <div class="ul-widget__chart-number">
-                                            <h2 class="t-font-boldest">$500</h2>
-                                        </div>
-                                    </div>
-                                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="card card-icon-bg card-icon-bg-primary o-hidden mb-4">
+                        <div class="card-body text-center"><i class="i-Money-2"></i>
+                            <div class="content">
+                                <p class="text-muted mt-2 mb-0">Amount Received</p>
+                                <p class="text-primary text-24 line-height-1 mb-2">0.00</p>
                             </div>
-                            
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-lg-3">
-                    <div class="card mb-4 o-hidden">
-                        <div class="card-body ul-card__widget-chart">
-                            <div class="row">
-                                <div class="col-md-3"></div>
-                                <div class="col-md-6">
-                                    <div class="ul-widget__chart-info">
-                                        <h5 class="heading">Completed Request</h5>
-                                        <div class="ul-widget__chart-number">
-                                            <h2 class="t-font-boldest">$44,909</h2>
-                                        </div>
-                                    </div>
-                                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="card card-icon-bg card-icon-bg-primary o-hidden mb-4">
+                        <div class="card-body text-center"><i class="i-Financial"></i>
+                            <div class="content">
+                                <p class="text-muted mt-2 mb-0">Completed Request</p>
+                                <p class="text-primary text-24 line-height-1 mb-2">0/0</p>
                             </div>
-                            
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-lg-3">
-                    <div class="card mb-4 o-hidden">
-                        <div class="card-body ul-card__widget-chart">
-                            <div class="row">
-                                <div class="col-md-3"></div>
-                                <div class="col-md-6">
-                                    <div class="ul-widget__chart-info">
-                                        <h5 class="heading">Validation Score</h5>
-                                        <div class="ul-widget__chart-number">
-                                            <h2 class="t-font-boldest">$500</h2>
-                                        </div>
-                                    </div>
-                                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="card card-icon-bg card-icon-bg-primary o-hidden mb-4">
+                        <div class="card-body text-center"><i class="i-Money-2"></i>
+                            <div class="content">
+                                <p class="text-muted mt-2 mb-0">Validation Score</p>
+                                <p class="text-primary text-24 line-height-1 mb-2">10%</p>
                             </div>
-                            
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-lg-3">
-                    <div class="card mb-4 o-hidden">
-                        <div class="card-body ul-card__widget-chart">
-                            <div class="row">
-                                <div class="col-md-3"></div>
-                                <div class="col-md-6">
-                                    <div class="ul-widget__chart-info">
-                                        <h5 class="heading">Recommendation</h5>
-                                        <div class="ul-widget__chart-number">
-                                            <h2 class="t-font-boldest">$500</h2>
-                                        </div>
-                                    </div>
-                                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="card card-icon-bg card-icon-bg-primary o-hidden mb-4">
+                        <div class="card-body text-center"><i class="i-Money-2"></i>
+                            <div class="content">
+                                <p class="text-muted mt-2 mb-0">Recommendation</p>
+                                <p class="text-primary text-24 line-height-1 mb-2">0</p>
                             </div>
-                            
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-lg-3">
-                    <div class="card mb-4 o-hidden">
-                        <div class="card-body ul-card__widget-chart">
-                            <div class="row">
-                                <div class="col-md-3"></div>
-                                <div class="col-md-6">
-                                    <div class="ul-widget__chart-info">
-                                        <h5 class="heading">Fund Requests</h5>
-                                        <div class="ul-widget__chart-number">
-                                            <h2 class="t-font-boldest">$500</h2>
-                                        </div>
-                                    </div>
-                                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="card card-icon-bg card-icon-bg-primary o-hidden mb-4">
+                        <div class="card-body text-center"><i class="i-Add-User"></i>
+                            <div class="content">
+                                <p class="text-muted mt-2 mb-0">Fund Request</p>
+                                <p class="text-primary text-24 line-height-1 mb-2">0</p>
                             </div>
-                            
                         </div>
                     </div>
-                </div><div class="col-md-3 col-lg-3">
-                    <div class="card mb-4 o-hidden">
-                        <div class="card-body ul-card__widget-chart">
-                            <div class="row">
-                                <div class="col-md-3"></div>
-                                <div class="col-md-6">
-                                    <div class="ul-widget__chart-info">
-                                        <h5 class="heading">Funders</h5>
-                                        <div class="ul-widget__chart-number">
-                                            <h2 class="t-font-boldest">$500</h2>
-                                        </div>
-                                    </div>
-                                </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="card card-icon-bg card-icon-bg-primary o-hidden mb-4">
+                        <div class="card-body text-center"><i class="i-Money-2"></i>
+                            <div class="content">
+                                <p class="text-muted mt-2 mb-0">Funder</p>
+                                <p class="text-primary text-24 line-height-1 mb-2">0</p>
                             </div>
-                            
                         </div>
                     </div>
                 </div>

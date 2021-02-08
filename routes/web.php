@@ -44,9 +44,10 @@ Route::group(['middleware'=>['web', 'guest'], 'namespace' => 'App\Http\Controlle
 });
 
 Route::group(['prefix' => 'student', 'namespace' => 'App\Http\Controllers'], function(){
-	Route::get('/dashboard', function(){
-		return view('dashboard.student.index');
-	})->name('student.index');
+	Route::get('/overview', 'StudentController@overview')->name('student.index');
+	Route::get('/profile', 'StudentController@profile')->name('student.profile');
+	Route::get('/verification', 'StudentController@verification')->name('student.verification');
+	Route::get('/fund-request', 'StudentController@fundRequest')->name('student.fund-request');
 });
 
 
