@@ -43,6 +43,13 @@ Route::group(['middleware'=>['web', 'guest'], 'namespace' => 'App\Http\Controlle
 	// Route::post('/signup', 'AuthController@signup')->name('signup.store');
 });
 
+Route::group(['prefix' => 'student', 'namespace' => 'App\Http\Controllers'], function(){
+	Route::get('/overview', 'StudentController@overview')->name('student.index');
+	Route::get('/profile', 'StudentController@profile')->name('student.profile');
+	Route::get('/verification', 'StudentController@verification')->name('student.verification');
+	Route::get('/fund-request', 'StudentController@fundRequest')->name('student.fund-request');
+});
+
 
 
 
