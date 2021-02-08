@@ -43,6 +43,12 @@ Route::group(['middleware'=>['web', 'guest'], 'namespace' => 'App\Http\Controlle
 	// Route::post('/signup', 'AuthController@signup')->name('signup.store');
 });
 
+Route::group(['prefix' => 'student', 'namespace' => 'App\Http\Controllers'], function(){
+	Route::get('/dashboard', function(){
+		return view('dashboard.student.index');
+	})->name('student.index');
+});
+
 
 
 
