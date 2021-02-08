@@ -13,26 +13,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Guest Routes
-Route::group(['middleware'=>['web', 'guest'], 'namespace' => 'App\Http\Controllers'], function(){
-
+// Test Routes
+Route::group(['middleware' => ['web']], function(){
 	Route::get('/test-sponsor', function () {
-    	return view('dashboard.sponsor.index');
+    	return view('dashboard.sponsor.unused');
 	});
 
 	Route::get('/test-admin', function () {
-    	return view('dashboard.admin.index');
+    	return view('dashboard.admin.unused');
 	});
 
 	Route::get('/test-student', function () {
-    	return view('dashboard.student.index');
+		$data['title'] = 'Dashboard';
+    	return view('dashboard.student.unused', $data);
 	});
+});
 
+// Guest Routes
+Route::group(['middleware'=>['web', 'guest'], 'namespace' => 'App\Http\Controllers'], function(){
 	Route::get('/', function () {
     	return view('pages.index');
 	});
-
-	
 	Route::get('/signup-sponsor', 'AuthController@createSponsor')->name('signup.sponsor');
 	Route::get('/signup-alumni', 'AuthController@createAlumni')->name('signup.alumni');
 	Route::get('/signup-student', 'AuthController@createStudent')->name('signup.student');
@@ -51,8 +52,7 @@ Route::group(['prefix' => 'student', 'namespace' => 'App\Http\Controllers'], fun
 });
 
 
-
-
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard/student/index');
+	$data['title'] = 'Dashboard';
+    return view('dashboard/student/index', $data);
 })->name('dashboard.student.index');
