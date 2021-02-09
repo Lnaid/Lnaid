@@ -2,7 +2,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Helpers\Util;
+use App\Helpers\Helper;
 use Silber\Bouncer\BouncerFacade as Bouncer;
 
 class RbacAbilitiesSeeder extends Seeder
@@ -17,7 +17,7 @@ class RbacAbilitiesSeeder extends Seeder
     	DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::table('abilities')->truncate();
 
-        $models =  Util::getModels();
+        $models =  Helper::getModels();
         foreach ($models as $model) {
 
             // abilitty to perform create operation on model
@@ -69,7 +69,7 @@ class RbacAbilitiesSeeder extends Seeder
                 'Allows all operation',
         ]);
 
-        Bouncer::allow('superadmin')->everything();  //for a start, allow super admin to do everything
-        Bouncer::allow('superadmin')->to('sudo'); //Then bucket superadmin to sudo
+        Bouncer::allow('superadmin')->everything();  // for a start, allow super admin to do everything
+        Bouncer::allow('superadmin')->to('sudo'); // Then bucket superadmin role into sudo ability
     }
 }
