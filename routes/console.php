@@ -57,7 +57,7 @@ Artisan::command('rbac:setup {--superadmin}', function () {
 			return $this->info('User not found');
 		}
 		
-		$this->info("{$user->name} will be assigned {$role->name} role on culconnect");
+		$this->info("{$user->name} will be assigned {$role->name} role on this site");
 
 		if ($this->confirm('Do you wish to continue?')){
 			Bouncer::assign($role)->to($user);
