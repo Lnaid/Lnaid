@@ -4,6 +4,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Helpers\Helper;
 use Silber\Bouncer\BouncerFacade as Bouncer;
+use Illuminate\Support\Facades\DB;
 
 class RbacAbilitiesSeeder extends Seeder
 {
