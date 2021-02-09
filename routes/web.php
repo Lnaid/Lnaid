@@ -61,18 +61,18 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 
 // ADMIN ENDPOINTS GROUP
-Route::group(['prefix' => 'admin', 'namespace' => 'App\Http\Controllers', 'middleware' => ['auth:sanctum', 'admin']], function () {
+Route::group(['prefix' => 'admin', 'namespace' => 'App\Http\Controllers\Admin', 'middleware' => ['auth:sanctum', 'admin']], function () {
 
     /** RBAC
      * RBAC Endpoints
      */
 
     //get all roles
-    Route::get('/rbac/roles', 'Admin\RbacController@getRoles');
+    Route::get('/rbac/roles', 'RbacController@getRoles');
     //get single role and its abilities
-    Route::get('/rbac/roles/{roleName?}', 'Admin\RbacController@getSingleRole');
+    Route::get('/rbac/roles/{roleName?}', 'RbacController@getSingleRole');
     //get all abilities
-    Route::get('/rbac/abilities', 'Admin\RbacController@getAbilities');
+    Route::get('/rbac/abilities', 'RbacController@getAbilities');
     // Attach Ability to Role (body: abilityName and roleName)
     Route::post('/rbac/attach', 'Admin\RbacController@attachAbilityToRole');
     // Assign role to a user (body: userId and roleName)
