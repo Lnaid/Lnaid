@@ -29,6 +29,16 @@ Route::group(['middleware' => ['web']], function(){
 	Route::get('/', function () {
     	return view('pages.index');
 	});
+
+	Route::get('/testboard', function () {
+    	return view('dashboard.default');
+	});
+
+	Route::get('/test-ajax', function(){
+		session()->put('success', 'hmmm');
+		session()->save();
+		return;
+	});
 });
 
 
