@@ -48,6 +48,7 @@ Route::group(['prefix' => 'student', 'namespace' => 'App\Http\Controllers'], fun
 	Route::get('/profile', 'StudentController@profile')->name('student.profile');
 	Route::get('/verification', 'StudentController@verification')->name('student.verification');
 	Route::get('/fund-request', 'StudentController@fundRequest')->name('student.fund-request');
+	Route::get('/chat', 'StudentController@chat')->name('student.chat');
 });
 
 

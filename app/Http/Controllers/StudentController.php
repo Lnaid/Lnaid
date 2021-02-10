@@ -31,4 +31,10 @@ class StudentController extends Controller
 
     	return view('dashboard.student.fund-request', $data);
     }
+
+    public function chat(){
+        $data['title'] = 'Chat';
+
+        return view('dashboard.student.chat', $data);
+    }
 }
