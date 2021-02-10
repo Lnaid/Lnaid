@@ -25,10 +25,10 @@ class StoreSponsorRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string'],
-            'email' => ['string', 'unique:users'],
+            'email' => ['string', 'required', 'unique:users'],
             'username' => ['sometimes', 'string'], //generated
             'slug' => ['sometimes', 'string'], //generated
-            'password' => ['string'],
+            'password' => ['string', 'required'],
             'phone' => ['nullable', 'integer'],
             'profile_photo_path' => [ 'nullable', 'string'],
             'cover_photo_path' => ['sometimes', 'string'], //only when its included in input array

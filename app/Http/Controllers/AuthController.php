@@ -66,7 +66,8 @@ class AuthController extends Controller
         $account = new User;
         $account->createSponsor($validatedData);
 
-        return redirect('/')->with('success', 'Welcome to Lnaid ');
+        // return redirect('/')->with('success', 'Welcome to Lnaid ');
+        return 'helo';
 
 
     }
