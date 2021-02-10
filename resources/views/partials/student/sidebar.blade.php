@@ -11,6 +11,9 @@
             <li class="nav-item"><a class="nav-item-hold" href="{{ route('student.verification') }}" title="Verification"><i class="nav-icon i-File-Clipboard-File--Text"></i><span class="nav-text">Verification</span></a>
                 <div class="triangle"></div>
             </li>
+            <li class="nav-item"><a class="nav-item-hold" href="{{ route('student.chat') }}" title="Chat"><i class="nav-icon i-Speach-Bubble-3"></i><span class="nav-text">Chat</span></a>
+                <div class="triangle"></div>
+            </li>
             <li class="nav-item"><a class="nav-item-hold" href="{{ route('student.profile') }}" title="Profile"><i class="nav-icon i-Administrator"></i><span class="nav-text">Profile</span></a>
                 <div class="triangle"></div>
             </li>
