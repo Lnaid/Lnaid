@@ -1,7 +1,7 @@
 @extends('layouts.auth')
     @push('css')
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" />
-        <link href="{{ asset('assets/css/ms-form2.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/css/toastr.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/css/ms-form.css') }}" rel="stylesheet">
     @endPush
     @section('content')
         <section class="" >
@@ -60,8 +60,8 @@
 
     @endSection
     @push('js')
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
-        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+        <script src=" {{ asset('assets/js/jquery.validate.min.js')}} "></script>
+        <script src="{{ asset('assets/js/toastr.min.js') }}"></script>
         <script src="{{ asset('assets/js/ms-script2.js') }}"></script>
 
         @include('partials.error', ['position' => 'toast-bottom-left' ])

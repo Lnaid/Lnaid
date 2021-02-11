@@ -15,6 +15,8 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,400i,600,700,800,900" rel="stylesheet" />
         <link href="{{ asset('assets/dashboard/css/themes/lite-purple.min.css') }}" rel="stylesheet" />
         <link href="{{ asset('assets/css/plugins/perfect-scrollbar.min.css') }}" rel="stylesheet" />
+        <!-- Toastr -->
+        <link href="{{ asset('assets/css/toastr.min.css') }}" rel="stylesheet">
 
         @stack('css')
 
@@ -57,8 +59,12 @@
         <script src="{{ asset('assets/dashboard/js/plugins/apexcharts.min.js') }}"></script>
         <script src="{{ asset('assets/dashboard/js/scripts/apexSparklineChart.script.min.js') }}"></script>
 
+        <!-- Toastr -->
+        <script src="{{ asset('assets/js/toastr.min.js') }}"></script>
 
 
+        @include('partials.error', ['position' => 'toast-bottom-left' ])
+        @include('partials.flash', ['position' => 'toast-top-right', 'timeout' => 3000 ])
         @stack('modals')
 
         @stack('js')

@@ -28,6 +28,7 @@ class CreateSchoolsTable extends Migration
             $table->string('website')->nullable();
             $table->text('additional_info')->nullable(); //rich text here - tinymce
             $table->string('status')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

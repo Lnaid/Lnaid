@@ -23,13 +23,13 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
-             $table->string('api_token')->nullable();
+            $table->string('api_token')->nullable();
             $table->foreignId('current_team_id')->nullable();
             $table->text('profile_photo_path')->nullable();
             $table->text('cover_photo_path')->nullable();
             $table->string('presence')->nullable()->default('online');
             $table->string('account_status')->nullable()->default('active');
-             $table->string('account_type')->nullable(); //student, sponsor, alumni
+            $table->string('account_type')->nullable(); //student, sponsor, alumni
             $table->timestamps();
             $table->softDeletes();
         });

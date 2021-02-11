@@ -1,6 +1,6 @@
 @extends('layouts.auth')
     @push('css')
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" />
+        <link href="{{ asset('assets/css/toastr.min.css') }}" rel="stylesheet">
         <link href="{{ asset('assets/css/ms-form.css') }}" rel="stylesheet">
     @endPush
     @section('content')
@@ -202,42 +202,8 @@
         </div>
     @endSection
     @push('js')
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
-        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-
-        <!-- <script type="text/javascript">
-            $(document).ready(function(){
-                $('.next').hover(function(){
-                    $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': "{{ csrf_token() }}"
-                    }
-                });
-
-                $.ajax({
-                    url:  "{{ url('signup-sponsor') }}",
-                    method: 'POST',
-                    data: {
-                        "_token": "{{ csrf_token() }}",
-                    },
-                    success: function(){
-                        var success = "{{ Session::get('success') }}";
-                        console.log('ajax came back successfully')
-                        // toastr.error(success)
-                    },
-
-                    error: function(err){
-                        errors = err.responseJSON.errors
-                        // console.log(err.responseJSON.errors)
-                        for(error in errors){
-                            // toastr.error(error);
-                            console.log(errors[error][0])
-                        }
-                    }
-                });
-                })
-            })
-        </script> -->
+        <script src=" {{ asset('assets/js/jquery.validate.min.js')}} "></script>
+        <script src="{{ asset('assets/js/toastr.min.js') }}"></script>
         <script src="{{ asset('assets/js/ms-script.js') }}"></script>
 
         @include('partials.error', ['position' => 'toast-bottom-left' ])

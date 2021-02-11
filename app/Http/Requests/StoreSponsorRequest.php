@@ -32,8 +32,9 @@ class StoreSponsorRequest extends FormRequest
             'phone' => ['nullable', 'integer'],
             'profile_photo_path' => [ 'nullable', 'string'],
             'cover_photo_path' => ['sometimes', 'string'], //only when its included in input array
-            'account_type' => ['required', 'string'],
+            'account_type' => ['nullable', 'string'],
             'display_name' => ['nullable', 'string'],
+            
             'phone_1' => ['nullable', 'integer'],
             'phone_2' => ['nullable', 'integer'],
             'sponsor_type' => ['string'],

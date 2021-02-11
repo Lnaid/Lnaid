@@ -31,6 +31,7 @@ class StoreStudentRequest extends FormRequest
             'phone' => ['nullable', 'unique:users', 'integer'],
             'profile_photo_path' => [ 'nullable', 'string'],
             'cover_photo_path' => ['sometimes', 'string'], //only when its included in input array
+            'account_type' => ['nullable', 'string'],
 
             'gender' => ['nullable', 'string'],
             'pronoun' => ['nullable', 'string'],

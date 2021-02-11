@@ -16,19 +16,12 @@ class Sponsor
      */
     public function handle($request, Closure $next)
     {
-        // if ($request->user()->role !== 'admin') {
-        //     return redirect('/');
-        // }
-        // return $next($request);
         $user = $request->user();
 
         if(Bouncer::is($user)->a('sponsor')){
             return $next($request);
         }else{
-            return response()->json([
-                'status' => 'error',
-                'message' => 'Unauthorized'
-            ], 401);
+            return redirect()->route('dashboard');
         }
     }
 }

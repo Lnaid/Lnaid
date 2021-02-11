@@ -25,10 +25,7 @@ class Student
         if(Bouncer::is($user)->a('student')){
             return $next($request);
         }else{
-            return response()->json([
-                'status' => 'error',
-                'message' => 'Unauthorized'
-            ], 401);
+            return redirect()->route('dashboard');
         }
     }
 }
