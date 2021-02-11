@@ -4,6 +4,7 @@ namespace App\Http\Traits;
 use App\Models\User;
 use App\Models\Sponsor;
 use App\Models\Student;
+use Illuminate\Support\Facades\Auth;
 
 trait UserAccountTrait {
 
@@ -23,6 +24,7 @@ trait UserAccountTrait {
       $user = User::create($data);
       $student = Student::create(['user_id' => $user->id]);
       $student->update($data);
+      Auth::login($user);
       return $user;
     }
 }

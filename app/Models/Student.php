@@ -34,7 +34,6 @@ class Student extends Model
         'graduation_year',
         'program_duration',
         'school_email',
-        'school_idcard'
 
         'phone',
         'phone_2',

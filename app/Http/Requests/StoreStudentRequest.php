@@ -28,7 +28,7 @@ class StoreStudentRequest extends FormRequest
             'email' => ['string', 'required', 'unique:users'],
             'username' => ['sometimes', 'unique:users', 'string'], //generated
             'password' => ['string', 'required'],
-            'phone' => ['nullable', 'integer'],
+            'phone' => ['nullable', 'unique:users', 'integer'],
             'profile_photo_path' => [ 'nullable', 'string'],
             'cover_photo_path' => ['sometimes', 'string'], //only when its included in input array
 

@@ -171,14 +171,12 @@ $(document).ready(function(){
 				success: function(res){
 					console.log(res)
 					toastr.success("account created successfully")
-					isAjax = true;
+					window.location.replace(window.location.origin + '/student/dashboard' );
 				},
 
 				error: function(err){
 					console.log(err)
-					if(err.status === 500){
-						toastr.error('An error occured - please try again');
-					}
+					toastr.error('Please try again');
 				 	validationErrors = err.responseJSON.errors
 	                // console.log(err.responseJSON.errors)
 	            	for(error in validationErrors){
