@@ -130,13 +130,17 @@ $(document).ready(function(){
 
 		
 	$("#submit").click(function(){
-		return ajaxSubmit();
-		console.log('sbmit')
+		return ajaxSubmit(form);
+		// console.log('sbmit')
 	})
 
 
-	function ajaxSubmit(argument) {
-		
+	function ajaxSubmit(form) {
+
+			var formValues= form.serialize();
+			
+			console.log(formValues);
+
 			$.ajaxSetup({
 				headers: {
 					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -146,13 +150,15 @@ $(document).ready(function(){
 			$.ajax({
 				url: window.location.origin + '/signup-sponsor',
 				method: 'POST',
-				data: {
-					"_token": $('meta[name="csrf-token"]').attr('content'),
-					"account_type": "individual",
-					"name": "John Ken",
-					"email": "aironde.v@gmail.com",
-					"password": "password"
-				},
+				// data: {
+				// 	"_token": $('meta[name="csrf-token"]').attr('content'),
+				// 	"account_type": "individual",
+				// 	"name": "John Ken",
+				// 	"email": "aironde.v@gmail.com",
+				// 	"password": "password"
+				// },
+				data: formValues,
+				
 				success: function(res){
 					var success = "{{ Session::get('success')['message'] }}";
 					console.log('ajax came back successfully')

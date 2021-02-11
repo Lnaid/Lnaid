@@ -19,6 +19,7 @@ class CreateStudentsTable extends Migration
             $table->unsignedBigInteger('school_id')->nullable();
 
             $table->string('gender')->nullable();
+            $table->string('pronoun')->nullable();
             $table->string('dob')->nullable();
             $table->string('state')->nullable();
             $table->string('country')->nullable();
@@ -29,12 +30,13 @@ class CreateStudentsTable extends Migration
             $table->string('program_type')->nullable(); //undergraduate, postgraduate
             $table->integer('level')->nullable();
             $table->string('matric_no')->nullable();
-            $table->text('aboutme')->nullable(); //rich text here
             $table->string('admission_year')->nullable();
             $table->string('graduation_year')->nullable();
-
             $table->string('schol_email')->nullable();
-            $table->string('phone_1')->nullable();
+            $table->text('program_duration')->nullable(); //rich text here
+
+            $table->text('aboutme')->nullable(); //rich text here
+            $table->string('phone')->nullable();
             $table->string('phone_2')->nullable();
             $table->string('twitter')->nullable();
             $table->string('linkedin')->nullable();

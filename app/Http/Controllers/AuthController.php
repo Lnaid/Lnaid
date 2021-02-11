@@ -66,10 +66,23 @@ class AuthController extends Controller
         $account = new User;
         $account->createSponsor($validatedData);
 
-        // return redirect('/')->with('success', 'Welcome to Lnaid ');
-        return 'helo';
+        return redirect('/')->with('success', 'Welcome to Lnaid ');
+    }
 
 
+     /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function storeStudent(StoreStudentRequest $request)
+    {
+        $validatedData = $request->validated();
+        $account = new User;
+        $account->createSponsor($validatedData);
+
+        return redirect('/')->with('success', 'Welcome to Lnaid ');
     }
 
     /**

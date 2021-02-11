@@ -64,7 +64,7 @@ p {
     box-sizing: border-box;
     font-family: montserrat;
     color: #2C3E50;
-    background-color: #ECEFF1;
+    /*background-color: #ECEFF1;*/
     font-size: 16px;
     letter-spacing: 1px
 }
@@ -74,7 +74,7 @@ p {
     -moz-box-shadow: none !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
-    border: 1px solid #673AB7;
+    border: 1px solid #e93a47;
     outline-width: 0
 }
 
@@ -160,7 +160,7 @@ p {
 #progressbar li {
     list-style-type: none;
     font-size: 15px;
-    width: 20%;
+    width: 25%;
     float: left;
     position: relative;
     font-weight: 400
