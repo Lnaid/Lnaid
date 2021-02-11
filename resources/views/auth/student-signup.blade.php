@@ -13,92 +13,101 @@
                         <form id="msform" name="student-signup-msform">
                             <!-- progressbar -->
                             <ul id="progressbar">
-                                <li class="active" id="account"><strong>Account</strong></li>
+                                <li id="school" class="active"><strong>School</strong></li>
+                                <li id="academic"><strong>Academics</strong></li>
                                 <li id="personal"><strong>Personal</strong></li>
-                                <li id="school"><strong>School</strong></li>
-                                <!-- <li id="payment"><strong>Image</strong></li> -->
+                                 <!-- <li id="payment"><strong>Image</strong></li> -->
+                                 <li id="account"><strong>Account</strong></li>
                                 <li id="confirm"><strong>Terms</strong></li>
                             </ul>
                             <div class="progress">
                                 <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div> <br> <!-- fieldsets -->
-                            <fieldset>
-                                <div class="form-card">
-                                    <div class="row">
-                                        <div class="col-7">
-                                            <h2 class="fs-title">Account Information:</h2>
-                                        </div>
-                                        <div class="col-5">
-                                            <h2 class="steps">Step 1 - 4</h2>
-                                        </div>
-                                    </div>
-                                    <label class="fieldlabels">Email: *</label>
-                                    <input type="email" name="email" placeholder="Email" />
-                                    <label class="fieldlabels">Username: *</label>
-                                    <input type="text" name="username" placeholder="Username" />
-                                    <label class="fieldlabels">Password: *</label>
-                                    <input type="password" name="password" placeholder="Password" />
-                                    <label class="fieldlabels">Confirm Password: *</label>
-                                    <input type="password" name="confirm_password" placeholder="Confirm Password" />
-                                </div> 
-                                <input type="button" name="next" class="next action-button" value="Next" />
-                            </fieldset>
-                            <fieldset>
-                                <div class="form-card">
-                                    <div class="row">
-                                        <div class="col-7">
-                                            <h2 class="fs-title">Personal Information:</h2>
-                                        </div>
-                                        <div class="col-5">
-                                            <h2 class="steps">Step 2 - 4</h2>
-                                        </div>
-                                    </div>
-                                    <label class="fieldlabels">Full Name: *</label>
-                                    <input type="text" name="fname" placeholder="First Name" />
-                                    <label class="fieldlabels">Prefered Pronoun: *</label>
-                                    <select class="form-control mb-2" name="pronoun">
-                                        <option>Select</option>
-                                        <option>He/Him</option>
-                                        <option>She/Her</option>
-                                        <option>They/Them</option>
-                                    </select>
-                                    <label class="fieldlabels">Contact No.: *</label>
-                                    <input type="text" name="phone" placeholder="Contact No." />
-                                    <label class="fieldlabels">Alternate Contact No.: *</label>
-                                    <input type="text" name="phone_2" placeholder="Alternate Contact No." />
-                                </div>
-                                <input type="button" name="next" class="next action-button" value="Next" />
-                                <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
-                            </fieldset>
-                            <fieldset>
-                                <div class="form-card">
-                                    <div class="row">
-                                        <div class="col-7">
-                                            <h2 class="fs-title">School Information:</h2>
-                                        </div>
-                                        <div class="col-5">
-                                            <h2 class="steps">Step 3 - 4</h2>
-                                        </div>
-                                    </div>
-                                    <label class="fieldlabels">School: *</label>
-                                    <input type="text" name="school" placeholder="School" />
-                                    <label class="fieldlabels">Department: *</label>
-                                    <input type="text" name="department" placeholder="Department" />
-                                    <label class="fieldlabels">Course: *</label>
-                                    <input type="text" name="course" placeholder="Course" />
-                                    <label class="fieldlabels">Program Type: *</label>
-                                    <select class="form-control mb-2" name="program_type">
-                                        <option>Select</option>
-                                        <option value="undergraduate">Undergraduate</option>
-                                        <option value="postgraduate">Postgraduate</option>
-                                    </select>
+                            </div> <br> 
+                            <!-- fieldsets -->
 
-                                    <label class="fieldlabels">Current Level: *</label>
-                                    <input type="integer" name="level" placeholder="Level *e.g 100" />
+                            <!-- School -->
+                            <fieldset>
+                                <div class="form-card">
+                                    <label class="fieldlabels">Choose School: *</label>
+                                    <!-- <input type="text" name="school" list="school-list">
+                                    <datalist id="school-list">
+                                        foreach($schools as $school)
+                                            <option value="">
+                                        endForeach
+                                    </datalist> -->
+                                    <select class="form-control" id="school-list" name="school_id" required="required">
+                                        <option value="">Select</option>
+                                        @foreach($schools as $school)
+                                            <option value="{{ $school['id'] }}">{{ $school['name'] }}</option>
+                                        @endForeach
+                                    </select>
+                                </div>
+                                <p class="mt-3">Can't find your school? <span><a class="text-danger" href="">make a request</a></span></p>
+                                <input type="button" name="next" class="next action-button" value="Next" />
+                            </fieldset>
+
+                            <!-- Academic -->
+                            <fieldset>
+                                <div class="form-card">
+                                    <div class="input-group col-md-6">
+                                        <label class="fieldlabels">Department: *</label>
+                                        <input type="text" name="department" placeholder="Department" />
+                                    </div>
+                                    <div class="input-group col-md-6">
+                                        <label class="fieldlabels">Course: *</label>
+                                        <input type="text" name="course" placeholder="Course" />
+                                    </div>
+                                    <div class="input-group col-md-6">
+                                        <label class="fieldlabels">Program Type: *</label>
+                                        <select class="form-control w-100" name="program_type" required="">
+                                            <option value="">Select</option>
+                                            <option value="undergraduate">Undergraduate</option>
+                                            <option value="postgraduate">Postgraduate</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-group col-md-6">
+                                        <label class="fieldlabels">Current Level: *</label>
+                                        <input type="text" name="level" placeholder="Level *e.g 100" />
+                                    </div>
                                 </div>
                                 <input type="button" name="next" class="next action-button" value="Next" /> 
                                 <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
                             </fieldset>
+
+                            <!-- Personal -->
+                            <fieldset>
+                                <div class="form-card">
+                                    <div class="input-group col-md-6">
+                                        <label class="fieldlabels">Full Name: *</label>
+                                        <input type="text" name="name" placeholder="Full Name" required="" />
+                                    </div>
+
+                                    <div class="input-group col-md-6">
+                                        <label class="fieldlabels">Contact No.: *</label>
+                                        <input type="text" name="phone" placeholder="Contact No." />
+                                    </div>
+
+                                    <div class="input-group col-md-6">
+                                        <label class="fieldlabels">Alternate Contact No.: *</label>
+                                        <input type="text" name="phone_2" placeholder="Alternate Contact No." />
+                                    </div>
+
+                                    <div class="input-group col-md-6">
+                                        <label class="fieldlabels">Prefered Pronoun: *</label>
+                                        <select class="form-control mb-2 w-100" name="pronoun">
+                                            <option>Select</option>
+                                            <option>He/Him</option>
+                                            <option>She/Her</option>
+                                            <option>They/Them</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <input type="button" name="next" class="next action-button" value="Next" />
+                                <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                            </fieldset>
+
+
+                            <!-- Image -->
                             <!-- <fieldset>
                                 <div class="form-card">
                                     <div class="row">
@@ -115,17 +124,35 @@
                                 <input type="button" name="next" class="next action-button" value="Next" />
                                 <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
                             </fieldset> -->
+
+                             <!-- Account -->
                             <fieldset>
                                 <div class="form-card">
-                                    <div class="row">
-                                        <div class="col-7">
-                                            <h2 class="fs-title">Terms:</h2>
-                                        </div>
-                                        <div class="col-5">
-                                            <h2 class="steps">Step 4 - 4</h2>
-                                        </div>
-                                    </div> <br><br>
-                                    <div class="px-3 row justify-content-center" style="height: 200px; overflow-y: scroll;">
+                                    <div class="input-group col-md-6">
+                                        <label class="fieldlabels">Email: *</label>
+                                        <input type="email" name="email" placeholder="Email" />
+                                    </div>
+                                    <div class="input-group col-md-6">
+                                        <label class="fieldlabels">Username: *</label>
+                                        <input type="text" name="username" placeholder="Username" />
+                                    </div>
+                                    <div class="input-group col-md-6">
+                                        <label class="fieldlabels">Password: *</label>
+                                        <input type="password" name="password" id="password" placeholder="Password" />
+                                    </div>
+                                    <div class="input-group col-md-6">
+                                        <label class="fieldlabels">Confirm Password: *</label>
+                                        <input type="password" name="confirm_password" placeholder="Confirm Password" />
+                                    </div>
+                                </div> 
+                                <input type="button" name="next" class="next action-button" value="Next" />
+                                <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                            </fieldset>
+
+                            <!-- Terms -->
+                            <fieldset>
+                                <div class="form-card">
+                                    <div class="px-3 row justify-content-center" style="height: 150px; overflow-y: scroll;">
                                         <!-- <div class="col-3"> <img src="https://i.imgur.com/GwStPmg.png" class="fit-image"> </div> -->
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                                         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -146,7 +173,7 @@
                                         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
                                         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
                                         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                    </div> <br><br>
+                                    </div>
                                     <div class="row justify-content-center">
                                         <div class="col-7 text-center">
                                             <h5 class="purple-text text-center"></h5>
@@ -154,7 +181,7 @@
                                     </div>
 
                                     <div class="">
-                                        <input class="form-check-input" type="checkbox" style="width: 60px" value="terms" id="flexCheckDefault"> 
+                                        <input class="form-check-input" type="checkbox" name="terms" style="width: 60px" value="accepted" id="terms"> 
                                         <label class="form-check-label" style="margin-left:30px" for="flexCheckDefault">
                                            I have read and accept Lnaid Terms
                                         </label>
@@ -162,9 +189,9 @@
 
                                 </div>
 
-                                
-
-
+                                <!-- <div id="ajaxLoading" style="position: relative; top: 60px"> -->
+                                    <img id="ajaxLoading" src="{{asset('assets/img/spinners/preloader.gif')}} " title="working..." />
+                                <!-- </div> -->
                                 <input type="button" id="submit" name="next" class="action-button" value="Submit" />
                                 <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
                             </fieldset>

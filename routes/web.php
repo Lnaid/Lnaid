@@ -16,8 +16,9 @@ use Illuminate\Support\Facades\Route;
 // Guest Routes
 Route::group(['middleware'=>['web', 'guest'], 'namespace' => 'App\Http\Controllers'], function(){
 	Route::get('/signup-sponsor', 'AuthController@createSponsor')->name('signup.sponsor');
-	Route::get('/signup-alumni', 'AuthController@createAlumni')->name('signup.alumni');
 	Route::get('/signup-student', 'AuthController@createStudent')->name('signup.student');
+
+	Route::post('/signup-student', 'AuthController@storeStudent')->name('store.student');
 	Route::post('/signup-sponsor', 'AuthController@storeSponsor')->name('store.sponsor');
 	// Route::post('/signin', 'AuthController@signIn')->name('signin.store');
 	// Route::post('/signup', 'AuthController@signup')->name('signup.store');

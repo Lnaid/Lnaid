@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Http\Requests\StoreSponsorRequest;
+use App\Http\Requests\StoreStudentRequest;
+use Illuminate\Support\Collection;
 
 class AuthController extends Controller
 {   
@@ -50,8 +52,13 @@ class AuthController extends Controller
      */
     public function createStudent()
     {
-        //
-        return view('auth.student-signup');
+        $schools = new Collection([
+            ['id' => 1, 'name' => 'Federal University of Technology - Minna' ],
+            ['id' => 2, 'name' => 'University of Abuja'],
+            ['id' => 3, 'name' => 'Covenant University' ]
+        ]);
+
+        return view('auth.student-signup')->with(['schools' => $schools]);
     }
 
     /**
@@ -80,9 +87,11 @@ class AuthController extends Controller
     {
         $validatedData = $request->validated();
         $account = new User;
-        $account->createSponsor($validatedData);
+        $account->createStudent($validatedData);
 
         return redirect('/')->with('success', 'Welcome to Lnaid ');
+
+        // return $validatedData;
     }
 
     /**

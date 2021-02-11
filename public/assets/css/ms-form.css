@@ -54,6 +54,7 @@ p {
 }
 
 #msform input,
+#msform select,
 #msform textarea {
     padding: 8px 15px 8px 15px;
     border: 1px solid #ccc;
@@ -150,7 +151,7 @@ p {
 #progressbar {
     margin-bottom: 30px;
     overflow: hidden;
-    color: lightgrey
+    color: lightgrey;
 }
 
 #progressbar .active {
@@ -160,10 +161,10 @@ p {
 #progressbar li {
     list-style-type: none;
     font-size: 15px;
-    width: 25%;
+    width: 20%;
     float: left;
     position: relative;
-    font-weight: 400
+    font-weight: 400;
 }
 
 #progressbar #account:before {
@@ -183,7 +184,12 @@ p {
 
 #progressbar #school:before {
     font-family: FontAwesome;
-    content: "\f015"
+    content: "\f19c"
+}
+
+#progressbar #academic:before {
+    font-family: FontAwesome;
+    content: "\f19d "
 }
 
 #progressbar #confirm:before {
@@ -192,9 +198,9 @@ p {
 }
 
 #progressbar li:before {
-    width: 50px;
-    height: 50px;
-    line-height: 45px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
     display: block;
     font-size: 20px;
     color: #ffffff;
@@ -211,17 +217,17 @@ p {
     background: lightgray;
     position: absolute;
     left: 0;
-    top: 25px;
-    z-index: -1
+    top: 20px;
+    z-index: -1;
 }
 
 #progressbar li.active:before,
 #progressbar li.active:after {
-    background: #e93a47;
+    background: #8b8787;
 }
 
 .progress {
-    height: 20px
+    height: 10px
 }
 
 .progress-bar {
@@ -237,12 +243,11 @@ p {
 /*air*/
 label.error {
     line-height: 0;
-    color: red;
-    font-size: 14px;
-    top: -40px;
+    color: #e93a47;
+    font-size: 12px;
+    top: -45px;
     position: relative;
     text-align: right;
     margin-bottom: 0;
-    float: right;
-    margin-right: 10px;
+    left: 50%;
 }

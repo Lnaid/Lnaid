@@ -4,8 +4,9 @@ $(document).ready(function(){
 	var opacity;
 	var current = 1;
 	var steps = $("fieldset").length;
-	var isUnique = true;
-	var isAjax = false;
+
+	// hide ajax loading gif
+	$('#ajaxLoading').hide();
 
 	setProgressBar(current);
 	// custom arguments for jquery validation
@@ -15,35 +16,40 @@ $(document).ready(function(){
         // The key name on the left side is the name attribute
         // of an input field. Validation rules are defined
         // on the right side
-        // name: "required",
-        email: {
-          required: true,
-          // Specify that email should be validated
-          // by the built-in "email" rule
-          email: true
-        },
-        // password: {
-        //   required: true,
-        //   minlength: 8
-        // },
+        name: "required",
+        username: "required",
+        email: { required: true, email: true },
+        password: { required: true, minlength: 8},
+        confirm_password: { required: true, equalTo: "#password" },
+        school_id: { required: true, minlength: 1 },
+        department: "required",
+        program_type: { required: true, minlength: 1 },
+        level: {required: true, number: true },
+        phone: {required: true, number: true},
 
-        // confirm_password: {
-        //     required: true,
-        //     equalTo: "#pass"
-        // }
       },
       // Specify validation error messages
       messages: {
-        // name: "Please enter your firstname",
-        // pass: {
-        //   required: "Please provide a password",
-        // },
-
-        // confirm_password: {
-        //   required: "Please confirm your password",
-        //   equalTo: "Password didn't match"
-        // },
-        email: "Please enter a valid email address"
+        name: "Enter your full name",
+        username: "Please choose username",
+        pass: {
+          required: "Please provide a password",
+        },
+        confirm_password: {
+          required: "Confirm your password",
+          equalTo: "Password didn't match"
+        },
+        email: "Please enter a valid email address",
+        school_id: "Please select a school",
+        program_type: "Please select",
+        level: {
+          required: "Please enter current level",
+          number: "Must be a valid number"
+        },
+        phone: {
+          required: "Enter phone number",
+          number: "Must be a valid phone number"
+        },
       },
 
       // onkeyup: function(element) {$(element).valid()},
@@ -130,50 +136,53 @@ $(document).ready(function(){
 
 		
 	$("#submit").click(function(){
+		var terms = form.find('input[name="terms"]');
+		if(!terms.is( ":checked")){
+			toastr.info("You need to accept our terms and conditions")
+			return false	
+		}
 		return ajaxSubmit(form);
-		// console.log('sbmit')
 	})
 
-
 	function ajaxSubmit(form) {
-
 			var formValues= form.serialize();
-			
 			console.log(formValues);
 
 			$.ajaxSetup({
 				headers: {
 					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-				}
+				},
+
 			});
 
 			$.ajax({
-				url: window.location.origin + '/signup-sponsor',
+				url: window.location.origin + '/signup-student',
 				method: 'POST',
-				// data: {
-				// 	"_token": $('meta[name="csrf-token"]').attr('content'),
-				// 	"account_type": "individual",
-				// 	"name": "John Ken",
-				// 	"email": "aironde.v@gmail.com",
-				// 	"password": "password"
-				// },
 				data: formValues,
+
+				beforeSend: function() {
+				    $('#ajaxLoading').show();
+				 },
+
+				complete: function(){
+			     	$('#ajaxLoading').hide();
+			  	},
 				
 				success: function(res){
-					var success = "{{ Session::get('success')['message'] }}";
-					console.log('ajax came back successfully')
-					// toastr.error(success)
-					return isAjax = true;
+					console.log(res)
+					toastr.success("account created successfully")
+					isAjax = true;
 				},
 
 				error: function(err){
 					console.log(err)
-				 	errors = err.responseJSON.errors
+					if(err.status === 500){
+						toastr.error('An error occured - please try again');
+					}
+				 	validationErrors = err.responseJSON.errors
 	                // console.log(err.responseJSON.errors)
-	            	for(error in errors){
-	                	toastr.error(errors[error][0]);
-	                	isUnique = false;
-	                	isAjax = true
+	            	for(error in validationErrors){
+	                	toastr.error(validationErrors[error][0]);
 	            	}
 				}
 			});

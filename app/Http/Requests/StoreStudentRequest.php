@@ -38,6 +38,7 @@ class StoreStudentRequest extends FormRequest
             'state' => ['nullable', 'string'],
             'country' => ['nullable', 'string'],
 
+            'school_id' => [ 'required', 'string'],
             'course' => [ 'nullable', 'string'],
             'department'  => ['nullable', 'string'],
             'falculty' => [ 'nullable', 'string'],
@@ -68,7 +69,7 @@ class StoreStudentRequest extends FormRequest
     public function messages()
     {
         return [
-            // 'title.required' => 'A title is required',
+            'school_id.required' => 'Please choose a choose',
             // 'body.required'  => 'A message is required',
         ];
     }
