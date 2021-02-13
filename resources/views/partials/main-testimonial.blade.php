@@ -4,8 +4,8 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-heading text-center">
-                    <span>What Clients Say</span>
-                    <h2 class="d-blue bold bl-text wow fadeInUp" data-wow-delay="0.3s">Loved By Our Clients</h2>
+                    <span>What Students Say</span>
+                    <h2 class="d-blue bold bl-text wow fadeInUp" data-wow-delay="0.3s">Thank You</h2>
                     <p class="wow fadeInUp" data-wow-delay="0.4s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis accumsan nisi Ut ut felis congue nisl hendrerit commodo. </p>
                 </div>
             </div>

@@ -16,6 +16,11 @@
         <link href="{{ asset('assets/dashboard/css/themes/lite-purple.min.css') }}" rel="stylesheet" />
         <link href="{{ asset('assets/css/plugins/perfect-scrollbar.min.css') }}" rel="stylesheet" />
 
+        <!-- Font Awesome -->
+        <link rel="stylesheet" type="text/css" href=" {{asset('assets/dashboard/css/fa.min.css')}} ">
+        <link rel="stylesheet" type="text/css" href=" {{asset('assets/dashboard/css/request.css')}} ">
+        
+
         @stack('css')
 
     </head>

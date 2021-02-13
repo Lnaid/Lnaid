@@ -8,7 +8,7 @@
     </div>
     <div class="d-flex align-items-center">
         <!-- Mega menu-->
-        <div class="dropdown mega-menu d-none d-md-block"><a class="btn text-muted dropdown-toggle mr-3" id="dropdownMegaMenuButton" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mega Menu</a>
+        <!-- <div class="dropdown mega-menu d-none d-md-block"><a class="btn text-muted dropdown-toggle mr-3" id="dropdownMegaMenuButton" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mega Menu</a>
             <div class="dropdown-menu text-left" aria-labelledby="dropdownMenuButton">
                 <div class="row m-0">
                     <div class="col-md-4 p-4 bg-img">
@@ -40,7 +40,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- / Mega menu-->
         <div class="search-bar">
             <input type="text" placeholder="Search" /><i class="search-icon text-muted i-Magnifi-Glass1"></i>

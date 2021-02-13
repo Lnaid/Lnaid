@@ -26186,3 +26186,11 @@ blockquote {
     color: #c2c6dc;
     text-decoration: none;
     background-color: #10163a; }
+
+
+
+/*airon - Request*/
+
+.feature-request-area .card{
+  flex-direction: inherit;
+}

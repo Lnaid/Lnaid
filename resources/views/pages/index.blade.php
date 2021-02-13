@@ -93,7 +93,7 @@
         </section>
 
         <!-- Creative Facts - Start -->
-        <section class="creative-facts section-padding-100">
+        <section class="creative-facts section-padding">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-sm-12">
@@ -145,73 +145,8 @@
         <!-- Creative Facts - End -->
 
     
-
-        <!-- ##### Our Services Area Start ##### -->
-        <hr />
-        <section class="our_services_area section-padding-0-0 relative hex-pat-1  mt-30" id="services">
-            <div class="container">
-                
-                <div class="section-heading text-center">
-                    <span>Can you help with this ?</span>
-                    <h2 class=" bold fadeInUp" data-wow-delay="0.3s">Top Request</h2>
-                    <p class="fadeInUp" data-wow-delay="0.4s">Lets start with some top profilled request from students</p>
-                </div>
-                    
-
-                <div class="row">
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <!-- Content -->
-                        <div class="service_single_content v2 text-center wow fadeInUp" data-wow-delay="0.2s">
-                           
-                            <div class="serv_icon">
-                                <img src="{{ asset('assets/img/icons/s1.png') }}" alt="">
-                            </div>
-                            <div class="service-content">
-                                <h6 class=" bold">Tuition</h6>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla neque quam, maxi ut accumsan ut, posuere sit Lorem ipsum</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <!-- Content -->
-                        <div class="service_single_content v2 text-center wow fadeInUp" data-wow-delay="0.2s">
-                           
-                            <div class="serv_icon">
-                                <img src="{{ asset('assets/img/icons/s3.png') }}" alt="">
-                            </div>
-                            <div class="service-content">
-                                <h6 class=" bold">Learning Resource</h6>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla neque quam, maxi ut accumsan ut, posuere sit Lorem ipsum</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <!-- Content -->
-                        <div class="service_single_content v2 text-center wow fadeInUp" data-wow-delay="0.4s">
-                           
-                            <div class="serv_icon">
-                                <img src="{{ asset('assets/img/icons/s5.png') }}" alt="">
-                            </div>
-                            <div class="service-content">
-                                <h6 class=" bold">Misc</h6>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla neque quam, maxi ut accumsan ut, posuere sit Lorem ipsum</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    
-
-                </div>
-            </div>
-        </section>
-
-
-       
-
         <!-- Testimonial section -->
-        <!-- include('partials.main-testimonial') -->
+        @include('partials.main-testimonial')
         <!-- Testimonial End -->
 
     @endSection
