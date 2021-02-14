@@ -1,7 +1,7 @@
 @extends('layouts.auth')
     @push('css')
         <link href="{{ asset('assets/css/toastr.min.css') }}" rel="stylesheet">
-        <link href="{{ asset('assets/css/ms-form.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/css/ms-form2.css') }}" rel="stylesheet">
     @endPush
     @section('content')
         <section class="" >
