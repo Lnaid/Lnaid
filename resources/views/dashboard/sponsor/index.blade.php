@@ -2,7 +2,41 @@
     @push('css')
         <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" /> -->
         <!-- <link rel="stylesheet" type="text/css" href=" {{asset('assets/dashboard/css/main.css')}} "> -->
+        <link rel="stylesheet" href=" {{ asset('assets/css/owl.carousel.min.css') }} ">
+        <style type="text/css">
+            
+            .owl-carousel{
+                overflow: hidden;
+            }
 
+            .owl-item{
+               float: left;
+            }
+
+            .request-slide .owl-dot.active {
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+                background: #c31e39;
+                color: #fff;
+            }
+            
+            .request-slide .owl-dot {
+                margin: 0 5px;
+                line-height: 1;
+                color: #607D8B;
+                width: 30px;
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+                font-size: 12px;
+                border-radius: 50%;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+                border: none;
+            }
+
+            .owl-nav{
+                display: none
+            }
+        </style>
         
     @endPush
    @section('content')
@@ -18,54 +52,57 @@
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="card card-icon mb-4">
                                 <div class="card-body text-center"><i class="i-Data-Upload"></i>
-                                    <p class="text-muted mt-2 mb-2">Today&apos;s Upload</p>
-                                    <p class="text-primary text-24 line-height-1 m-0">21</p>
+                                    <p class="text-muted mt-2 mb-2">New Requests</p>
+                                    <p class="text-primary text-24 line-height-1 m-0">221</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="card card-icon mb-4">
                                 <div class="card-body text-center"><i class="i-Add-User"></i>
-                                    <p class="text-muted mt-2 mb-2">New Users</p>
-                                    <p class="text-primary text-24 line-height-1 m-0">21</p>
+                                    <p class="text-muted mt-2 mb-2">Funded Request</p>
+                                    <p class="text-primary text-24 line-height-1 m-0">51</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="card card-icon mb-4">
                                 <div class="card-body text-center"><i class="i-Money-2"></i>
-                                    <p class="text-muted mt-2 mb-2">Total sales</p>
-                                    <p class="text-primary text-24 line-height-1 m-0">4021</p>
+                                    <p class="text-muted mt-2 mb-2">Total Offers</p>
+                                    <p class="text-primary text-24 line-height-1 m-0">4</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="card card-icon-big mb-4">
                                 <div class="card-body text-center"><i class="i-Money-2"></i>
-                                    <p class="line-height-1 text-title text-18 mt-2 mb-0">4021</p>
+                                     <p class="text-muted mt-2 mb-2">Total Donations</p>
+                                    <p class="line-height-1 text-title text-18 mt-2 mb-0">N17000</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="card card-icon-big mb-4">
                                 <div class="card-body text-center"><i class="i-Gear"></i>
-                                    <p class="line-height-1 text-title text-18 mt-2 mb-0">4021</p>
+                                     <p class="text-muted mt-2 mb-2">Scholarships</p>
+                                    <p class="line-height-1 text-title text-18 mt-2 mb-0">0</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="card card-icon-big mb-4">
                                 <div class="card-body text-center"><i class="i-Bell"></i>
-                                    <p class="line-height-1 text-title text-18 mt-2 mb-0">4021</p>
+                                     <p class="text-muted mt-2 mb-2">Following</p>
+                                    <p class="line-height-1 text-title text-18 mt-2 mb-0">2</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-12">
-                    <div class="card mb-4">
+                <div class="white-bg pt-30 col-lg-6 col-md-12 feature-request-area" id="random-request-slide">
+                    <!-- <div class="card mb-4">
                         <div class="card-body">
-                            <div class="card-title">Top Schools</div>
+                            <div class="card-title">Lnaid Schools</div>
                             <div class="d-flex align-items-center border-bottom-dotted-dim pb-3 mb-3"><img class="avatar-md rounded mr-3" src="{{ asset('assets/img/logos/logo-unn.png') }}" alt="" />
                                 <div class="flex-grow-1">
                                     <h6 class="m-0">University of Nigeria, Nsukka</h6>
@@ -94,8 +131,12 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
+
+                    @include('partials.request.slide')
+
                 </div>
+
             </div>
             <!-- end of row-->
             <div class="row">

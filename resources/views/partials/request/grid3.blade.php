@@ -6,8 +6,7 @@
                 <div class="card requests request-cart white-bg mb-30">
                     <div class="projects__content">
                         <a href="#" class="new-tag">Tuition</a>
-                        <h3><a href="request-video.html">Gen3 Airoha Air Pro 3 TWS 
-                            Cancel Headphone</a></h3>
+                        <h3><a href="request-video.html">Kindly asssist in paying my school fees for 2020/2021 Academic Session</a></h3>
                             <div class="projects__manager d-sm-flex align-items-center mb-40">
                                 <div class="manager-img mr-20">
                                    <img src=" {{ url('storage/files/avatars/01.png') }} " alt="">
@@ -15,8 +14,8 @@
                                 <div class="name">
                                     <h5>Somalia D Silva</h5>
                                     <address>
-                                        <a href="#">9 Campaigns</a>
-                                        <a href="#"><i class="far fa-map-marker-alt"></i> 55 Main Street, New York</a>
+                                        <a href="#">1 request</a>
+                                        <a href="#"><i class="far fa-map-marker-alt"></i> Federal Polytechnic - Ako</a>
                                     </address>
                                 </div>
                             </div>
@@ -54,8 +53,7 @@
                 <div class="card requests request-cart white-bg mb-30">
                     <div class="projects__content">
                         <a href="#" class="new-tag">Project</a>
-                        <h3><a href="request-video.html">Gen3 Airoha Air Pro 3 TWS 
-                            Cancel Headphone</a></h3>
+                        <h3><a href="request-video.html">Need help  financing my final year project</a></h3>
                             <div class="projects__manager d-sm-flex align-items-center mb-40">
                                 <div class="manager-img mr-20">
                                     <img src=" {{ url('storage/files/avatars/01.png') }} " alt="">
@@ -63,8 +61,8 @@
                                 <div class="name">
                                     <h5>Somalia D Silva</h5>
                                     <address>
-                                        <a href="#">9 Campaigns</a>
-                                        <a href="#"><i class="far fa-map-marker-alt"></i> 55 Main Street, New York</a>
+                                        <a href="#">2 requests</a>
+                                        <a href="#"><i class="far fa-map-marker-alt"></i> University of Abuja</a>
                                     </address>
                                 </div>
                             </div>
