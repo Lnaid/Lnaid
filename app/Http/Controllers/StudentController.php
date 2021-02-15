@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class StudentController extends Controller
 {
@@ -36,5 +37,16 @@ class StudentController extends Controller
         $data['title'] = 'Chat';
 
         return view('dashboard.student.chat', $data);
+    }
+
+    public function logout(Request $request){
+
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/');
     }
 }

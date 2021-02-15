@@ -72,6 +72,7 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth:sanctum',  'student'
 	Route::get('/verification', 'StudentController@verification')->name('student.verification');
 	Route::get('/fund-request', 'StudentController@fundRequest')->name('student.fund-request');
 	Route::get('/chat', 'StudentController@chat')->name('student.chat');
+	Route::get('/logout', 'StudentController@logout')->name('student.signout');
 });
 
 

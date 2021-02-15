@@ -15,8 +15,9 @@
                     <div class="card mb-4 h-100">
                         <div class="card-body">
                             <div class="card-title">Profile Picture</div>
-                            <img src="http://127.0.0.1:8000/assets/dashboard/images/faces/1.jpg"alt="" style="display: block; border-radius: 50%; margin-left: 90px;">
-                            <button class="btn btn-danger" style="position: absolute;margin-left: 110px;margin-top: 10px;" type="button">Change</button>
+                            <img src="{{ asset('assets/dashboard/images/faces/1.jpg') }}"alt="" style="display: block; border-radius: 50%; margin-left: 90px;" id="user_p_image">
+                            <input type="file" style="display: none" id="profile_photo_path" name="profile_photo_path">
+                            <button class="btn btn-danger" id="select_img" style="position: absolute;margin-left: 110px;margin-top: 10px;" type="button">Change</button>
                         </div>
                     </div>
                 </div>
@@ -34,28 +35,20 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <p class="font-weight-400 mb-2">CPF</p>
-                                    <input class="form-control" type="text" placeholder="999.999.999-99" />
+                                    <p class="font-weight-400 mb-2">Full Name</p>
+                                    <input class="form-control" type="text" name="name" placeholder="Fullname" value="{{ Auth::user()->name }}" />
                                 </div>
                                 <div class="mb-3 col-md-6">
-                                    <p class="font-weight-400 mb-2">Zip Code</p>
-                                    <input class="form-control" type="text" placeholder="99999-999" />
+                                    <p class="font-weight-400 mb-2">Username</p>
+                                    <input class="form-control" type="text" name="username" placeholder="Username" value="{{ Auth::user()->username }}" />
                                 </div>
                                 <div class="mb-3 col-md-6">
-                                    <p class="font-weight-400 mb-2">Phone</p>
-                                    <input class="form-control" type="text" placeholder="+9 (999) 999-9999" />
+                                    <p class="font-weight-400 mb-2">Email Address</p>
+                                    <input class="form-control" name="email" placeholder="Email Address" type="text" value="{{ Auth::user()->email }}" />
                                 </div>
                                 <div class="mb-3 col-md-6">
-                                    <p class="font-weight-400 mb-2">Master Card</p>
-                                    <input class="form-control" type="text" placeholder="9999 9999 9999 9999" />
-                                </div>
-                                <div class="mb-3 col-md-6">
-                                    <p class="font-weight-400 mb-2">Date</p>
-                                    <input class="form-control" type="text" placeholder="mm/dd/yy" />
-                                </div>
-                                <div class="mb-3 col-md-6">
-                                    <p class="font-weight-400 mb-2">CPF/CNPJ</p>
-                                    <input class="form-control" type="text" placeholder="99.999.999/9999-99" />
+                                    <p class="font-weight-400 mb-2">Phone Number</p>
+                                    <input class="form-control" type="text" name="phone" placeholder="Phone Number" value="{{ Auth::user()->phone }}" />
                                 </div>
                             </div>
                             <button class="btn float-right btn-danger" type="button">Edit</button>
@@ -76,6 +69,42 @@
 
         <!-- include('partials.error', ['position' => 'toast-bottom-left' ]) -->
         <!-- include('partials.flash', ['position' => 'toast-bottom-left', 'timeout' => 1000 ]) -->
+        <script>
+            $(document).on('click','#select_img', function(event) {
+                $('#profile_photo_path').click();
+            });
+
+            $(document).on('change','#profile_photo_path', function(event) {
+                var p = 'profile_photo_path';
+                upload_img(p);
+            });
+
+            function upload_img(a){
+            console.log(a);
+            var fuData = document.getElementById(a);
+            var FileUploadPath = fuData.value;
+            if (FileUploadPath == '') {
+                alert("Please upload an image");
+            } else {
+                var Extension = FileUploadPath.substring(
+                    FileUploadPath.lastIndexOf('.') + 1).toLowerCase();
+                if (Extension == "gif" || Extension == "png" || Extension == "jpeg" || Extension == "jpg") {
+                    if (fuData.files && fuData.files[0]) {
+                        var reader = new FileReader();
+                        reader.onload = function(e) {
+                            $('#user_p_image').attr('src', e.target.result);
+                        }
+                        reader.readAsDataURL(fuData.files[0]);
+                    }
+                }
+                else {
+                    alert("Sorry, Only Files With The Following Extensions are allowed: GIF, PNG, JPG, JPEG. ");
+
+                }
+            }
+
+        }
+        </script>
 
     @endPush
 
