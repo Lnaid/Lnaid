@@ -29,7 +29,7 @@ class StoreSponsorRequest extends FormRequest
             'username' => ['sometimes', 'string'], //generated
             'slug' => ['sometimes', 'string'], //generated
             'password' => ['string', 'required'],
-            'phone' => ['nullable', 'integer'],
+            'phone' => ['nullable', 'unique:users', 'string'],
             'profile_photo_path' => [ 'nullable', 'string'],
             'cover_photo_path' => ['sometimes', 'string'], //only when its included in input array
             'account_type' => ['nullable', 'string'],

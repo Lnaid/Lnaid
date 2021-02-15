@@ -15,6 +15,7 @@ trait UserAccountTrait {
         $user = User::create($data);
         $sponsor = Sponsor::create(['user_id' => $user->id]);
         $sponsor->update($data);
+        Auth::login($user);
         // TODO - assign student role to user here
         Bouncer::assign('sponsor')->to($user);
         return $user;

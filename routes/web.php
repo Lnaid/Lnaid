@@ -64,7 +64,7 @@ Route::group(['middleware' =>['web', 'auth']], function(){
 Route::group(['prefix' => 'student', 'middleware' => ['auth:sanctum',  'student' ], 'namespace' => 'App\Http\Controllers'], function(){
 	Route::get('/', function(){
 		$data['title'] = 'Dashboard';
-    	return view('dashboard/student/index', $data);
+    	return view('dashboard.student.index', $data);
 	})->name('student.dashboard')->middleware('verified');
 	
 	Route::get('/overview', 'StudentController@overview')->name('student.index');
@@ -84,7 +84,7 @@ Route::group(['prefix' => 'sponsor', 'middleware' => ['auth:sanctum',  /*'sponso
 	Route::get('/', function () {
 		$data['title'] = 'Dashboard';
     	return view('dashboard.sponsor.index', $data);
-	});
+	})->name('sponsor.dashboard');
 
 	Route::get('/requests', function () {
 		$data['title'] = 'Dashboard';

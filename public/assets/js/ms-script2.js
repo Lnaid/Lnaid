@@ -4,6 +4,8 @@ $(document).ready(function(){
   var current_fs, next_fs, previous_fs; //fieldsets
   var left, opacity, scale; //fieldset properties which we will animate
   var animating; //flag to prevent quick multi-click glitches
+    // hide ajax loading gif
+  $('#ajaxLoading').hide();
 
 
 // custom arguments for jquery validation
@@ -56,6 +58,11 @@ $(document).ready(function(){
 
   var form = $("form[name='sponsor-signup']");
   form.validate(args)
+  toastr.options = {
+      preventDuplicates: true,
+      positionClass: "toast-bottom-left",
+      timeOut: 0,
+    }
 
 
   $(".next").click(function(){
@@ -140,7 +147,52 @@ $(document).ready(function(){
     });
   });
 
-  $(".submit").click(function(){
+  $("#submit").click(function(){
+   return ajaxSubmit(form);
     // return false;
   })
+
+
+  function ajaxSubmit(form) {
+      var formValues= form.serialize();
+      console.log(formValues);
+
+      $.ajaxSetup({
+        headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+
+      });
+
+      $.ajax({
+        url: window.location.origin + '/signup-sponsor',
+        method: 'POST',
+        data: formValues,
+
+        beforeSend: function() {
+            $('#ajaxLoading').show();
+         },
+
+        complete: function(){
+            $('#ajaxLoading').hide();
+          },
+        
+        success: function(res){
+          console.log(res)
+          toastr.success("account created successfully")
+          window.location.replace(window.location.origin + '/dashboard' );
+        },
+
+        error: function(err){
+          console.log(err)
+          toastr.error('Please try again');
+          validationErrors = err.responseJSON.errors
+                  // console.log(err.responseJSON.errors)
+                for(error in validationErrors){
+                    toastr.error(validationErrors[error][0]);
+                }
+        }
+      });
+    
+  }
 })

@@ -49,7 +49,10 @@
 
                             <input type="hidden" name="account_type" value="sponsor" />
                             <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
-                            <input type="submit" name="submit" class="submit action-button" value="Submit"/>
+                            <input type="button" id="submit" name="submit" class="submit action-button" value="Submit"/>
+                            <!-- <div id="ajaxLoading" style="position: relative; top: 60px"> -->
+                                <img id="ajaxLoading" src="{{asset('assets/img/spinners/preloader.gif')}} " title="working..." />
+                                <!-- </div> -->
                         </fieldset>
                     </form>
                     

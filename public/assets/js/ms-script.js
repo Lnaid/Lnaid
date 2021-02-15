@@ -171,7 +171,7 @@ $(document).ready(function(){
 				success: function(res){
 					console.log(res)
 					toastr.success("account created successfully")
-					window.location.replace(window.location.origin + '/student/dashboard' );
+					window.location.replace(window.location.origin + '/dashboard' );
 				},
 
 				error: function(err){
