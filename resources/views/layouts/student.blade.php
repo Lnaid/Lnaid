@@ -46,7 +46,8 @@
         </div>
 
         <!-- ########## All JS ########## -->
-        <script src="{{ asset('assets/dashboard/js/plugins/jquery-3.3.1.min.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+
         <script src="{{ asset('assets/dashboard/js/plugins/bootstrap.bundle.min.js') }}"></script>
         <script src="{{ asset('assets/dashboard/js/plugins/perfect-scrollbar.min.js') }}"></script>
         <script src="{{ asset('assets/dashboard/js/scripts/script.min.js') }}"></script>

@@ -44,18 +44,18 @@
         </div>
 
         <!-- ########## All JS ########## -->
-        <script src="{{ asset('assets/dashboard/js/plugins/jquery-3.3.1.min.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
         <script src="{{ asset('assets/dashboard/js/plugins/bootstrap.bundle.min.js') }}"></script>
         <script src="{{ asset('assets/dashboard/js/plugins/perfect-scrollbar.min.js') }}"></script>
         <script src="{{ asset('assets/dashboard/js/scripts/script.min.js') }}"></script>
         <script src="{{ asset('assets/dashboard/js/scripts/sidebar.large.script.min.js') }}"></script>
-        <script src="{{ asset('assets/dashboard/js/plugins/echarts.min.js') }}"></script>
-        <script src="{{ asset('assets/dashboard/js/scripts/echart.options.min.js') }}"></script>
+        <!-- <script src="{{ asset('assets/dashboard/js/plugins/echarts.min.js') }}"></script> -->
+        <!-- <script src="{{ asset('assets/dashboard/js/scripts/echart.options.min.js') }}"></script> -->
         <script src="{{ asset('assets/dashboard/js/plugins/datatables.min.js') }}"></script>
         <script src="{{ asset('assets/dashboard/js/scripts/dashboard.v4.script.min.js') }}"></script>
-        <script src="{{ asset('assets/dashboard/js/scripts/widgets-statistics.min.js') }}"></script>
-        <script src="{{ asset('assets/dashboard/js/plugins/apexcharts.min.js') }}"></script>
-        <script src="{{ asset('assets/dashboard/js/scripts/apexSparklineChart.script.min.js') }}"></script>
+        <!-- <script src="{{ asset('assets/dashboard/js/scripts/widgets-statistics.min.js') }}"></script> -->
+        <!-- <script src="{{ asset('assets/dashboard/js/plugins/apexcharts.min.js') }}"></script> -->
+        <!-- <script src="{{ asset('assets/dashboard/js/scripts/apexSparklineChart.script.min.js') }}"></script> -->
 
 
 
