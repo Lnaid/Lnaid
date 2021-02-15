@@ -88,10 +88,11 @@
                 <img src="{{ asset('assets/dashboard/images/faces/1.jpg') }}" id="userDropdown" alt="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                     <div class="dropdown-header">
-                        <i class="i-Lock-User mr-1"></i> Timothy Carlson
+                        <i class="i-Lock-User mr-1"></i> {{ Auth::user()->username }}
                     </div>
                     <a class="dropdown-item">Settings</a>
-                    <a class="dropdown-item" href="signin.html">Sign out</a>
+                    <a class="dropdown-item" href="{{ route('student.signout') }}">Sign out</a>
+                    <a class="dropdown-item" href="{{ route('student.signout') }}">Sign out of other devices</a>
                 </div>
             </div>
         </div>
