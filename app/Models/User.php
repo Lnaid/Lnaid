@@ -20,7 +20,7 @@ class User extends Authenticatable
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
-    use SoftDeletes;
+    //use SoftDeletes;
     use UserAccountTrait;
     use HasRolesAndAbilities;
 

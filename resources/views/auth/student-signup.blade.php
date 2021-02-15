@@ -38,7 +38,7 @@
                                     <select class="form-control" id="school-list" name="school_id" required="required">
                                         <option value="">Select</option>
                                         @foreach($schools as $school)
-                                            <option value="{{ $school['id'] }}">{{ $school['name'] }}</option>
+                                            <option value="{{ $school->id }}">{{ $school->name }}</option>
                                         @endForeach
                                     </select>
                                 </div>
