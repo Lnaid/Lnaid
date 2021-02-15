@@ -33,7 +33,7 @@
       
         <div class="app-admin-wrap layout-sidebar-large">
             <!-- Navigation -->
-            @include('partials.admin.main-header')
+            @include('partials.student.main-header')
             <!-- Sidebar - student -->
             @include('partials.student.sidebar')
 

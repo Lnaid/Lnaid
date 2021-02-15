@@ -1858,9 +1858,9 @@ p.artficial:before{
     margin-top: -100px;
 }
 .article.special{
-    background: #fbecec;
+    background: #ffffff;
     border:none;
-    border-bottom: 3px solid #f00016;
+    border: 1px solid #354168;
     position: relative;
     text-align: center;
     overflow: hidden;

@@ -43,29 +43,30 @@ Route::group(['middleware' => ['web']], function(){
 	});
 });
 
-// Auth gracefull Redirects
+// Dashboard gracefull Redirects
 Route::group(['middleware' =>['web', 'auth']], function(){
-		Route::get('/dashboard', function(){
-			$user = request()->user();
-		  	if(Bouncer::is($user)->a('admin')){
-		     	return redirect()->route('admin.dashboard');
-		   	} elseif(Bouncer::is($user)->a('sponsor')){
-		      	return redirect()->route('sponsor.dashboard');
-		 	}elseif(Bouncer::is($user)->a('student')){
-		      	return redirect()->route('student.dashboard');
-		 	}else{
-		     	return redirect()->back()->with('error', 'Prohibited');
-		    }
-		})->name('dashboard');
+	Route::get('/dashboard', function(){
+		$user = request()->user();
+	  	if(Bouncer::is($user)->a('admin')){
+	     	return redirect()->route('admin.dashboard');
+	   	} elseif(Bouncer::is($user)->a('sponsor')){
+	      	return redirect()->route('sponsor.dashboard');
+	 	}elseif(Bouncer::is($user)->a('student')){
+	      	return redirect()->route('student.dashboard');
+	 	}else{
+	     	return redirect()->back()->with('error', 'Prohibited');
+	    }
+	})->name('dashboard');
 });
 
 
 // STUDENT Routes
 Route::group(['prefix' => 'student', 'middleware' => ['auth:sanctum',  'student' ], 'namespace' => 'App\Http\Controllers'], function(){
-	Route::get('/dashboard', function(){
+	Route::get('/', function(){
 		$data['title'] = 'Dashboard';
     	return view('dashboard/student/index', $data);
 	})->name('student.dashboard')->middleware('verified');
+	
 	Route::get('/overview', 'StudentController@overview')->name('student.index');
 	Route::get('/profile', 'StudentController@profile')->name('student.profile');
 	Route::get('/verification', 'StudentController@verification')->name('student.verification');
@@ -75,17 +76,35 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth:sanctum',  'student'
 
 
 // Sponsor Routes
-Route::group(['prefix' => 'sponsor', 'middleware' => ['auth:sanctum',  'sponsor' ], 'namespace' => 'App\Http\Controllers'], function(){
+Route::group(['prefix' => 'sponsor', 'middleware' => ['auth:sanctum',  /*'sponsor' */ ], 'namespace' => 'App\Http\Controllers'], function(){
 	Route::get('/test', function () {
     	return view('dashboard.sponsor.unused');
+	});
+
+	Route::get('/', function () {
+		$data['title'] = 'Dashboard';
+    	return view('dashboard.sponsor.index', $data);
+	});
+
+	Route::get('/requests', function () {
+		$data['title'] = 'Dashboard';
+    	return view('dashboard.sponsor.request-index', $data);
+	});
+
+	Route::get('/requests/12', function () {
+		$data['title'] = 'Dashboard';
+    	return view('dashboard.sponsor.request-single', $data);
 	});
 });
 
 
+
+
 // ADMIN ENDPOINTS GROUP
-Route::group(['prefix' => 'admin',  'namespace' => 'App\Http\Controllers\Admin', 'middleware' => ['auth:sanctum', 'admin']], function () {
+Route::group(['prefix' => 'admin',  'namespace' => 'App\Http\Controllers\Admin', 'middleware' => ['auth:sanctum', /*'admin' */]], function () {
+	
 	Route::get('/test', function () {
-    	return view('dashboard.admin.unused')->name('admin.dashboard');
+    	return view('dashboard.admin.unused');
 	});
  
 // RBAC

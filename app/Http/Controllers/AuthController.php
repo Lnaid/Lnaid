@@ -70,7 +70,7 @@ class AuthController extends Controller
         $account = new User;
         $account->createSponsor($validatedData);
 
-        return redirect('/')->with('success', 'Welcome to Lnaid ');
+        return redirect()->route('dashboard')->with('success', 'Welcome to Lnaid ');
     }
 
 
@@ -86,7 +86,7 @@ class AuthController extends Controller
         $account = new User;
         $account->createStudent($validatedData);
 
-        return redirect('/')->with('success', 'Welcome to Lnaid ');
+        return redirect()->route('dashboard')->with('success', 'Welcome to Lnaid ');
 
         // return $validatedData;
     }
