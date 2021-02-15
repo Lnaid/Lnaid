@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class School extends Model
 {
     use HasFactory;
-    use SoftDeletes;
+    //use SoftDeletes;
 
     /**
      * The attributes that should be hidden for arrays.

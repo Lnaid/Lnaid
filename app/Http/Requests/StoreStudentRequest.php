@@ -28,7 +28,7 @@ class StoreStudentRequest extends FormRequest
             'email' => ['string', 'required', 'unique:users'],
             'username' => ['sometimes', 'unique:users', 'string'], //generated
             'password' => ['string', 'required'],
-            'phone' => ['nullable', 'unique:users', 'integer'],
+            'phone' => ['nullable', 'unique:users', 'string'],
             'profile_photo_path' => [ 'nullable', 'string'],
             'cover_photo_path' => ['sometimes', 'string'], //only when its included in input array
             'account_type' => ['nullable', 'string'],
@@ -51,7 +51,7 @@ class StoreStudentRequest extends FormRequest
             'program_duration' => [ 'nullable', 'string'],
             'school_email' => [ 'nullable', 'string'],
 
-            'phone_2' => ['nullable', 'integer'],
+            'phone_2' => ['nullable', 'string'],
             'about' => [ 'nullable', 'string'],
             'twitter' => ['nullable', 'string'],
             'linkedin' => ['nullable', 'string'],

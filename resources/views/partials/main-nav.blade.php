@@ -32,7 +32,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="contact-us.html">Contact</a>
                     </li>
-                    <li class="lh-55px"><a href="#" class="btn login-btn ml-50">Login!</a></li>
+                    @if(Auth::check())
+                    <li class="lh-55px"><a href="{{ route('dashboard') }}" class="btn login-btn ml-50">Dashboard!</a></li>
+                    @else
+                    <li class="lh-55px"><a href="{{ route('login') }}" class="btn login-btn ml-50">Login!</a></li>
+                    @endif
                 </ul>
             </div>
         </div>

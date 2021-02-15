@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\School;
 use App\Http\Requests\StoreSponsorRequest;
 use App\Http\Requests\StoreStudentRequest;
 use Illuminate\Support\Collection;
@@ -52,11 +53,7 @@ class AuthController extends Controller
      */
     public function createStudent()
     {
-        $schools = new Collection([
-            ['id' => 1, 'name' => 'Federal University of Technology - Minna' ],
-            ['id' => 2, 'name' => 'University of Abuja'],
-            ['id' => 3, 'name' => 'Covenant University' ]
-        ]);
+        $schools = School::where('status', 'approve')->get();
 
         return view('auth.student-signup')->with(['schools' => $schools]);
     }
