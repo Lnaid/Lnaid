@@ -19,4 +19,10 @@ class Request extends Model
     protected $hidden = [
         'id'
     ];
+
+
+    public function media()
+    {
+        return $this->hasOne(RequestMedia::class, 'request_id');
+    }
 }

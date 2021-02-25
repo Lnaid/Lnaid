@@ -71,6 +71,9 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth:sanctum',  'student'
 	Route::get('/profile', 'StudentController@profile')->name('student.profile');
 	Route::get('/verification', 'StudentController@verification')->name('student.verification');
 	Route::get('/fund-request', 'StudentController@fundRequest')->name('student.fund-request');
+	Route::post('/fund-request/create', 'StudentController@fundRequestPost')->name('student.fund.create');
+	Route::get('/fund-request/{id}/delete', 'StudentController@fundRequestDelete')->name('student.fund.delete');
+	Route::post('/fund-request/{id}/edit', 'StudentController@fundRequestEdit')->name('student.fund.edit');
 	Route::get('/chat', 'StudentController@chat')->name('student.chat');
 	Route::get('/logout', 'StudentController@logout')->name('student.signout');
 });
