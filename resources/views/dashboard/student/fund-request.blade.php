@@ -19,35 +19,109 @@
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Name</th>
+                                    <th scope="col">Title</th>
                                     <th scope="col">Amount</th>
-                                    <th scope="col">Email</th>
+                                    <th scope="col">Request Media</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
+
                             <tbody>
+                                @if(count($requests) > 0)
+                                @php $sn = 0 @endphp
+                                @foreach($requests as $request)
+                                @php $sn++ @endphp
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>Smith Doe</td>
-                                    <td>#1000</td>
-                                    <td>Smith@gmail.com</td>
-                                    <td><span class="badge badge-success">Active</span></td>
+                                    <th scope="row">{{ $sn }}</th>
+                                    <td>{{$request->title}}</td>
+                                    <td>{{$request->currency_id}} {{$request->amount}}</td>
                                     <td>
-                                        <button class="btn btn-success" type="button"><i class="nav-icon i-Pen-2"></i></button>
-                                        <button class="btn btn-danger" type="button"><i class="nav-icon i-Close-Window"></i></button>
+
+                                    </td>
+                                    <td>
+                                        @if($request->status == 1)
+                                        <span class="badge badge-success">Paid</span>
+                                        @elseif($request->status == 2)
+                                        <span class="badge badge-success">Accepted</span>
+                                        @elseif($request->status == 3)
+                                        <span class="badge badge-success">Failed</span>
+                                        @elseif($request->status == 0)
+                                        <span class="badge badge-success">Pending</span>
+                                        @endif
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-success" type="button" data-toggle="modal" data-target="#exampleModal{{$request->id}}"><i class="nav-icon i-Pen-2" title="Edit"></i></button>
+                                        <a href="{{ route('student.fund.delete', ['id' => $request->id]) }}" class="btn btn-danger" type="button"><i class="nav-icon i-Close-Window" title="Delete"></i></a>
                                     </td>
                                 </tr>
+                                <div class="modal fade" id="exampleModal{{$request->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <form action="{{route('student.fund.edit', ['id' => $request->id])}}" method="POST" enctype="multipart/form-data">
+                                                @csrf
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Create a request</h5>
+                                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <p class="font-weight-400 mb-2">Title</p>
+                                                            <input class="form-control" type="text" name="title" placeholder="Title" value="{{ $request->title }}" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <p class="font-weight-400 mb-2">Currency</p>
+                                                            <select class="form-control" name="currency"/>
+                                                            <option>Select currency</option>
+                                                            <option value="NGN" @if($request->currency_id == "NGN") selected @endif>NGN (Nigeria)</option>
+                                                            <option value="USD" @if($request->currency_id == "USD") selected @endif>USD (USA Dollar)</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <p class="font-weight-400 mb-2">Amount</p>
+                                                        <input class="form-control" type="number" name="amount" placeholder="Amount" value="{{ $request->amount }}" />
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <p class="font-weight-400 mb-2">Description</p>
+                                                        <textarea class="form-control" name="description" placeholder="Description">{{ $request->description }}</textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <p class="font-weight-400 mb-2">Attached File</p>
+                                                        <input class="form-control" type="file" name="attachment"/>
+                                                    </div>
+                                                </div>
 
-                            </tbody>
-                        </table>
-                    </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+                                                <button class="btn btn-primary ml-2" type="submit">Edit</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                            @else
+                            <tr><td colspan="6" style="text-align: center;">No data found</td></tr>
+                            @endif
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
-    <!-- end of row-->
-    <!-- end of main-content -->
+</div>
+<!-- end of row-->
+<!-- end of main-content -->
 </div>
 
 
@@ -64,19 +138,56 @@
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Create a request</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-            </div>
-            <div class="modal-body">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere autem consequuntur unde? Dolore, dolor iusto.</p>
+            <form action="{{route('student.fund.create')}}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Create a request</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="font-weight-400 mb-2">Title</p>
+                            <input class="form-control" type="text" name="title" placeholder="Title" value="" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="font-weight-400 mb-2">Currency</p>
+                            <select class="form-control" name="currency"/>
+                            <option>Select currency</option>
+                            <option value="NGN">NGN (Nigeria)</option>
+                            <option value="USD">USD (USA Dollar)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="font-weight-400 mb-2">Amount</p>
+                        <input class="form-control" type="number" name="amount" placeholder="Amount" value="" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="font-weight-400 mb-2">Description</p>
+                        <textarea class="form-control" name="description" placeholder="Description"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="font-weight-400 mb-2">Attached File</p>
+                        <input class="form-control" type="file" name="attachment"/>
+                    </div>
+                </div>
+
             </div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
-                <button class="btn btn-primary ml-2" type="button">Create</button>
+                <button class="btn btn-primary ml-2" type="submit">Create</button>
             </div>
-        </div>
+        </form>
     </div>
+</div>
 </div>
 @endPush
 

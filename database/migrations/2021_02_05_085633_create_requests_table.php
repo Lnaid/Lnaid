@@ -27,6 +27,7 @@ class CreateRequestsTable extends Migration
             $table->string('visibility')->nullable()->defualt('university'); //private or public - private defualts to university domain
             $table->string('description')->nullable();
             $table->string('currency_id')->nullable();
+            $table->integer('status')->default(0)->comment('0 = pending, 1 = successful, 2 = failed');
             $table->timestamps();
 
             $table->softDeletes();

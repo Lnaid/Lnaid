@@ -19,4 +19,5 @@ class RequestMedia extends Model
     protected $hidden = [
         'id'
     ];
+
 }
