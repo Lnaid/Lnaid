@@ -70,6 +70,9 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth:sanctum',  'student'
 	Route::get('/overview', 'StudentController@overview')->name('student.index');
 	Route::get('/profile', 'StudentController@profile')->name('student.profile');
 	Route::get('/verification', 'StudentController@verification')->name('student.verification');
+	Route::post('/verification/step/1', 'StudentController@verifyStep1')->name('student.verify.step1');
+	Route::post('/verification/step/2', 'StudentController@verifyStep2')->name('student.verify.step2');
+	Route::post('/verification/step/3', 'StudentController@verifyStep3')->name('student.verify.step3');
 	Route::get('/fund-request', 'StudentController@fundRequest')->name('student.fund-request');
 	Route::post('/fund-request/create', 'StudentController@fundRequestPost')->name('student.fund.create');
 	Route::get('/fund-request/{id}/delete', 'StudentController@fundRequestDelete')->name('student.fund.delete');
