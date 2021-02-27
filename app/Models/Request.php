@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Http\Traits\HasRequestMedia;
+use App\Http\Traits\HasStudentDetails;
 use App\Models\Request;
 
 class Request extends Model
@@ -13,6 +14,7 @@ class Request extends Model
     use HasFactory;
     //use SoftDeletes;
     use HasRequestMedia;
+    use HasStudentDetails;
 
     /**
      * The attributes that should be hidden for arrays.
@@ -34,5 +36,12 @@ class Request extends Model
         return $this->hasMany(RequestComment::class, 'request_id');
 
     }
+
+    public function student()
+    {
+        return $this->belongsTo(Student::class, 'student_id');
+
+    }
+
 
 }

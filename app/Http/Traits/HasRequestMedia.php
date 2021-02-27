@@ -15,8 +15,8 @@ trait HasRequestMedia
      */
     public function getRequestMediaUrlAttribute()
     {
-        return $this->media->path
-                    ? Storage::disk($this->requestMediaDisk())->url($this->media->path)
+        return $this->media
+                    ? Storage::disk($this->requestMediaDisk())->url($this->media)
                     : $this->defaultRequestMediaUrl();
     }
 

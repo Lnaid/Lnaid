@@ -7,7 +7,7 @@
                 <div class="request-img mb-30 wow fadeInUp2 animated" data-wow-delay='.1s'>
                     <!-- <img src="{{ asset('storage/files/request/07.jpg') }}" alt=""> -->
                     <img src="{{ $request->getRequestMediaUrlAttribute() }}" alt="">
-                    
+
                 </div>
             </div>
 
@@ -18,10 +18,10 @@
                         <h3><a href="request-video.html">{{ $request->title }}</a></h3>
                             <div class="projects__manager d-sm-flex align-items-center mb-40">
                                 <div class="manager-img mr-20">
-                                    <img src=" {{ $request->student->user->profile_photo_url }} " alt="">
+                                    <img src=" {{ $request->studentDetails()['photo'] }} " alt="">
                                 </div>
                                 <div class="name">
-                                    <h5> D. Silva</h5>
+                                    <h5>{{ $request->studentDetails()['name'] }}</h5>
                                     <address>
                                         <a href="#">4 requests</a>
                                         <a href="#"><i class="far fa-map-marker-alt"></i> Federal University of Technology, Akure</a>
@@ -37,7 +37,7 @@
                                 </div>
                             </div>
                         </div>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit 
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit
                             voluptatem accusante doloremque lauda</p>
                         <ul class="cart-list d-sm-flex align-items-center">
                             <li>
@@ -108,7 +108,7 @@
                                 </div>
                             </section>
                         </div>
-                        
+
                         <!-- DOnors Tab -->
                         <div class="tab-pane fade" id="contact-02" role="tabpanel" aria-labelledby="contact-tab">
                             <div class="backer-list-table pt-45 pb-130">
