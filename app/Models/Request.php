@@ -34,8 +34,5 @@ class Request extends Model
         return $this->hasMany(RequestComment::class, 'request_id');
 
     }
-    public function student()
-    {
-        return $this->belongsTo(Student::class, 'student_id');
-    }
+
 }
