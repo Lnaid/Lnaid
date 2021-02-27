@@ -8,6 +8,9 @@ use App\Models\Request as RequestDb;
 use App\Models\RequestMedia;
 use App\Models\Student;
 use App\Models\School;
+use App\Models\User;
+use App\Models\Message;
+use App\Models\MessageThread;
 use App\Models\StudentVerification;
 use File;
 
@@ -33,6 +36,50 @@ class StudentController extends Controller
         $data['programme'] = array('Undergraduate', 'Postgraduate');
         $data['student'] = Student::where('user_id', Auth::user()->id)->first();
     	return view('dashboard.student.verification', $data);
+    }
+
+    public function chatThread($id){
+
+    }
+
+    public function chatThreadReply(Request $request, $id){
+
+    }
+
+    public function editProfile(Request $request){
+
+        $request->validate([
+            'name' => 'required|integer',
+            'username' => 'required|integer',
+            'email' => 'required|string',
+            'phone' => 'required|string',
+            'profile_photo_path' => 'required|string',
+        ]);
+
+
+        $user = User::find(Auth::user()->id);
+        $user->phone = $request->phone;
+        $user->name = $request->name;
+        $user->username = $request->username;
+        $user->email = $request->email;
+
+        if($request->hasFile('profile_photo_path')){
+
+            if(File::exists(public_path('uploads/profile'.$user->profile_photo_path))){
+                File::delete(public_path('uploads/profile'.$user->profile_photo_path));
+            }
+
+            $pp = time().'_'.Auth::user()->username;
+            $filepath = $fileName."_profile_picture".$request->transcript->extension();
+            $request->transcript->move(public_path('uploads/profile'), $filepath);
+
+            $user->profile_photo_path = $filepath;
+        }
+
+        if($user->save()){
+            return back()->with('success','Profile updated successfully');
+        }
+
     }
 
     public function verifyStep1(Request $request){
