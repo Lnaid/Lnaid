@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
 	        RbacAbilitiesSeeder::class,
 	        SchoolSeeder::class,
 	        RbacRoleSeeder::class,
+            CurrencySeeder::class,
 	    ]);
     }
 }

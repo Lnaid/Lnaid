@@ -5,7 +5,7 @@
 
             <div class="col-xl-6">
                 <div class="request-img mb-30 wow fadeInUp2 animated" data-wow-delay='.1s'>
-                    <!-- <img src="{{ asset('storage/files/request/07.jpg') }}" alt=""> -->
+                    <!-- <img src="{{ asset('storage/uploads/requests/07.jpg') }}" alt=""> -->
                     <img src="{{ $request->getRequestMediaUrlAttribute() }}" alt="">
 
                 </div>
@@ -29,7 +29,10 @@
                                 </div>
                             </div>
                         <div class="skill mb-20">
-                            <p class="skill-para">Raised <span>N56,000</span></p>
+                            <p class="skill-para mb-5">
+                                <span> Requested: N{{ number_format($request->amount, 2) }} </span> 
+                                <span class="float-right"> Raised: N{{ number_format($request->getStats()->amountRaised, 2) }} </span> 
+                            </p>
                             <div class="progress">
                                 <div class="progress-bar" role="progressbar" aria-valuenow="95"
                                     aria-valuemin="0" aria-valuemax="95">

@@ -27,7 +27,8 @@ trait HasRequestMedia
      */
     protected function defaultRequestMediaUrl()
     {
-        return 'https://picsum.photos/851/315';
+        // return 'https://picsum.photos/851/315';
+        return Storage::disk($this->requestMediaDisk())->url('uploads/requests/defaults/requests_04.jpg');
     }
 
     /**

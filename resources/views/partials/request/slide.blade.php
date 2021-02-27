@@ -4,7 +4,7 @@
                 <div class="request-slide" style="overflow: hidden;">
                     <div class="card requests grey-bg d-sm-flex mb-30 wow fadeInUp2  animated" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp2;">
                         <div class="projects__thumb">
-                            <img src="{{ asset('storage/files/request/03.jpg') }}" alt="">
+                            <img src="{{ asset('storage/uploads/requests/03.jpg') }}" alt="">
                         </div>
                         <div class="projects__content">
                             <h4 class="text-primary"><a href="request-video.html">Need help with 2020/2021 Session School Fees</a></h4>
@@ -30,7 +30,7 @@
 
                     <div class="card requests grey-bg d-sm-flex mb-30 wow fadeInUp2  animated" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp2;">
                         <div class="projects__thumb">
-                            <img src="{{ asset('storage/files/request/03.jpg') }}" alt="">
+                            <img src="{{ asset('storage/uploads/requests/03.jpg') }}" alt="">
                         </div>
                         <div class="projects__content">
                             <h4 class="text-primary"><a href="request-video.html">Financial help with my Final Year Project</a></h4>
@@ -56,7 +56,7 @@
 
                     <div class="card requests grey-bg d-sm-flex mb-30 wow fadeInUp2  animated" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp2;">
                         <div class="projects__thumb">
-                            <img src="{{ asset('storage/files/request/03.jpg') }}" alt="">
+                            <img src="{{ asset('storage/uploads/requests/03.jpg') }}" alt="">
                         </div>
                         <div class="projects__content">
                             <h4 class="text-primary"><a href="request-video.html">Please help with learning resource for my Postgraduate Thesis</a></h4>

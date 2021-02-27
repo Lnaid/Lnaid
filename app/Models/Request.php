@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Http\Traits\HasRequestMedia;
 use App\Http\Traits\HasStudentDetails;
-use App\Http\Traits\HasDonations;
+use App\Http\Traits\HasRequestStats;
 use App\Models\Request;
+use App\Models\Currency;
 
 class Request extends Model
 {
@@ -16,7 +17,7 @@ class Request extends Model
     //use SoftDeletes;
     use HasRequestMedia;
     use HasStudentDetails;
-    use HasDonations;
+    use HasRequestStats;
 
     /**
      * The attributes that should be hidden for arrays.
@@ -33,7 +34,12 @@ class Request extends Model
         return $this->hasOne(RequestMedia::class, 'request_id');
     }
 
-    public function comment()
+    public function currency()
+    {
+        return $this->hasOne(Currency::class, 'id');
+    }
+
+    public function comments()
     {
         return $this->hasMany(RequestComment::class, 'request_id');
 
