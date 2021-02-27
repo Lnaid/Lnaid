@@ -15,26 +15,35 @@
                     <div class="border-right">
                         <div class="pt-2 pb-2 pl-3 pr-3 d-flex align-items-center o-hidden box-shadow-1 chat-topbar"><a class="link-icon d-md-none" data-sidebar-toggle="chat"><i class="icon-regular ml-0 mr-3 i-Left"></i></a>
                             <div class="form-group m-0 flex-grow-1">
-                                <input class="form-control form-control-rounded" id="search" type="text" placeholder="Search contacts">
+                                <form method="GET" action="{{ route('student.chat.search') }}">
+                                    <input class="form-control form-control-rounded" id="search" type="text" placeholder="Search...">
+                                </form>
                             </div>
                         </div>
                         <div class="contacts-scrollable perfect-scrollbar ps">
-                            <div class="mt-4 pb-2 pl-3 pr-3 font-weight-bold text-muted border-bottom">Recent</div>
-                            <div class="p-3 d-flex align-items-center border-bottom online contact"><img class="avatar-sm rounded-circle mr-3" src="{{ asset('assets/dashboard/images/faces/1.jpg') }}" alt="alt">
-                                <div>
-                                    <h6 class="m-0">Frank Powell</h6><span class="text-muted text-small">3 Oct, 2018</span>
-                                </div>
-                            </div>
-                            <div class="mt-3 pb-2 pl-3 pr-3 font-weight-bold text-muted border-bottom">Contacts</div>
-                            <div class="p-3 d-flex border-bottom align-items-center contact online"><img class="avatar-sm rounded-circle mr-3" src="{{ asset('assets/dashboard/images/faces/1.jpg') }}" alt="alt">
-                                <h6>William Wills</h6>
-                            </div>
-                            <div class="p-3 d-flex border-bottom align-items-center contact online"><img class="avatar-sm rounded-circle mr-3" src="{{ asset('assets/dashboard/images/faces/1.jpg') }}" alt="alt">
-                                <h6>Jaqueline Day</h6>
-                            </div>
-                            <div class="p-3 d-flex border-bottom align-items-center contact"><img class="avatar-sm rounded-circle mr-3" src="{{ asset('assets/dashboard/images/faces/1.jpg') }}" alt="alt">
-                                <h6>Jhone Will</h6>
-                            </div>
+                            <div class="mt-3 pb-2 pl-3 pr-3 font-weight-bold text-muted border-bottom">Recent Chat</div>
+                            @if(count($chats) > 0)
+                                @foreach($chats as $chat)
+                                    <a href="{{ route('student.chat.thread', ['id' => $chat->id]) }}">
+                                        <div class="p-3 d-flex border-bottom align-items-center contact online">
+                                            @if($chat->sender_id == Auth::user()->id)
+                                                <img class="avatar-sm rounded-circle mr-3" src="{{ asset('assets/uploads/profile/'.$chat->receiver->profile_photo_path) }}" alt="alt">
+                                            @else
+                                                <img class="avatar-sm rounded-circle mr-3" src="{{ asset('assets/uploads/profile/'.$chat->sender->profile_photo_path) }}" alt="alt">
+                                            @endif
+                                            <h6>
+                                                @if($chat->sender_id == Auth::user()->id)
+                                                    {{ $chat->receiver->username }}
+                                                @else
+                                                    {{ $chat->sender->username }}
+                                                @endif
+                                            </h6>
+                                        </div>
+                                    </a>
+                                @endforeach
+                            @else
+                            <span style="text-align: center; margin: 10px">No chat history</span>
+                            @endif
                             <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></div>
                         </div>
                     </div>
@@ -61,22 +70,7 @@
                                     <p class="m-0">Lorem ipsum dolor sit amet.</p>
                                 </div>
                             </div>
-                            <div class="d-flex mb-4">
-                                <div class="message flex-grow-1">
-                                    <div class="d-flex">
-                                        <p class="mb-1 text-title text-16 flex-grow-1">Frank Powell</p><span class="text-small text-muted">25 min ago</span>
-                                    </div>
-                                    <p class="m-0">Do you ever find yourself falling into the “discount trap?</p>
-                                </div><img class="avatar-sm rounded-circle ml-3" src="{{ asset('assets/dashboard/images/faces/1.jpg') }}" alt="alt">
-                            </div>
-                            <div class="d-flex mb-4 user"><img class="avatar-sm rounded-circle mr-3" src="{{ asset('assets/dashboard/images/faces/1.jpg') }}" alt="alt">
-                                <div class="message flex-grow-1">
-                                    <div class="d-flex">
-                                        <p class="mb-1 text-title text-16 flex-grow-1">Jhon Doe</p><span class="text-small text-muted">24 min ago</span>
-                                    </div>
-                                    <p class="m-0">Lorem ipsum dolor sit amet.</p>
-                                </div>
-                            </div>
+                            
                             <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; height: 290px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 189px;"></div></div></div>
                             <div class="pl-3 pr-3 pt-3 pb-3 box-shadow-1 chat-input-area">
                                 <form class="inputForm">

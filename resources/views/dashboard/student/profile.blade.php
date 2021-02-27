@@ -52,7 +52,6 @@
                                 </div>
                                 <button class="btn float-right btn-danger" type="submit">Edit</button>
                             </div>
-                            <
                             <!-- -->
                             <!-- -->
                         </div>

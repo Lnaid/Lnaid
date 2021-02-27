@@ -295,7 +295,7 @@ class StudentController extends Controller
 
     public function chat(){
         $data['title'] = 'Chat';
-
+        $data['chats'] = MessageThread::where('sender_id', Auth::user()->id)->orWhere('receiver_id', Auth::user()->id)->get();
         return view('dashboard.student.chat', $data);
     }
 

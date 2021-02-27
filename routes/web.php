@@ -79,7 +79,8 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth:sanctum',  'student'
 	Route::post('/fund-request/{id}/edit', 'StudentController@fundRequestEdit')->name('student.fund.edit');
 	Route::post('/profile/edit', 'StudentController@editProfile')->name('student.profile.edit');
 	Route::get('/chat', 'StudentController@chat')->name('student.chat');
-	Route::get('/chat/thread/{id}', 'StudentController@chatThread')->name('student.chat.thread');
+	Route::get('/chat/search', 'StudentController@chatSearch')->name('student.chat.search');
+	Route::get('/chat/{id}/thread', 'StudentController@chatThread')->name('student.chat.thread');
 	Route::post('/chat/thread/{id}/reply', 'StudentController@chatThreadReply')->name('student.chat.thread.reply');
 	Route::get('/logout', 'StudentController@logout')->name('student.signout');
 });

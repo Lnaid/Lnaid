@@ -19,4 +19,14 @@ class Message extends Model
     protected $hidden = [
         'id'
     ];
+
+    public function sender()
+    {
+        return $this->hasOne(Users::class, 'sender_id');
+    }
+
+    public function receiver()
+    {
+        return $this->hasOne(Users::class, 'receiver_id');
+    }
 }

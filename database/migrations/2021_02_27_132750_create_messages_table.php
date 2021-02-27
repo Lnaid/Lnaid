@@ -20,6 +20,7 @@ class CreateMessagesTable extends Migration
             $table->unsignedBigInteger('thread_code')->index();
             $table->string('contents');
             $table->string('attachment')->nullable();
+            $table->integer('status')->default(0);
             $table->timestamps();
             $table->softDeletes();
 
