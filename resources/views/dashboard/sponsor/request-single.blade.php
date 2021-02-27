@@ -11,8 +11,11 @@
 
             <div class="row">
                 <div class="col-md-12">
+                    @if($request)
                     <!-- pass a single request object with subobject  included -->
-                    @include('partials.request.single')
+                    @include('partials.request.single', ['request' => $request])
+
+                    @endif
                 </div>
             </div>
             <!-- end of row-->

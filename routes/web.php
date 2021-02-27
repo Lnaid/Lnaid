@@ -84,27 +84,18 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth:sanctum',  'student'
 
 // Sponsor Routes
 Route::group(['prefix' => 'sponsor', 'middleware' => ['auth:sanctum',  /*'sponsor' */ ], 'namespace' => 'App\Http\Controllers'], function(){
-	Route::get('/test', function () {
-    	return view('dashboard.sponsor.unused');
-	});
+	// Route::get('/test', function () {
+ //    	return view('dashboard.sponsor.unused');
+	// });
+	Route::get('/', 'SponsorController@index' )->name('sponsor.dashboard');
+	Route::get('/requests', 'SponsorController@rgetRequest')->name('sponsor.request');
+	Route::get('/requests/{id}','SponsorController@getSingleRequest' )->name('sponsor.request-single');
 
-	Route::get('/', function () {
-		$data['title'] = 'Dashboard';
-    	return view('dashboard.sponsor.index', $data);
-	})->name('sponsor.dashboard');
-
-	Route::get('/requests', function () {
-		$data['title'] = 'Dashboard';
-    	return view('dashboard.sponsor.request-index', $data);
-	});
-
-	Route::get('/requests/12', function () {
-		$data['title'] = 'Dashboard';
-    	return view('dashboard.sponsor.request-single', $data);
+	Route::get('/req', function(){
+		$requests = App\Models\Request::find(1);
+		dd($requests->student->user->profile_photo_url);
 	});
 });
-
-
 
 
 // ADMIN ENDPOINTS GROUP

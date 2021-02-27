@@ -20,4 +20,9 @@ class RequestMedia extends Model
         'id'
     ];
 
+    public function request()
+    {
+        return $this->belongsTo(Request::class, 'id');
+    }
+
 }
