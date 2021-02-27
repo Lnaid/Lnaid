@@ -9,19 +9,19 @@ use Laravel\Jetstream\Features;
 trait HasRequestMedia
 {
     /**
-     * Get the URL to the user's profile photo.
+     * Get the URL to the request's media file.
      *
      * @return string
      */
     public function getRequestMediaUrlAttribute()
     {
         return $this->media
-                    ? Storage::disk($this->requestMediaDisk())->url($this->media)
+                    ? Storage::disk($this->requestMediaDisk())->url($this->media->path)
                     : $this->defaultRequestMediaUrl();
     }
 
     /**
-     * Get the default profile photo URL if no profile photo has been uploaded.
+     * Get the default request media URL if no request media has been uploaded.
      *
      * @return string
      */

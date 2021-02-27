@@ -18,13 +18,13 @@
                         <h3><a href="request-video.html">{{ $request->title }}</a></h3>
                             <div class="projects__manager d-sm-flex align-items-center mb-40">
                                 <div class="manager-img mr-20">
-                                    <img src=" {{ $request->studentDetails()['photo'] }} " alt="">
+                                    <img src=" {{ $request->studentDetails()->photo }} " alt="">
                                 </div>
                                 <div class="name">
-                                    <h5>{{ $request->studentDetails()['name'] }}</h5>
+                                    <h5>{{ $request->studentDetails()->name }}</h5>
                                     <address>
-                                        <a href="#">4 requests</a>
-                                        <a href="#"><i class="far fa-map-marker-alt"></i> Federal University of Technology, Akure</a>
+                                        <a href="#">{{ $request->studentDetails()->totalRequest  }} requests</a>
+                                        <a href="#"><i class="far fa-map-marker-alt"></i> {{ $request->studentDetails()->school }} </a>
                                     </address>
                                 </div>
                             </div>

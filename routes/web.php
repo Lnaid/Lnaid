@@ -66,7 +66,7 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth:sanctum',  'student'
 		$data['title'] = 'Dashboard';
     	return view('dashboard.student.index', $data);
 	})->name('student.dashboard')->middleware('verified');
-	
+
 	Route::get('/overview', 'StudentController@overview')->name('student.index');
 	Route::get('/profile', 'StudentController@profile')->name('student.profile');
 	Route::get('/verification', 'StudentController@verification')->name('student.verification');
@@ -97,18 +97,18 @@ Route::group(['prefix' => 'sponsor', 'middleware' => ['auth:sanctum',  /*'sponso
 
 	Route::get('/req', function(){
 		$requests = App\Models\Request::find(1);
-		dd($requests->student->user->profile_photo_url);
+		dd($requests->getDonations());
 	});
 });
 
 
 // ADMIN ENDPOINTS GROUP
 Route::group(['prefix' => 'admin',  'namespace' => 'App\Http\Controllers\Admin', 'middleware' => ['auth:sanctum', /*'admin' */]], function () {
-	
+
 	Route::get('/test', function () {
     	return view('dashboard.admin.unused');
 	});
- 
+
 // RBAC
     //get all roles
     Route::get('/rbac/roles', 'RbacController@getRoles');

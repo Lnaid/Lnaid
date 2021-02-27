@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Http\Traits\HasRequestMedia;
 use App\Http\Traits\HasStudentDetails;
+use App\Http\Traits\HasDonations;
 use App\Models\Request;
 
 class Request extends Model
@@ -15,6 +16,7 @@ class Request extends Model
     //use SoftDeletes;
     use HasRequestMedia;
     use HasStudentDetails;
+    use HasDonations;
 
     /**
      * The attributes that should be hidden for arrays.
@@ -42,6 +44,13 @@ class Request extends Model
         return $this->belongsTo(Student::class, 'student_id');
 
     }
+
+    public function donations()
+    {
+        return $this->hasMany(Donation::class, 'request_id');
+
+    }
+
 
 
 }

@@ -2,9 +2,6 @@
 
 namespace App\Http\Traits;
 
-use Illuminate\Http\UploadedFile;
-use Illuminate\Support\Facades\Storage;
-use Laravel\Jetstream\Features;
 
 trait HasStudentDetails
 {
@@ -14,9 +11,12 @@ trait HasStudentDetails
      * @return string
      */
     public function studentDetails()
-    {    return $details = [
-            'photo' => $this->student->user->profile_photo_url,
-            'name' => $this->student->user->name
-        ];
+    {
+        $details = collect();
+        $details->name = $this->student->user->name;
+        $details->photo = $this->student->user->profile_photo_url;
+        $details->school = $this->student->school->name;
+        $details->totalRequest = $this->student->requests->count();
+        return $details;
     }
 }
