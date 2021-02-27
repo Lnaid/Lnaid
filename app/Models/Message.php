@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class RequestMedia extends Model
+class Message extends Model
 {
     use HasFactory;
     //use SoftDeletes;
@@ -20,9 +20,13 @@ class RequestMedia extends Model
         'id'
     ];
 
-    public function request()
+    public function sender()
     {
-        return $this->belongsTo(Request::class, 'id');
+        return $this->hasOne(Users::class, 'sender_id');
     }
 
+    public function receiver()
+    {
+        return $this->hasOne(Users::class, 'receiver_id');
+    }
 }

@@ -42,4 +42,9 @@ class Student extends Model
         'about',
         'twitter',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id');
+    }
 }

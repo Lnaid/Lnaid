@@ -17,6 +17,7 @@ class CreateRequestMediaTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('request_id');
             $table->string('name')->nullable();
+            $table->string('path')->nullable();
             $table->string('alt')->nullable();
             $table->string('desc')->nullable();
             $table->string('type')->nullable(); //pdf, mp3,mp4, docx etc

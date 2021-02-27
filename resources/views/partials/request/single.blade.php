@@ -5,34 +5,35 @@
 
             <div class="col-xl-6">
                 <div class="request-img mb-30 wow fadeInUp2 animated" data-wow-delay='.1s'>
-                    <img src="{{ asset('storage/files/request/19.jpg') }}" alt="">
+                    <!-- <img src="{{ asset('storage/files/request/07.jpg') }}" alt=""> -->
+                    <img src="{{ $request->getRequestMediaUrlAttribute() }}" alt="">
+                    
                 </div>
             </div>
 
             <div class="col-xl-6  wow fadeInUp2 animated" data-wow-delay='.1s'>
                 <div class="requests request-cart white-bg mb-30">
                     <div class="projects__content">
-                        <a href="#" class="new-tag">headphone</a>
-                        <h3><a href="request-video.html">Gen3 Airoha Air Pro 3 TWS 
-                            Cancel Headphone</a></h3>
+                        <a href="#" class="new-tag">Misc</a>
+                        <h3><a href="request-video.html">{{ $request->title }}</a></h3>
                             <div class="projects__manager d-sm-flex align-items-center mb-40">
                                 <div class="manager-img mr-20">
-                                    <img src=" {{ url('storage/files/avatars/01.png') }} " alt="">
+                                    <img src=" {{ $request->student->user->profile_photo_url }} " alt="">
                                 </div>
                                 <div class="name">
-                                    <h5>Somalia D Silva</h5>
+                                    <h5> D. Silva</h5>
                                     <address>
-                                        <a href="#">9 Campaigns</a>
-                                        <a href="#"><i class="far fa-map-marker-alt"></i> 55 Main Street, New York</a>
+                                        <a href="#">4 requests</a>
+                                        <a href="#"><i class="far fa-map-marker-alt"></i> Federal University of Technology, Akure</a>
                                     </address>
                                 </div>
                             </div>
                         <div class="skill mb-20">
-                            <p class="skill-para">Raised <span>$2535</span></p>
+                            <p class="skill-para">Raised <span>N56,000</span></p>
                             <div class="progress">
                                 <div class="progress-bar" role="progressbar" aria-valuenow="95"
                                     aria-valuemin="0" aria-valuemax="95">
-                                    <h5>95%</h5>
+                                    <h5>52%</h5>
                                 </div>
                             </div>
                         </div>

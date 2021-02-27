@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class RequestMedia extends Model
+class MessageThread extends Model
 {
     use HasFactory;
     //use SoftDeletes;
@@ -19,10 +19,4 @@ class RequestMedia extends Model
     protected $hidden = [
         'id'
     ];
-
-    public function request()
-    {
-        return $this->belongsTo(Request::class, 'id');
-    }
-
 }

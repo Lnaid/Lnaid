@@ -55,7 +55,7 @@
                                     </div>
                                     <div class="input-group col-md-6">
                                         <label class="fieldlabels">Course: *</label>
-                                        <input type="text" name="course" placeholder="Course" />
+                                        <input type="text" name="department" placeholder="Course" />
                                     </div>
                                     <div class="input-group col-md-6">
                                         <label class="fieldlabels">Program Type: *</label>
