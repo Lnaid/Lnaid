@@ -80,6 +80,7 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth:sanctum',  'student'
 	Route::post('/profile/edit', 'StudentController@editProfile')->name('student.profile.edit');
 	Route::get('/chat', 'StudentController@chat')->name('student.chat');
 	Route::get('/chat/search', 'StudentController@chatSearch')->name('student.chat.search');
+	Route::get('/chat/{id}/create', 'StudentController@chatCreate')->name('student.chat.create');
 	Route::get('/chat/{id}/thread', 'StudentController@chatThread')->name('student.chat.thread');
 	Route::post('/chat/thread/{id}/reply', 'StudentController@chatThreadReply')->name('student.chat.thread.reply');
 	Route::get('/logout', 'StudentController@logout')->name('student.signout');

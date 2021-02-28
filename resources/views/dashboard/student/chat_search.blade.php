@@ -16,33 +16,25 @@
                         <div class="pt-2 pb-2 pl-3 pr-3 d-flex align-items-center o-hidden box-shadow-1 chat-topbar"><a class="link-icon d-md-none" data-sidebar-toggle="chat"><i class="icon-regular ml-0 mr-3 i-Left"></i></a>
                             <div class="form-group m-0 flex-grow-1">
                                 <form method="GET" action="{{ route('student.chat.search') }}">
-                                    <input class="form-control form-control-rounded" id="search" name="s" type="text" placeholder="Search...">
+                                    <input class="form-control form-control-rounded" id="search" name="s" type="text" placeholder="Search..." value="{{ $query }}">
                                 </form>
                             </div>
                         </div>
                         <div class="contacts-scrollable perfect-scrollbar ps">
                             <div class="mt-3 pb-2 pl-3 pr-3 font-weight-bold text-muted border-bottom">Recent Chat</div>
-                            @if(isset($chats) && count($chats) > 0)
-                                @foreach($chats as $chat)
-                                    <a href="{{ route('student.chat.thread', ['id' => $chat->id]) }}">
+                            @if(isset($user) && count($user) > 0)
+                                @foreach($user as $u)
+                                    <a href="{{ route('student.chat.create', ['id' => $u->id]) }}">
                                         <div class="p-3 d-flex border-bottom align-items-center contact online">
-                                            @if($chat->sender_id == Auth::user()->id)
-                                                <img class="avatar-sm rounded-circle mr-3" src="{{ asset('assets/uploads/profile/'.$chat->receiver->profile_photo_path) }}" alt="alt">
-                                            @else
-                                                <img class="avatar-sm rounded-circle mr-3" src="{{ asset('assets/uploads/profile/'.$chat->sender->profile_photo_path) }}" alt="alt">
-                                            @endif
+                                                <img class="avatar-sm rounded-circle mr-3" src="{{ asset('assets/uploads/profile/'.$u->profile_photo_path) }}" alt="alt">
                                             <h6>
-                                                @if($chat->sender_id == Auth::user()->id)
-                                                    {{ $chat->receiver->username }}
-                                                @else
-                                                    {{ $chat->sender->username }}
-                                                @endif
+                                                {{$u->name}}
                                             </h6>
                                         </div>
                                     </a>
                                 @endforeach
                             @else
-                            <span style="text-align: center; margin: 10px">No chat history</span>
+                            <span style="text-align: center; margin: 10px">No result found</span>
                             @endif
                             <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></div>
                         </div>
@@ -80,7 +72,7 @@
                             @endforeach
                             <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; height: 290px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 189px;"></div></div></div>
                             <div class="pl-3 pr-3 pt-3 pb-3 box-shadow-1 chat-input-area">
-                                <form class="inputForm" method="POST" action="{{route('student.chat.thread.reply', ['id' => $thread_code])}}">
+                                <form class="inputForm" method="POST" action="{{route('student.chat.thread.reply', ['id' => 1])}}">
                                     <div class="form-group">
                                         <textarea class="form-control form-control-rounded" id="message" placeholder="Type your message" name="message" cols="30" rows="3"></textarea>
                                     </div>

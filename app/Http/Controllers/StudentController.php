@@ -40,7 +40,11 @@ class StudentController extends Controller
     }
 
     public function chatThread($id){
-
+        $data['title'] = 'Chat';
+        $data['chats'] = MessageThread::where('sender_id', Auth::user()->id)->orWhere('receiver_id', Auth::user()->id)->get();
+        $data['singleChat'] = Message::where('thread_code', $id)->get();
+        $data['thread_code'] = $id;
+        return view('dashboard.student.chat_thread', $data);
     }
 
     public function chatThreadReply(Request $request, $id){
@@ -195,6 +199,30 @@ class StudentController extends Controller
         $data['requests'] = RequestDb::where('student_id', Auth::user()->id)->paginate(10);
         $data['currency'] = Currency::get();
     	return view('dashboard.student.fund-request', $data);
+    }
+
+    public function chatSearch(Request $request){
+
+        $q = $request->query('s');
+
+        $data['user'] = User::where('name','LIKE','%'.$q.'%')->orWhere('username','LIKE','%'.$q.'%')->get();
+        $data['title'] = 'Search result for '.$q;
+        $data['query'] = $q;
+        return view('dashboard.student.chat_search', $data);
+    }
+
+    public function chatCreate($id){
+
+        $chat = MessageThread::where('sender_id', Auth::user()->id)->orWhere('sender_id', $id)->where('receiver_id', Auth::user()->id)->orWhere('receiver_id', $id)->first();
+
+        if($chat == null){
+            $chat = new MessageThread;
+            $chat->sender_id = Auth::user()->id;
+            $chat->receiver_id = $id;
+            $chat->save();
+        }
+
+        return redirect()->route('student.chat.thread', ['id' => $chat->id]);
     }
 
 
