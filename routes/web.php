@@ -97,7 +97,7 @@ Route::group(['prefix' => 'sponsor', 'middleware' => ['auth:sanctum',  /*'sponso
 
 	Route::get('/req', function(){
 		$requests = App\Models\Request::find(1);
-		dd($requests->getStats()->amountRaised);
+		dd($requests->currency()->code);
 	});
 });
 

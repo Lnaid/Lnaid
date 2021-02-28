@@ -30,8 +30,8 @@
                             </div>
                         <div class="skill mb-20">
                             <p class="skill-para mb-5">
-                                <span> Requested: N{{ number_format($request->amount, 2) }} </span> 
-                                <span class="float-right"> Raised: N{{ number_format($request->getStats()->amountRaised, 2) }} </span> 
+                                <span> Requested: {{ $request->currency()->code }} {{ number_format($request->amount, 2) }} </span> 
+                                <span class="float-right"> Raised: {{ $request->currency()->code }} {{ number_format($request->getStats()->amountRaised, 2) }} </span> 
                             </p>
                             <div class="progress">
                                 <div class="progress-bar" role="progressbar" aria-valuenow="95"
@@ -40,19 +40,9 @@
                                 </div>
                             </div>
                         </div>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit
-                            voluptatem accusante doloremque lauda</p>
                         <ul class="cart-list d-sm-flex align-items-center">
-                            <li>
-                                <form class="cart-plus-minus" action="https://www.devsnews.com/template/fande/fande/form.php">
-                                    <div class="plus-minus pos-rel">
-                                        <input type="text" value="$5">
-                                        <div class="updown plus"><i class="far fa-chevron-left"></i></div>
-                                        <div class="updown minus"><i class="far fa-chevron-right"></i></div>
-                                    </div>
-                                </form>
-                            </li>
-                            <li><a class="theme_btn theme_btn_bg" href="contact.html"
+                            <li class="mx-auto">
+                                <a class="theme_btn theme_btn_bg" href="contact.html"
                                 data-animation="fadeInLeft" data-delay=".5s">Donate now <i
                                     class="far fa-arrow-right"></i></a>
                             </li>
