@@ -12,6 +12,7 @@ use App\Models\User;
 use App\Models\Message;
 use App\Models\MessageThread;
 use App\Models\StudentVerification;
+use App\Models\Currency;
 use File;
 
 class StudentController extends Controller
@@ -192,6 +193,7 @@ class StudentController extends Controller
     public function fundRequest(){
     	$data['title'] = 'Fund Request';
         $data['requests'] = RequestDb::where('student_id', Auth::user()->id)->paginate(10);
+        $data['currency'] = Currency::get();
     	return view('dashboard.student.fund-request', $data);
     }
 
@@ -205,6 +207,10 @@ class StudentController extends Controller
             'currency' => 'required'
         ]);
 
+        if(StudentVerification::where('user_id', Auth::user()->id)->exists() == false){
+            return back()->with('error', 'Please complete your verification');
+        }
+
         $req = new RequestDb;
         $req->title = $request->title;
         $req->amount = $request->amount;
@@ -217,7 +223,7 @@ class StudentController extends Controller
 
         if ($request->hasFile('attachment')) {
             $fileName = time().'_'.Auth::user()->username;
-            $filepath = $fileName.'.'$request->attachment->extension();  
+            $filepath = $fileName.'.'.$request->attachment->extension();  
             $request->attachment->move(public_path('uploads'), $filepath);
 
             $req_media = new RequestMedia;

@@ -16,7 +16,7 @@ class CreateStudentBankAccountsTable extends Migration
         Schema::create('student_bank_accounts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('student_id');
-            $table->unsignedBigInteger('paystack_account_id')->nullable();
+            $table->unsignedBigInteger('paystack_subaccount_id')->nullable();
 
             $table->string('bvn')->nullable();
             $table->string('bank')->nullable();

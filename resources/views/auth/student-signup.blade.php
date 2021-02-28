@@ -50,12 +50,12 @@
                             <fieldset>
                                 <div class="form-card">
                                     <div class="input-group col-md-6">
-                                        <label class="fieldlabels">Department: *</label>
-                                        <input type="text" name="department" placeholder="Department" />
+                                        <label class="fieldlabels">School/Faculty: *</label>
+                                        <input type="text" name="falculty" placeholder="School/Faculty" />
                                     </div>
                                     <div class="input-group col-md-6">
-                                        <label class="fieldlabels">Course: *</label>
-                                        <input type="text" name="department" placeholder="Course" />
+                                        <label class="fieldlabels">Department: *</label>
+                                        <input type="text" name="department" placeholder="Department" />
                                     </div>
                                     <div class="input-group col-md-6">
                                         <label class="fieldlabels">Program Type: *</label>

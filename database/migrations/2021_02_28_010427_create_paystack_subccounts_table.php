@@ -13,7 +13,7 @@ class CreatePaystackSubccountsTable extends Migration
      */
     public function up()
     {
-        Schema::create('paystack_subccounts', function (Blueprint $table) {
+        Schema::create('paystack_subaccounts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('student_id');
             $table->unsignedBigInteger('account_id')->comment('from paystack');
@@ -34,12 +34,10 @@ class CreatePaystackSubccountsTable extends Migration
             $table->string('settlement_schedule')->nullable();
             $table->boolean('active')->nullable();
             $table->boolean('migrate')->nullable();
-            $table->string('settlement_bank')->nullable();
             $table->timestamps();
 
             $table->softDeletes();
             $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
-            $table->foreign('paystack_subaccount_id')->references('id')->on('paystack_subaccounts');
         });
     }
 
@@ -50,6 +48,6 @@ class CreatePaystackSubccountsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('paystack_subccounts');
+        Schema::dropIfExists('paystack_subaccounts');
     }
 }

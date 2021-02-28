@@ -35,7 +35,7 @@
                                 <tr>
                                     <th scope="row">{{ $sn }}</th>
                                     <td>{{$request->title}}</td>
-                                    <td>{{$request->currency_id}} {{$request->amount}}</td>
+                                    <td>{{$request->currency->code}} {{$request->amount}}</td>
                                     <td>
 
                                     </td>
@@ -76,8 +76,9 @@
                                                             <p class="font-weight-400 mb-2">Currency</p>
                                                             <select class="form-control" name="currency"/>
                                                             <option>Select currency</option>
-                                                            <option value="NGN" @if($request->currency_id == "NGN") selected @endif>NGN (Nigeria)</option>
-                                                            <option value="USD" @if($request->currency_id == "USD") selected @endif>USD (USA Dollar)</option>
+                                                            @foreach($currency as $cur)
+                                                            <option value="{{$cur->id}}" @if($request->currency_id == $cur->id) selected @endif> {{$cur->name}} ({{$cur->code}})</option>
+                                                           @endforeach
                                                         </select>
                                                     </div>
                                                 </div>
@@ -156,8 +157,9 @@
                             <p class="font-weight-400 mb-2">Currency</p>
                             <select class="form-control" name="currency"/>
                             <option>Select currency</option>
-                            <option value="NGN">NGN (Nigeria)</option>
-                            <option value="USD">USD (USA Dollar)</option>
+                            @foreach($currency as $cur)
+                                <option value="{{$cur->id}}"> {{$cur->name}} ({{$cur->code}})</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
