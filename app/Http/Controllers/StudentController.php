@@ -70,7 +70,7 @@ class StudentController extends Controller
             }
 
             $pp = time().'_'.Auth::user()->username;
-            $filepath = $fileName."_profile_picture".$request->transcript->extension();
+            $filepath = $fileName."_profile_picture.".$request->transcript->extension();
             $request->transcript->move(public_path('uploads/profile'), $filepath);
 
             $user->profile_photo_path = $filepath;
@@ -131,15 +131,15 @@ class StudentController extends Controller
         if ($request->hasFile('admission_letter') && $request->hasFile('idcard') && $request->hasFile('transcript')) {
 
             $user = time().'_'.Auth::user()->username;
-            $filepathAdm = $fileName."_admission_letter".$request->admission_letter->extension();
+            $filepathAdm = $fileName."_admission_letter.".$request->admission_letter->extension();
             $request->admission_letter->move(public_path('uploads/verification'), $filepathAdm);
 
             $user = time().'_'.Auth::user()->username;
-            $filepathCard = $fileName."_school_id_card".$request->idcard->extension();
+            $filepathCard = $fileName."_school_id_card.".$request->idcard->extension();
             $request->idcard->move(public_path('uploads/verification'), $filepath);
 
             $user = time().'_'.Auth::user()->username;
-            $filepathTran = $fileName."_transcript".$request->transcript->extension(); 
+            $filepathTran = $fileName."_transcript.".$request->transcript->extension(); 
             $request->transcript->move(public_path('uploads/verification'), $filepath);
 
 
@@ -217,7 +217,7 @@ class StudentController extends Controller
 
         if ($request->hasFile('attachment')) {
             $fileName = time().'_'.Auth::user()->username;
-            $filepath = $fileName.$request->attachment->extension();  
+            $filepath = $fileName.'.'$request->attachment->extension();  
             $request->attachment->move(public_path('uploads'), $filepath);
 
             $req_media = new RequestMedia;
@@ -253,7 +253,7 @@ class StudentController extends Controller
 
         if ($request->hasFile('attachment')) {
             $fileName = time().'_'.Auth::user()->username;
-            $filepath = $fileName.$request->attachment->extension();  
+            $filepath = $fileName.'.'.$request->attachment->extension();  
             $request->attachment->move(public_path('uploads/request_media'), $filepath);
 
             $req_media = new RequestMedia;
