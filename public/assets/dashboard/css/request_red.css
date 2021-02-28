@@ -1442,11 +1442,11 @@
 
     .skill p {
       color: #414657;
-      font-weight: 700;
+      /*font-weight: 700;*/
       margin-bottom: 12px;
     }
     .skill p span {
-      font-size: 18px;
+      font-size: 15px;
       color: #607d8b;
     }
 

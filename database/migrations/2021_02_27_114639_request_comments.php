@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRequestMediaTable extends Migration
+class RequestComments extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,16 @@ class CreateRequestMediaTable extends Migration
      */
     public function up()
     {
-        Schema::create('request_media', function (Blueprint $table) {
+        Schema::create('request_comment', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('request_id');
-            $table->string('name')->nullable();
-            $table->string('path')->nullable();
-            $table->string('alt')->nullable();
-            $table->string('desc')->nullable();
-            $table->string('type')->nullable(); //pdf, mp3,mp4, docx etc
+            $table->unsignedBigInteger('user_id');
+            $table->string('comment')->nullable();
             $table->timestamps();
             $table->softDeletes();
 
             $table->foreign('request_id')->references('id')->on('requests')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -35,6 +33,6 @@ class CreateRequestMediaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('request_media');
+        Schema::dropIfExists('request_comment');
     }
 }

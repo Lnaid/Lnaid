@@ -4,12 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
-class RequestMedia extends Model
+class RequestComment extends Model
 {
     use HasFactory;
-    //use SoftDeletes;
 
     /**
      * The attributes that should be hidden for arrays.
@@ -20,9 +18,17 @@ class RequestMedia extends Model
         'id'
     ];
 
+    /**
+     * Get comments that belongs to a particular request
+     */
+
     public function request()
     {
-        return $this->belongsTo(Request::class, 'id');
+        return $this->belongsTo(Request::class);
     }
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

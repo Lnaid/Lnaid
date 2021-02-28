@@ -42,4 +42,19 @@ class Student extends Model
         'about',
         'twitter',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id');
+    }
+
+    public function school()
+    {
+        return $this->hasOne(School::class, 'id');
+    }
+
+    public function requests()
+    {
+        return $this->hasMany(Request::class, 'student_id');
+    }
 }

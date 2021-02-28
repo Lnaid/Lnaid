@@ -66,48 +66,49 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth:sanctum',  'student'
 		$data['title'] = 'Dashboard';
     	return view('dashboard.student.index', $data);
 	})->name('student.dashboard')->middleware('verified');
-	
+
 	Route::get('/overview', 'StudentController@overview')->name('student.index');
 	Route::get('/profile', 'StudentController@profile')->name('student.profile');
 	Route::get('/verification', 'StudentController@verification')->name('student.verification');
+	Route::post('/verification/step/1', 'StudentController@verifyStep1')->name('student.verify.step1');
+	Route::post('/verification/step/2', 'StudentController@verifyStep2')->name('student.verify.step2');
+	Route::post('/verification/step/3', 'StudentController@verifyStep3')->name('student.verify.step3');
 	Route::get('/fund-request', 'StudentController@fundRequest')->name('student.fund-request');
+	Route::post('/fund-request/create', 'StudentController@fundRequestPost')->name('student.fund.create');
+	Route::get('/fund-request/{id}/delete', 'StudentController@fundRequestDelete')->name('student.fund.delete');
+	Route::post('/fund-request/{id}/edit', 'StudentController@fundRequestEdit')->name('student.fund.edit');
+	Route::post('/profile/edit', 'StudentController@editProfile')->name('student.profile.edit');
 	Route::get('/chat', 'StudentController@chat')->name('student.chat');
+	Route::get('/chat/search', 'StudentController@chatSearch')->name('student.chat.search');
+	Route::get('/chat/{id}/thread', 'StudentController@chatThread')->name('student.chat.thread');
+	Route::post('/chat/thread/{id}/reply', 'StudentController@chatThreadReply')->name('student.chat.thread.reply');
 	Route::get('/logout', 'StudentController@logout')->name('student.signout');
 });
 
 
 // Sponsor Routes
 Route::group(['prefix' => 'sponsor', 'middleware' => ['auth:sanctum',  /*'sponsor' */ ], 'namespace' => 'App\Http\Controllers'], function(){
-	Route::get('/test', function () {
-    	return view('dashboard.sponsor.unused');
-	});
+	// Route::get('/test', function () {
+ //    	return view('dashboard.sponsor.unused');
+	// });
+	Route::get('/', 'SponsorController@index' )->name('sponsor.dashboard');
+	Route::get('/requests', 'SponsorController@rgetRequest')->name('sponsor.request');
+	Route::get('/requests/{id}','SponsorController@getSingleRequest' )->name('sponsor.request-single');
 
-	Route::get('/', function () {
-		$data['title'] = 'Dashboard';
-    	return view('dashboard.sponsor.index', $data);
-	})->name('sponsor.dashboard');
-
-	Route::get('/requests', function () {
-		$data['title'] = 'Dashboard';
-    	return view('dashboard.sponsor.request-index', $data);
-	});
-
-	Route::get('/requests/12', function () {
-		$data['title'] = 'Dashboard';
-    	return view('dashboard.sponsor.request-single', $data);
+	Route::get('/req', function(){
+		$requests = App\Models\Request::find(1);
+		dd($requests->currency()->code);
 	});
 });
 
 
-
-
 // ADMIN ENDPOINTS GROUP
 Route::group(['prefix' => 'admin',  'namespace' => 'App\Http\Controllers\Admin', 'middleware' => ['auth:sanctum', /*'admin' */]], function () {
-	
+
 	Route::get('/test', function () {
     	return view('dashboard.admin.unused');
 	});
- 
+
 // RBAC
     //get all roles
     Route::get('/rbac/roles', 'RbacController@getRoles');

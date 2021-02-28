@@ -24,7 +24,7 @@ class CreateStudentsTable extends Migration
             $table->string('state')->nullable();
             $table->string('country')->nullable();
 
-            $table->string('course')->nullable();
+            //$table->string('course')->nullable();
             $table->string('department')->nullable();
             $table->string('falculty')->nullable();
             $table->string('program_type')->nullable(); //undergraduate, postgraduate

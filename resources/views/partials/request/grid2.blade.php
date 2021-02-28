@@ -14,7 +14,7 @@
             <div class="col-xl-6 col-lg-6 col-md-12">
                 <div class="card requests grey-bg d-sm-flex mb-30 wow fadeInUp2  animated" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp2;">
                     <div class="projects__thumb">
-                        <img src="{{ asset('storage/files/request/01.jpg') }}" alt="">
+                        <img src="{{ asset('storage/uploads/requests/01.jpg') }}" alt="">
                     </div>
                     <div class="projects__content">
                         <h4 class="text-primary"><a href="request-video.html">Reference Pico-Neo2
@@ -42,7 +42,7 @@
             <div class="col-xl-6 col-lg-6 col-md-12">
                 <div class="card requests grey-bg d-sm-flex mb-30 wow fadeInUp2  animated" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp2;">
                     <div class="projects__thumb">
-                        <img class="fit" src="{{ asset('storage/files/request/02.jpg') }}" alt="">
+                        <img class="fit" src="{{ asset('storage/uploads/requests/02.jpg') }}" alt="">
                     </div>
                     <div class="projects__content">
                         <h4 class="text-primary"><a href="request-video.html">Pimax-Vision-852x
@@ -70,7 +70,7 @@
             <div class="col-xl-6 col-lg-6 col-md-12">
                 <div class="card requests grey-bg d-sm-flex mb-30 wow fadeInUp2  animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp2;">
                     <div class="projects__thumb">
-                        <img src="{{ asset('storage/files/request/03.jpg') }}" alt="">
+                        <img src="{{ asset('storage/uploads/requests/03.jpg') }}" alt="">
                     </div>
                     <div class="projects__content">
                         <h4 class="text-primary"><a href="request-video.html">Mobile UI Design For
@@ -98,7 +98,7 @@
             <div class="col-xl-6 col-lg-6 col-md-12">
                 <div class="card requests grey-bg d-sm-flex mb-30 wow fadeInUp2  animated" data-wow-delay=".7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInUp2;">
                     <div class="projects__thumb">
-                        <img src="{{ asset('storage/files/request/04.jpg') }}" alt="">
+                        <img src="{{ asset('storage/uploads/requests/04.jpg') }}" alt="">
                     </div>
                     <div class="projects__content">
                         <h4 class="text-primary"><a href="request-video.html">Micrologic ML-522 BT

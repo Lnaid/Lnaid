@@ -3,7 +3,7 @@
     <div class="col-xl-4 col-lg-4 col-md-6">
         <div class="card requests requests-02 white-bg mb-30 wow fadeInUp2  animated" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp2;">
             <div class="projects__thumb pos-rel">
-                <img src="{{ asset('storage/files/request/05.jpg') }}" alt="">
+                <img src="{{ asset('storage/uploads/requests/05.jpg') }}" alt="">
                 <a href="#" class="new-tag">new</a>
             </div>
             <div class="projects__content">
@@ -32,7 +32,7 @@
     <div class="col-xl-4 col-lg-4 col-md-6">
         <div class=" card requests requests-02 white-bg mb-30 wow fadeInUp2  animated" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp2;">
             <div class="projects__thumb pos-rel">
-                <img src="{{ asset('storage/files/request/06.jpg') }}" alt="">
+                <img src="{{ asset('storage/uploads/requests/06.jpg') }}" alt="">
                 <a href="#" class="new-tag">new</a>
             </div>
             <div class="projects__content">
@@ -61,7 +61,7 @@
     <div class="col-xl-4 col-lg-4 col-md-6">
         <div class="card requests requests-02 white-bg mb-30 wow fadeInUp2  animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp2;">
             <div class="projects__thumb pos-rel">
-                <img src="{{ asset('storage/files/request/07.jpg') }}" alt="">
+                <img src="{{ asset('storage/uploads/requests/07.jpg') }}" alt="">
                 <a href="#" class="new-tag">new</a>
             </div>
             <div class="projects__content">

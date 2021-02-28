@@ -17,12 +17,11 @@ class CreateStudentVerificationsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('student_id');
-            $table->boolean('matric_no')->default(false);
-            $table->boolean('department')->default(false);
-            $table->boolean('faculty')->default(false);
-            $table->boolean('level')->default(false);
-            $table->boolean('school')->default(false);
-            $table->string('notes')->nullable();
+            $table->string('bvn')->nullable();
+            $table->string('nin')->nullable();
+            $table->string('school_id_path')->default(false);
+            $table->string('admission_letter_path')->default(false);
+            $table->string('transcript_letter_path')->default(false);
             $table->softDeletes();
 
             // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
