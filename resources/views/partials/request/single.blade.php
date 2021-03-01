@@ -42,8 +42,8 @@
                         </div>
                         <ul class="cart-list d-sm-flex align-items-center">
                             <li class="mx-auto">
-                                <a class="theme_btn theme_btn_bg" href="contact.html"
-                                data-animation="fadeInLeft" data-delay=".5s">Donate now <i
+                                <a class="theme_btn theme_btn_bg"
+                                data-animation="fadeInLeft" data-delay=".5s" data-toggle="modal" data-target="#raveDonateModal">Donate now <i
                                     class="far fa-arrow-right"></i></a>
                             </li>
                         </ul>
@@ -90,8 +90,8 @@
                                                         <i class="fa fa-quote-left" style="font-size: 80px; color: #fed857;"></i>
                                                         <h5 >Help</h5>
                                                         <h4>An investment in knpwledge pays the best</h4>
-                                                            <a class="theme_btn theme_btn_bg" href="contact.html"
-                                                            data-animation="fadeInLeft" data-delay=".5s">donate now <i
+                                                            <a class="theme_btn theme_btn_bg"
+                                                            data-animation="fadeInLeft" data-delay=".5s" data-toggle="modal" data-target="#donateModal">donate now <i
                                                                 class="far fa-arrow-right"></i></a>
                                                     </div>
                                                 </div>
@@ -228,4 +228,125 @@
 
  <!--our-overview-area start-->
 
-<!--our-overview-area end
+<!-- Pay Modals -->
+
+ <!-- Paystack Modal -->
+<div class="modal fade" id="paystackDonateModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <form class="cart-plus-minus" role="form" method="POST" action="{{ route('pay') }}" >
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title alert" id="staticBackdropLabel">Please enter amount to donate</h5>
+                </div>
+                <div class="modal-body">
+                  <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="cart-list d-flex align-items-center">
+                                <li>
+                                    <div class="plus-minus pos-rel">
+                                        <input placeholder="Enter here" style="font-size: 14px; width: 230px; border-radius: 0px" type="text" name="amount" id="amount" value="">
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="plus-minus pos-rel">
+                                        <select name="currency" class="form-control" style=" height: 56px; border-radius: 0px" type="text"  id="currency">
+                                            <option value="NGN">NGN</option>
+                                            <option value="USD">USD</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <input type="hidden" name="email" value="{{ auth()->user()->email }}"> {{-- required --}}
+                                <!-- <input type="hidden" name="orderID" value="345"> -->
+                                <!-- <input type="hidden" name="amount" value="800"> {{-- required in kobo --}} -->
+                                <!-- <input type="hidden" name="quantity" value="3"> -->
+                                <!-- <input type="hidden" name="currency" value="NGN"> -->
+                                <input type="hidden" name="metadata" value="{{ json_encode($array = ['key_name' => 'value',]) }}" > {{-- For other necessary things you want to add to your payload. it is optional though --}}
+                                <input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
+                                {{ csrf_field() }} {{-- works only when using laravel 5.1, 5.2 --}}
+
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}"> {{-- employ this in place of csrf_field only in laravel 5.0 --}}
+
+                            </ul>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                    <button class="btn btn-default btn-block btn-lg" type="submit" value="Pay Now!">
+                        <i class="fa fa-plus-circle fa-lg"></i> Pay Now!
+                    </button>
+                    <button class="btn btn-default btn-lg" data-dismiss="modal">
+                        <i class="fa fa-cancel fa-lg"></i> Close
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<!-- Flutterwave Modal -->
+<div class="modal fade" id="raveDonateModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <form class="cart-plus-minus" role="form" method="POST" action="{{ route('donations.pay') }}" id="paymentForm" >
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title alert" id="staticBackdropLabel">Please enter amount to donate</h5>
+                </div>
+                <div class="modal-body">
+                  <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="cart-list d-flex align-items-center">
+                                <li>
+                                    <div class="plus-minus pos-rel">
+                                        <input placeholder="Enter here" style="font-size: 14px; width: 230px; border-radius: 0px" type="text" name="amount" id="amount" value="">
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="plus-minus pos-rel">
+                                        <select name="currency" class="form-control" style=" height: 56px; border-radius: 0px" type="text"  id="currency">
+                                            <option value="NGN">NGN</option>
+                                            <option value="USD">USD</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                 {{ csrf_field() }}
+                                <!-- <input type="hidden" name="amount" value="500" /> -->
+                                <input type="hidden" name="payment_method" value="both" /> <!-- Can be card, account, both -->
+                                <input type="hidden" name="description" value="{{ $request->title }}" /> <!-- Replace the value with your transaction description -->
+                                <input type="hidden" name="country" value="NG" /> <!-- Replace the value with your transaction country -->
+                                <!-- <input type="hidden" name="currency" value="USD" /> -->
+                                <input type="hidden" name="email" value="{{ auth()->user()->email }}" /> <!-- Replace the value with your customer email -->
+                                <input type="hidden" name="firstname" value="Oluwole" /> <!-- Replace the value with your customer firstname -->
+                                <input type="hidden" name="lastname" value="Adebiyi" /> <!-- Replace the value with your customer lastname -->
+                                <input type="hidden" name="metadata" value="{{ json_encode($request) }}" > <!-- Meta data that might be needed to be passed to the Rave Payment Gateway -->
+                                <input type="hidden" name="phonenumber" value="090929992892" /> <!-- Replace the value with your customer phonenumber -->
+                                <input type="hidden" name="paymentplan" value="362" /> <!-- Ucomment and Replace the value with the payment plan id --> 
+                                    {{-- <input type="hidden" name="ref" value="MY_NAME_5uwh2a2a7f270ac98" /> <!-- Ucomment and  Replace the value with your transaction reference. It must be unique per transaction. You can delete this line if you want one to be generated for you. --> --}}
+
+
+                            </ul>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                    <button class="btn btn-default btn-block btn-lg" type="submit" value="Pay Now!">
+                        <i class="fa fa-plus-circle fa-lg"></i> Pay Now!
+                    </button>
+                    <button class="btn btn-default btn-lg" data-dismiss="modal">
+                        <i class="fa fa-cancel fa-lg"></i> Close
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

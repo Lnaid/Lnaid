@@ -102,6 +102,27 @@ Route::group(['prefix' => 'sponsor', 'middleware' => ['auth:sanctum',  /*'sponso
 });
 
 
+// Donation and Payments Routes
+Route::group(['prefix' => 'donations', 'middleware' => ['auth:sanctum',  /*'sponsor' */ ], 'namespace' => 'App\Http\Controllers'], function(){
+
+	Route::post('/pay', 'PaymentController@redirectToGateway')->name('pay');
+
+	Route::post('/paye', 'RaveController@initialize')->name('donations.pay');
+
+	Route::get('/rave/callback', 'RaveController@callback')->name('callback');
+	Route::get('test', function(){
+		dd(request());
+	})->name('test.callback');
+
+	Route::get('/customers', function(){
+		$paystack = new App\Models\Paystack;
+		$subAccounts = 	$paystack->listSubAccounts(1,1);
+		dd($subAccounts);
+
+	});
+});
+
+
 // ADMIN ENDPOINTS GROUP
 Route::group(['prefix' => 'admin',  'namespace' => 'App\Http\Controllers\Admin', 'middleware' => ['auth:sanctum', /*'admin' */]], function () {
 
@@ -117,17 +138,17 @@ Route::group(['prefix' => 'admin',  'namespace' => 'App\Http\Controllers\Admin',
     //get all abilities
     Route::get('/rbac/abilities', 'RbacController@getAbilities');
     // Attach Ability to Role (body: abilityName and roleName)
-    Route::post('/rbac/attach', 'Admin\RbacController@attachAbilityToRole');
+    Route::post('/rbac/attach', 'RbacController@attachAbilityToRole');
     // Assign role to a user (body: userId and roleName)
-    Route::post('/rbac/assign', 'Admin\RbacController@assignUserRole');
+    Route::post('/rbac/assign', 'RbacController@assignUserRole');
     // Retract role from user  (body: userID and roleName)
-    Route::post('/rbac/retract', 'Admin\RbacController@retractUserRole');
+    Route::post('/rbac/retract', 'RbacController@retractUserRole');
     // Get user roles
-    Route::get('/rbac/user/{userId?}/roles', 'Admin\RbacController@getUserRoles');
+    Route::get('/rbac/user/{userId?}/roles', 'RbacController@getUserRoles');
     // Get user abilities
-    Route::get('/rbac/user/{userId?}/abilities', 'Admin\RbacController@getUserAbilities');
+    Route::get('/rbac/user/{userId?}/abilities', 'RbacController@getUserAbilities');
     // create  new  role
-    Route::post('/rbac/create/role', 'Admin\RbacController@storeRole');
+    Route::post('/rbac/create/role', 'RbacController@storeRole');
     // create new ability
-    Route::post('/rbac/create/ability', 'Admin\RbacController@storeAbility');
+    Route::post('/rbac/create/ability', 'RbacController@storeAbility');
 });
