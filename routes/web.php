@@ -115,10 +115,7 @@ Route::group(['prefix' => 'donations', 'middleware' => ['auth:sanctum',  /*'spon
 	Route::get('confirmed', 'DonationController@sayThanks' )->name('donations.confirmed');
 
 	Route::get('/customers', function(){
-		$paystack = new App\Models\Paystack;
-		$subAccounts = 	$paystack->listSubAccounts(1,1);
-		dd($subAccounts);
-
+		return App\Helpers\fxExchange::dollarToNaira(566);
 	});
 });
 

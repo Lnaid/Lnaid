@@ -34,9 +34,9 @@
                                 <span class="float-right"> Raised: {{ $request->currency()->code }} {{ number_format($request->getStats()->amountRaised, 2) }} </span> 
                             </p>
                             <div class="progress">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="95"
-                                    aria-valuemin="0" aria-valuemax="95">
-                                    <h5>52%</h5>
+                                <div class="progress-bar" role="progressbar" aria-valuenow="{{$request->getStats()->percentageRaised}}%"
+                                    aria-valuemin="0" aria-valuemax="100">
+                                    <h5>{{$request->getStats()->percentageRaised}}%</h5>
                                 </div>
                             </div>
                         </div>
@@ -299,6 +299,7 @@
         ['metaname' => 'student_name', 'metavalue' => $request->studentDetails()->name],
         ['metaname' => 'request_slug', 'metavalue' => $request->slug],
         ['metaname' => 'donor_type', 'metavalue' => 'user'],
+        ['metaname' => 'request_currency', 'metavalue' => $request->currency()->code ],
     ];
 @endphp
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Donation;
 use App\Models\Transaction;
+use App\Helpers\fxExchange;
 
 //use the Rave Facade
 use Rave;
@@ -48,10 +49,24 @@ class RaveController extends Controller
         $txMeta[$value->metaname] = $value->metavalue;
     }
 
+
+
+
+
+    // Covert donation values
+    if($verifiedTxChargeCurrency === "USD" && $txMeta['request_currency'] === "NGN"){
+        // If request is in naira and donation is in dollar - convert to naira and store equivalent in db ad donation value
+        $donationValue = fxExchange::dollarToNaira($verifiedTxChargeAmount);
+    } elseif ($verifiedTxChargeCurrency === "USD" && $txMeta['request_currency'] === "NGN") {
+       $donationValue = fxExchange::nairaToDollar($verifiedTxChargeAmount);
+    }else{
+        $donationValue = $verifiedTxChargeAmount;
+    }
+
     $donationData = [
       'request_id' => $txMeta['request_id'],
       // 'transaction_id' => $transaction->id,
-      'amount' => $verifiedTxChargeAmount,
+      'amount' => $donationValue,
       'currency' => $verifiedTxChargeCurrency,
       'donor_type' => $txMeta['donor_type'],
       'donor_name' => $verifiedTx->data->custname,
@@ -102,7 +117,7 @@ class RaveController extends Controller
 }
 
 
-
+https://free.currconv.com/api/v5/convert?q=USD_NGN&compact=ultra&apiKey=63f0b3cf575148b621cf
 
 
 

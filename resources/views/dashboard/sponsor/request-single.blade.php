@@ -29,5 +29,10 @@
         <!-- include('partials.error', ['position' => 'toast-bottom-left' ]) -->
         <!-- include('partials.flash', ['position' => 'toast-bottom-left', 'timeout' => 1000 ]) -->
 
+        <script type="text/javascript">
+            document.getElementsByClassName("progress-bar")[0].setAttribute("style", "width:50%");
+            document.getElementsByClassName("progress-bar")[0].style.width = "{{$request->getStats()->percentageRaised}}%";
+        </script>
+
     @endPush
 

@@ -17,8 +17,20 @@ trait HasRequestStats
         $donations = Donation::where('request_id', $this->id);
         $details = collect();
         $details->totalDonations = $donations->count();
-        $details->amountRaised = 40000;
+        $details->amountRaised = $donations->sum('amount');
+        $details->percentageRaised = $this->calcPercentage($this->amount, $donations->sum('amount') );
+
         return $details;
+    }
+
+    public function calcPercentage($requested, $raised){
+        $amountRequested = (float) $requested;
+        $amountRaised = (float) $raised;
+        if($amountRequested === 0 || $amountRaised === 0 ){
+            return 0;
+        }
+        $percentageRaised = round( ($amountRaised/$amountRequested)*100, 2);
+        return $percentageRaised;
     }
 
 }

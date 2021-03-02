@@ -78,6 +78,7 @@ class DonationController extends Controller
      */
     public function sayThanks()
     {
+        // TODO - use sweetalert to say thank you 
         return redirect()->route('sponsor.request-single', ['id'=> 1]);
     }
 }
