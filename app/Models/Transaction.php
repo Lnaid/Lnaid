@@ -4,14 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Donation extends Model
+class Transaction extends Model
 {
     use HasFactory;
-    //use SoftDeletes;
 
-    /**
+     /**
      * The attributes that should be hidden for arrays.
      *
      * @var array
@@ -19,4 +17,5 @@ class Donation extends Model
     protected $guarded = [
         'id'
     ];
+
 }

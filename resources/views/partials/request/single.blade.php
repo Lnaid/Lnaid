@@ -233,7 +233,7 @@
  <!-- Paystack Modal -->
 <div class="modal fade" id="paystackDonateModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <form class="cart-plus-minus" role="form" method="POST" action="{{ route('pay') }}" >
+        <form class="cart-plus-minus" role="form" method="POST" action="{{ route('donations.pay.paystack') }}" >
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title alert" id="staticBackdropLabel">Please enter amount to donate</h5>
@@ -288,11 +288,25 @@
     </div>
 </div>
 
+@php
+    $name = trim(auth()->user()->name);
+    $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
+    $first_name = trim( preg_replace('#'.preg_quote($last_name,'#').'#', '', $name ) );
+
+    $array = [
+        ['metaname' => 'request_id', 'metavalue' => $request->id ],
+        ['metaname' => 'student_id', 'metavalue' => $request->studentDetails()->id],
+        ['metaname' => 'student_name', 'metavalue' => $request->studentDetails()->name],
+        ['metaname' => 'request_slug', 'metavalue' => $request->slug],
+        ['metaname' => 'donor_type', 'metavalue' => 'user'],
+    ];
+@endphp
+
 
 <!-- Flutterwave Modal -->
 <div class="modal fade" id="raveDonateModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <form class="cart-plus-minus" role="form" method="POST" action="{{ route('donations.pay') }}" id="paymentForm" >
+        <form class="cart-plus-minus" role="form" method="POST" action="{{ route('donations.pay.rave') }}" id="paymentForm" >
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title alert" id="staticBackdropLabel">Please enter amount to donate</h5>
@@ -318,19 +332,19 @@
                                 </li>
                                  {{ csrf_field() }}
                                 <!-- <input type="hidden" name="amount" value="500" /> -->
-                                <input type="hidden" name="payment_method" value="both" /> <!-- Can be card, account, both -->
+                                <!-- <input type="hidden" name="payment_method" value="both" /> -->
                                 <input type="hidden" name="description" value="{{ $request->title }}" /> <!-- Replace the value with your transaction description -->
-                                <input type="hidden" name="country" value="NG" /> <!-- Replace the value with your transaction country -->
-                                <!-- <input type="hidden" name="currency" value="USD" /> -->
+                                <input type="hidden" name="country" value="NG" /> 
+                                <!-- <input type="hidden" name="currency" value="NGN" /> -->
                                 <input type="hidden" name="email" value="{{ auth()->user()->email }}" /> <!-- Replace the value with your customer email -->
-                                <input type="hidden" name="firstname" value="Oluwole" /> <!-- Replace the value with your customer firstname -->
-                                <input type="hidden" name="lastname" value="Adebiyi" /> <!-- Replace the value with your customer lastname -->
-                                <input type="hidden" name="metadata" value="{{ json_encode($request) }}" > <!-- Meta data that might be needed to be passed to the Rave Payment Gateway -->
-                                <input type="hidden" name="phonenumber" value="090929992892" /> <!-- Replace the value with your customer phonenumber -->
-                                <input type="hidden" name="paymentplan" value="362" /> <!-- Ucomment and Replace the value with the payment plan id --> 
-                                    {{-- <input type="hidden" name="ref" value="MY_NAME_5uwh2a2a7f270ac98" /> <!-- Ucomment and  Replace the value with your transaction reference. It must be unique per transaction. You can delete this line if you want one to be generated for you. --> --}}
+                                <input type="hidden" name="firstname" value="{{ $first_name }}" /> <!-- Replace the value with your customer firstname -->
+                                <input type="hidden" name="lastname" value="{{ $last_name }}" /> <!-- Replace the value with your customer lastname -->
+                                <input type="hidden" name="metadata" value="{{ json_encode($array) }}" > <!-- Meta data that might be needed to be passed to the Rave Payment Gateway -->
 
-
+                                <input type="hidden" name="phonenumber" value="{{ auth()->user()->phone }}" /> <!-- Replace the value with your customer phonenumber -->
+                                {{-- <input type="hidden" name="paymentplan" value="{{ $request->slug }}" /> <!-- Ucomment and Replace the value with the payment plan id --> --}}
+                                 
+                                {{-- <input type="hidden" name="title" value="Flamez Co" /> <!-- Replace the value with your transaction title (Optional, present in .env) --> --}}
                             </ul>
                         </div>
                     </div>

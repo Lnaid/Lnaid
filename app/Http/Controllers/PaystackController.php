@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redirect;
 use Paystack;
 
-class PaymentController extends Controller
+class PaystackController extends Controller
 {
 
     /**

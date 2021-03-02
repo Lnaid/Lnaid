@@ -2,6 +2,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Donation;
+use App\Models\Transaction;
 
 //use the Rave Facade
 use Rave;
@@ -17,7 +19,7 @@ class RaveController extends Controller
   {
     //This initializes payment and redirects to the payment gateway
     //The initialize method takes the parameter of the redirect URL
-    Rave::initialize(route('callback'));
+    Rave::initialize(route('rave.callback'));
   }
 
   /**
@@ -29,34 +31,80 @@ class RaveController extends Controller
 
     $responsePayload =  json_decode( request()->resp);
     $tx = $responsePayload->tx; // or $responseObject->data->data
-    $txRef = $tx->txRef;
+    $txRef = $tx->txRef; // transaction reference from initial
     $txStatus = $tx->status;
+    $txChargeAmount = $tx->amount; //amount from initial response
+    $txCurrency = $tx->currency; // currency from initial response
 
     $verifiedTx = Rave::verifyTransaction($txRef);
-
     $verifiedTxchargeResponsecode = $verifiedTx->data->chargecode;
+    $verifiedTxchargeMessage = $verifiedTx->data->chargemessage;
     $verifiedTxChargeAmount = $verifiedTx->data->amount;
     $verifiedTxChargeCurrency = $verifiedTx->data->currency;
-    
-    $txChargeAmount = $tx->data->amount;
-    $txCurrency = $tx->data->amount;
+    $verifiedMeta = $verifiedTx->data->meta;
 
-    if (($verifiedTxchargeResponsecode == "00" || $verifiedTxchargeResponsecode == "0") && ($verifiedTxChargeAmount == $txChargeAmount)  && ($verifiedTxChargeCurrency == $txCurrency)) {
-    // transaction was successful...
-    // please check other things like whether you already gave value for this ref
-    // if the email matches the customer who owns the product etc
-    //Give Value and return to Success page
-    
-        return redirect('/success');
-    
-    } else {
-        //Dont Give Value and return to Failure page
-    
-        return redirect('/failed');
+    $txMeta = [];
+    foreach ($verifiedMeta as $value) {
+        $txMeta[$value->metaname] = $value->metavalue;
     }
 
+    $donationData = [
+      'request_id' => $txMeta['request_id'],
+      // 'transaction_id' => $transaction->id,
+      'amount' => $verifiedTxChargeAmount,
+      'currency' => $verifiedTxChargeCurrency,
+      'donor_type' => $txMeta['donor_type'],
+      'donor_name' => $verifiedTx->data->custname,
+      'donor_email' => $verifiedTx->data->custemail,
+      // 'donor_address' => $verifiedTx->data->address,
+      'donor_payload' => json_encode($tx->customer),
+      'donor_phone' => $verifiedTx->data->custphone,
 
-    return redirect()->route('test.callback')->with('data', $verifiedData);
+    ];
+
+    $transactionData = [
+      'status' => 0,
+      'reference_id' => $txRef,
+      'payment_type' => $verifiedTx->data->paymenttype,
+      'payment_id' => $verifiedTx->data->paymentid,
+      'payment_aggregator' => 'rave',
+      'payment_payload' => json_encode($verifiedTx),
+      'transaction_meta' => json_encode($txMeta)
+    ];
+   
+
+    if (($verifiedTxchargeResponsecode == "00" || $verifiedTxchargeResponsecode == "0") && ($verifiedTxChargeAmount == $txChargeAmount)  && ($verifiedTxChargeCurrency == $txCurrency)) {
+
+        $transaction = $this->storeTransaction($transactionData);
+        $donationData['transaction_id'] = $transaction->id;
+        $donation = $this->storeDonation($donationData);
+
+        // send txMeta whih contains request_id, slug and other usefull data what will be usedfull in the thank you page
+        return redirect()->route('donations.confirmed')->with(['donation' => $donation, 'txMeta' => $txMeta]);
+      }else {
+          return redirect('/failed');
+    }
+  }
+
+  public function storeDonation($data){
+    // TODO - move logic to trait
+    $donation = Donation::create($data);
+    return $donation;
+
+  }
+
+  public function storeTransaction($data){
+    // TODO - move logic to trait
+    $transaction = Transaction::create($data);
+    return $transaction;
+
+  }
+}
+
+
+
+
+
 
 
     // Response object contains
@@ -273,6 +321,3 @@ class RaveController extends Controller
         // Give value for the transaction
         // Update the transaction to note that you have given value for the transaction
         // You can also redirect to your success page from here
-
-  }
-}

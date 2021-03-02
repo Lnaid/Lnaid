@@ -105,14 +105,14 @@ Route::group(['prefix' => 'sponsor', 'middleware' => ['auth:sanctum',  /*'sponso
 // Donation and Payments Routes
 Route::group(['prefix' => 'donations', 'middleware' => ['auth:sanctum',  /*'sponsor' */ ], 'namespace' => 'App\Http\Controllers'], function(){
 
-	Route::post('/pay', 'PaymentController@redirectToGateway')->name('pay');
+	// via Paystack
+	Route::post('/pay/paystack', 'PaystackController@redirectToGateway')->name('donations.pay.paystack');
 
-	Route::post('/paye', 'RaveController@initialize')->name('donations.pay');
+	// via Flutterwave rave
+	Route::post('/pay/rave', 'RaveController@initialize')->name('donations.pay.rave');
+	Route::get('/rave/callback', 'RaveController@callback')->name('rave.callback');
 
-	Route::get('/rave/callback', 'RaveController@callback')->name('callback');
-	Route::get('test', function(){
-		dd(request());
-	})->name('test.callback');
+	Route::get('confirmed', 'DonationController@sayThanks' )->name('donations.confirmed');
 
 	Route::get('/customers', function(){
 		$paystack = new App\Models\Paystack;
