@@ -23,6 +23,7 @@
         
 
         @stack('css')
+        @livewireStyles
 
     </head>
 
@@ -66,6 +67,8 @@
 
         @stack('js')
 
+
         <!-- livewireScripts -->
+        @livewireScripts
     </body>
 </html>

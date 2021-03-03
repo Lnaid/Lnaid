@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Traits\FundRequestTrait;
 use App\Models\Request as RequestDb;
 
 class SponsorController extends Controller
 {
+
+    use FundRequestTrait;
     /**
      * Display a listing of the resource.
      *
@@ -14,6 +17,8 @@ class SponsorController extends Controller
      */
     public function index()
     {
+        $recentRequests = FundRequestTrait::getRecentRequests($total = 20, $perpage = 10);
+        $topRequests =FundRequestTrait::getTopRequests($total = null, $perpage = 2);
         $data['title'] = 'Dashboard';
         return view('dashboard.sponsor.index', $data);
     }
@@ -24,13 +29,12 @@ class SponsorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function getAllRequest()
+    public function allRequest()
     {
-        $requests = RequestDb::all();
+        $allRequests = FundRequestTrait::getAllRequests($total = null, $perpage = 2);
         $data['title'] = 'Dashboard';
-        return view('dashboard.sponsor.request-index')->with(['data' => $data, 'request' => $requests]);
-
-        dd($request);
+        dd($allRequests);
+        // return view('dashboard.sponsor.request-index')->with(['data' => $data, 'request' => $allRequests]);
     }
 
     /**
@@ -38,7 +42,7 @@ class SponsorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function getSingleRequest($id)
+    public function singleRequest($id)
     {
         $request = RequestDb::find($id);
         $title = 'Dashboard';

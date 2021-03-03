@@ -95,7 +95,8 @@ class RaveController extends Controller
         $donation = $this->storeDonation($donationData);
 
         // send txMeta whih contains request_id, slug and other usefull data what will be usedfull in the thank you page
-        return redirect()->route('donations.confirmed')->with(['donation' => $donation, 'txMeta' => $txMeta]);
+        // return redirect()->route('donations.confirmed')->with(['donation' => $donation, 'txMeta' => $txMeta]);
+        return redirect()->route('sponsor.request-single', ['id'=> $txMeta['request_id'] ]);
       }else {
           return redirect('/failed');
     }

@@ -76,9 +76,12 @@ class DonationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function sayThanks()
+    public function sayThanks(Request $request)
     {
         // TODO - use sweetalert to say thank you 
-        return redirect()->route('sponsor.request-single', ['id'=> 1]);
+        $txMeta = session()->all();
+        // return redirect()->route('sponsor.request-single', ['id'=> 1]);
+        dd($txMeta);
+
     }
 }
