@@ -26,7 +26,7 @@
                                 @foreach($user as $u)
                                     <a href="{{ route('student.chat.create', ['id' => $u->id]) }}">
                                         <div class="p-3 d-flex border-bottom align-items-center contact online">
-                                                <img class="avatar-sm rounded-circle mr-3" src="{{ asset('assets/uploads/profile/'.$u->profile_photo_path) }}" alt="alt">
+                                                <img class="avatar-sm rounded-circle mr-3" src="{{ $u->profile_photo_url }}" alt="alt">
                                             <h6>
                                                 {{$u->name}}
                                             </h6>

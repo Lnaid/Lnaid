@@ -20,13 +20,13 @@ class Message extends Model
         'id'
     ];
 
-    public function sender()
+    public function getSender()
     {
-        return $this->hasOne(Users::class, 'sender_id');
+        return $this->belongsTo(User::class, 'sender_id', 'id');
     }
 
-    public function receiver()
+    public function getReceiver()
     {
-        return $this->hasOne(Users::class, 'receiver_id');
+        return $this->belongsTo(User::class, 'receiver_id', 'id');
     }
 }

@@ -14,7 +14,7 @@
                         <div class="card-body text-center"><i class="i-Money-2"></i>
                             <div class="content">
                                 <p class="text-muted mt-2 mb-0">Amount Requested</p>
-                                <p class="text-primary text-24 line-height-1 mb-2">0.00</p>
+                                <p class="text-primary text-24 line-height-1 mb-2">{{$amount_requested}}</p>
                             </div>
                         </div>
                     </div>
@@ -24,7 +24,7 @@
                         <div class="card-body text-center"><i class="i-Money-2"></i>
                             <div class="content">
                                 <p class="text-muted mt-2 mb-0">Amount Received</p>
-                                <p class="text-primary text-24 line-height-1 mb-2">0.00</p>
+                                <p class="text-primary text-24 line-height-1 mb-2">{{$amount_received}}</p>
                             </div>
                         </div>
                     </div>
@@ -34,7 +34,7 @@
                         <div class="card-body text-center"><i class="i-Financial"></i>
                             <div class="content">
                                 <p class="text-muted mt-2 mb-0">Completed Request</p>
-                                <p class="text-primary text-24 line-height-1 mb-2">0/0</p>
+                                <p class="text-primary text-24 line-height-1 mb-2">{{$completed_request}}/{{$fund_request}}</p>
                             </div>
                         </div>
                     </div>
@@ -44,7 +44,7 @@
                         <div class="card-body text-center"><i class="i-Money-2"></i>
                             <div class="content">
                                 <p class="text-muted mt-2 mb-0">Validation Score</p>
-                                <p class="text-primary text-24 line-height-1 mb-2">10%</p>
+                                <p class="text-primary text-24 line-height-1 mb-2">{{$validate_score}}%</p>
                             </div>
                         </div>
                     </div>
@@ -54,7 +54,7 @@
                         <div class="card-body text-center"><i class="i-Money-2"></i>
                             <div class="content">
                                 <p class="text-muted mt-2 mb-0">Recommendation</p>
-                                <p class="text-primary text-24 line-height-1 mb-2">0</p>
+                                <p class="text-primary text-24 line-height-1 mb-2">{{$recommendation}}</p>
                             </div>
                         </div>
                     </div>
@@ -64,7 +64,7 @@
                         <div class="card-body text-center"><i class="i-Add-User"></i>
                             <div class="content">
                                 <p class="text-muted mt-2 mb-0">Fund Request</p>
-                                <p class="text-primary text-24 line-height-1 mb-2">0</p>
+                                <p class="text-primary text-24 line-height-1 mb-2">{{$fund_request}}</p>
                             </div>
                         </div>
                     </div>
@@ -74,7 +74,7 @@
                         <div class="card-body text-center"><i class="i-Money-2"></i>
                             <div class="content">
                                 <p class="text-muted mt-2 mb-0">Funder</p>
-                                <p class="text-primary text-24 line-height-1 mb-2">0</p>
+                                <p class="text-primary text-24 line-height-1 mb-2">{{$funder}}</p>
                             </div>
                         </div>
                     </div>

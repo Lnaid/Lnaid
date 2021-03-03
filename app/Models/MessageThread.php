@@ -19,4 +19,14 @@ class MessageThread extends Model
     protected $hidden = [
         'id'
     ];
+
+    public function getSender()
+    {
+        return $this->belongsTo(User::class, 'sender_id', 'id');
+    }
+
+    public function getReceiver()
+    {
+        return $this->belongsTo(User::class, 'receiver_id', 'id');
+    }
 }

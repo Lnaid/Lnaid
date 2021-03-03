@@ -20,7 +20,13 @@ class StudentController extends Controller
     //
     public function overview(){
     	$data['title'] = 'Overview';
-
+        $data['validate_score'] = "100";
+        $data['recommendation'] = "5";
+        $data['fund_request'] = "4";
+        $data['amount_received'] = "1000";
+        $data['amount_requested'] = "1000";
+        $data['completed_request'] = "5";
+        $data['funder'] = "376";
     	return view('dashboard.student.index', $data);
     }
 
@@ -40,14 +46,40 @@ class StudentController extends Controller
     }
 
     public function chatThread($id){
-        $data['title'] = 'Chat';
         $data['chats'] = MessageThread::where('sender_id', Auth::user()->id)->orWhere('receiver_id', Auth::user()->id)->get();
         $data['singleChat'] = Message::where('thread_code', $id)->get();
-        $data['thread_code'] = $id;
+        $data['single'] = MessageThread::find($id);
+        $data['title'] = MessageThread::find($id)->getReceiver->name;
         return view('dashboard.student.chat_thread', $data);
     }
 
     public function chatThreadReply(Request $request, $id){
+
+        $request->validate([
+            'content' => 'required|string',
+            'receiver_id' => 'required'
+        ]);
+
+        $msg = new Message;
+        $msg->sender_id = Auth::user()->id;
+        $msg->receiver_id = $request->receiver_id;
+        $msg->thread_code = $id;
+        $msg->status = 1;
+        $msg->contents = $request->content;
+
+
+        if($request->hasFile('attachment')){
+
+            $pp = time().'_'.Auth::user()->username;
+            $filepath = $fileName."_message.".$request->transcript->extension();
+            $request->transcript->move(public_path('uploads/messaging'), $filepath);
+            $msg->attachment = $filepath;
+        }
+
+        if($msg->save()){
+            return back()->with('success', Auth::user()->username.": ".$msg->contents);
+        }
+
 
     }
 
@@ -214,7 +246,7 @@ class StudentController extends Controller
             $chat->save();
         }
 
-        return redirect()->route('student.chat.thread', ['id' => $chat->id]);
+        return redirect()->route('student.chat.thread', ['id' => $chat->id])->with('success', 'Message thread started');
     }
 
 

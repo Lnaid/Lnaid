@@ -14,7 +14,7 @@
                         <div class="card mb-4 h-100">
                             <div class="card-body">
                                 <div class="card-title">Profile Picture</div>
-                                <img src="{{ asset('assets/dashboard/images/faces/1.jpg') }}"alt="" style="display: block; border-radius: 50%; margin-left: 90px;" id="user_p_image">
+                                <img src="{{ Auth::user()->profile_photo_url }}"alt="" style="display: block; border-radius: 50%; margin-left: 90px;" id="user_p_image">
                                 <input type="file" style="display: none" id="profile_photo_path" name="profile_photo_path">
                                 <button class="btn btn-danger" id="select_img" style="position: absolute;margin-left: 110px;margin-top: 10px;" type="button">Change</button>
                             </div>

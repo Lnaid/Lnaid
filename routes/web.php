@@ -62,11 +62,7 @@ Route::group(['middleware' =>['web', 'auth']], function(){
 
 // STUDENT Routes
 Route::group(['prefix' => 'student', 'middleware' => ['auth:sanctum',  'student' ], 'namespace' => 'App\Http\Controllers'], function(){
-	Route::get('/', function(){
-		$data['title'] = 'Dashboard';
-    	return view('dashboard.student.index', $data);
-	})->name('student.dashboard')->middleware('verified');
-
+	Route::get('/', 'StudentController@overview')->name('student.dashboard')->middleware('verified');
 	Route::get('/overview', 'StudentController@overview')->name('student.index');
 	Route::get('/profile', 'StudentController@profile')->name('student.profile');
 	Route::get('/verification', 'StudentController@verification')->name('student.verification');
