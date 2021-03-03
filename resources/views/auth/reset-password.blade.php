@@ -1,4 +1,5 @@
 @extends('layouts.guest')
+    @section('page_title', 'Reset password')
     @section('content')
         <x-jet-authentication-card>
             <x-slot name="logo">
