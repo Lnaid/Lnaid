@@ -148,20 +148,12 @@ class StudentController extends Controller
             $request->transcript->move(public_path('uploads/verification'), $filepath);
 
 
-            $student = new StudentVerification;
+            $student = Student::where('user_id', Auth::user()->id)->first();
             $student->student_id = $request->student_id;
             $student->user_id = Auth::user()->id;
             $student->school_id_path = $filepathCard;
             $student->admission_letter_path = $filepathAdm;
             $student->transcript_path = $filepathTran;
-
-
-            $req_media = new RequestMedia;
-            $req_media->request_id = $req->id;
-            $req_media->name = $fileName;
-            $req_media->alt = $filepath;
-            $req_media->type = $request->attachment->extension(); 
-            $req_media->save();
 
             if($student->save()){
                 return back()->with('success','Verification submitted successfully');
@@ -182,7 +174,7 @@ class StudentController extends Controller
             'bvn' => 'required|integer',
         ]);
 
-        $student = StudentVerification::where('user_id', Auth::user()->id)->first();
+        $student = Student::where('user_id', Auth::user()->id)->first();
         $student->nin = $request->nin;
         $student->bvn = $request->bvn;
 

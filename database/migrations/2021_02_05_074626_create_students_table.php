@@ -43,6 +43,13 @@ class CreateStudentsTable extends Migration
             $table->string('facebook')->nullable();
 
 
+            $table->string('bvn')->nullable();
+            $table->string('nin')->nullable();
+            $table->string('school_id_path')->nullable()->default(false);
+            $table->string('admission_letter_path')->nullable()->default(false);
+            $table->string('transcript_letter_path')->nullable()->default(false);
+
+
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

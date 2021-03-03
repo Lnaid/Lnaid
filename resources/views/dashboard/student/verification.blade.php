@@ -15,8 +15,8 @@
                     <h4 class="card-title mb-3">Verify your account</h4>
                     <ul class="nav nav-pills" id="myPillTab" role="tablist">
                         <li class="nav-item"><a class="nav-link @if($student->schol_email == null) active show @endif" id="home-icon-pill" data-toggle="pill" href="#homePIll" role="tab" aria-controls="homePIll" aria-selected="false"><i class="nav-icon i-Computer-Secure mr-1"></i>Upload your credential</a></li>
-                        <li class="nav-item"><a class="nav-link @if($student->schol_email != null) active show @endif" id="profile-icon-pill" data-toggle="pill" href="#profilePIll" role="tab" aria-controls="profilePIll" aria-selected="false"><i class="nav-icon i-Computer-Secure mr-1"></i> Upload your school ID card</a></li>
-                        <li class="nav-item"><a class="nav-link" id="contact-icon-pill" data-toggle="pill" href="#contactPIll" role="tab" aria-controls="contactPIll" aria-selected="true"><i class="nav-icon i-Computer-Secure mr-1"></i> Final submission</a></li>
+                        <li class="nav-item"><a class="nav-link @if($student->schol_email != null && $student->school_id_path == null) active show @endif" id="profile-icon-pill" data-toggle="pill" href="#profilePIll" role="tab" aria-controls="profilePIll" aria-selected="false"><i class="nav-icon i-Computer-Secure mr-1"></i> Upload your school ID card</a></li>
+                        <li class="nav-item"><a class="nav-link @if($student->school_id_path != null) active show @endif" id="contact-icon-pill" data-toggle="pill" href="#contactPIll" role="tab" aria-controls="contactPIll" aria-selected="true"><i class="nav-icon i-Computer-Secure mr-1"></i> Final submission</a></li>
                     </ul>
                     <div class="tab-content" id="myPillTabContent">
                         <div class="tab-pane fade  @if($student->schol_email == null) active show @endif" id="homePIll" role="tabpanel" aria-labelledby="home-icon-pill">
@@ -113,7 +113,7 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="tab-pane fade @if($student->schol_email != null) active show @endif" id="profilePIll" role="tabpanel" aria-labelledby="profile-icon-pill">
+                        <div class="tab-pane fade @if($student->schol_email != null && $student->school_id_path == null) active show @endif" id="profilePIll" role="tabpanel" aria-labelledby="profile-icon-pill">
                             <form action="{{route('student.verify.step2')}}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
@@ -142,7 +142,7 @@
                             </form>
 
                         </div>
-                        <div class="tab-pane fade" id="contactPIll" role="tabpanel" aria-labelledby="contact-icon-pill">
+                        <div class="tab-pane fade @if($student->school_id_path != null) active show @endif" id="contactPIll" role="tabpanel" aria-labelledby="contact-icon-pill">
                             <form action="{{route('student.verify.step3')}}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
