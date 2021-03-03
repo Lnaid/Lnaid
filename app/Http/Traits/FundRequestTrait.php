@@ -14,6 +14,10 @@ trait FundRequestTrait {
       return RequestDb::all();
     }
 
+    public static function getRandomRequests($total = null) {
+          return RequestDb::inRandomOrder()->take($total)->get();
+    }
+
     public static function getRecentRequests($total = null, $perPage = null) {
        return RequestDb::orderBy('created_at', 'DESC')->take($total)->paginate($perPage);
     }
@@ -54,6 +58,5 @@ trait FundRequestTrait {
        } catch (\Exception $e) {
          return $e;
        }
-
     }
 }

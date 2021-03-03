@@ -133,7 +133,9 @@
                         </div>
                     </div> -->
 
-                    @include('partials.request.slide')
+                    <!-- Random requests -->
+                    <!-- include('partials.request.slide') -->
+                    <livewire:requests.random />
 
                 </div>
 
