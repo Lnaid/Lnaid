@@ -51,16 +51,6 @@
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="card card-icon-bg card-icon-bg-primary o-hidden mb-4">
-                        <div class="card-body text-center"><i class="i-Money-2"></i>
-                            <div class="content">
-                                <p class="text-muted mt-2 mb-0">Recommendation</p>
-                                <p class="text-primary text-24 line-height-1 mb-2">{{$recommendation}}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="card card-icon-bg card-icon-bg-primary o-hidden mb-4">
                         <div class="card-body text-center"><i class="i-Add-User"></i>
                             <div class="content">
                                 <p class="text-muted mt-2 mb-0">Fund Request</p>
@@ -73,7 +63,7 @@
                     <div class="card card-icon-bg card-icon-bg-primary o-hidden mb-4">
                         <div class="card-body text-center"><i class="i-Money-2"></i>
                             <div class="content">
-                                <p class="text-muted mt-2 mb-0">Funder</p>
+                                <p class="text-muted mt-2 mb-0">Donations</p>
                                 <p class="text-primary text-24 line-height-1 mb-2">{{$funder}}</p>
                             </div>
                         </div>

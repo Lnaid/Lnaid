@@ -13,20 +13,23 @@ use App\Models\Message;
 use App\Models\MessageThread;
 use App\Models\StudentVerification;
 use App\Models\Currency;
+use App\Models\Donation;
 use File;
+use App\Http\Traits\HasValidationScore;
 
 class StudentController extends Controller
 {
+    use HasValidationScore;
     //
     public function overview(){
     	$data['title'] = 'Overview';
-        $data['validate_score'] = "100";
+        $data['validate_score'] = $this->getVerificationScore(Auth::user()->id);
         $data['recommendation'] = "5";
-        $data['fund_request'] = "4";
-        $data['amount_received'] = "1000";
-        $data['amount_requested'] = "1000";
-        $data['completed_request'] = "5";
-        $data['funder'] = "376";
+        $data['fund_request'] = $this->getFundRequest(Auth::user()->id);
+        $data['amount_received'] = $this->getAmountReceived(Auth::user()->id);
+        $data['amount_requested'] = $this->getAmountRequest(Auth::user()->id);
+        $data['completed_request'] = $this->getFundRequestCompleted(Auth::user()->id);
+        $data['funder'] = Donation::get()->count();
     	return view('dashboard.student.index', $data);
     }
 
