@@ -4,15 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Donation extends Model
+class ExchangeRate extends Model
 {
     use HasFactory;
-    //use SoftDeletes;
 
-    /**
-     * The attributes that should be hidden for arrays.
+     /**
+     * The attributes that should be guarded for arrays.
      *
      * @var array
      */

@@ -133,7 +133,9 @@
                         </div>
                     </div> -->
 
-                    @include('partials.request.slide')
+                    <!-- Random requests -->
+                    <!-- include('partials.request.slide') -->
+                    <livewire:requests.random />
 
                 </div>
 
@@ -142,7 +144,8 @@
             <div class="row">
 
                 <div class="col-md-12">
-                    @include('partials.request.grid3')
+                    <!-- include('partials.request.grid3') -->
+                     <livewire:requests.recent />
                 </div>
 
                 <div class="col-md-12">

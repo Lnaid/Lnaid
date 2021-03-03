@@ -13,6 +13,7 @@ trait HasStudentDetails
     public function studentDetails()
     {
         $details = collect();
+        $details->id = $this->student->user->id;
         $details->name = $this->student->user->name;
         $details->photo = $this->student->user->profile_photo_url;
         $details->school = $this->student->school->name;

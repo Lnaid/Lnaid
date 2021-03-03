@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Request as RequestDb;
 
-class RequestController extends Controller
+class DonationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,13 +13,7 @@ class RequestController extends Controller
      */
     public function index()
     {
-        $requests = RequestDb::all();
-        $data['title'] = 'Dashboard';
-
-        // TODO use if statement to decide how to return data - [admin, sponsor, 'guest'];
-        return view('dashboard.sponsor.request-index')->with(['data' => $data, 'request' => $requests]);
-
-        dd($request);
+        //
     }
 
     /**
@@ -52,29 +45,8 @@ class RequestController extends Controller
      */
     public function show($id)
     {
-        $request = RequestDb::find($id);
-        $title = 'Dashboard';
-        return view('dashboard.sponsor.request-single', ['title' => $title, 'request' => $request]);
-
-        // dd($request);
+        //
     }
-
-    /**
-     * Display the specified resource for student.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function preview($id)
-    {
-        $request = RequestDb::find($id);
-        $title = 'Dashboard';
-        return view('dashboard.sponsor.request-single', ['title' => $title, 'request' => $request]);
-
-        // dd($request);
-    }
-
-
 
     /**
      * Show the form for editing the specified resource.
@@ -100,13 +72,16 @@ class RequestController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Display thank you message after donation has been confirmed.
      *
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function sayThanks(Request $request)
     {
-        //
+        // TODO - use sweetalert to say thank you 
+        $txMeta = session()->all();
+        // return redirect()->route('sponsor.request-single', ['id'=> 1]);
+        dd($txMeta);
+
     }
 }

@@ -16,16 +16,25 @@ class CreateDonationsTable extends Migration
         Schema::create('donations', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('request_id')->index();
-            $table->unsignedBigInteger('user_id')->index();
+            $table->unsignedBigInteger('transaction_id')->index();
+
             $table->unsignedBigInteger('amount')->nullable();
+            $table->string('currency')->nullable();
             $table->string('description')->nullable();
-            $table->string('additinal_info')->nullable();
-            $table->string('transaction_type')->nullable(); //bank, paystack page, abeg, cash app etc
+            $table->text('additinal_info')->nullable();
+
+            $table->string('donor_type')->nullable()->comment('user, guest, anonymous');
+            $table->string('donor_name')->nullable();
+            $table->string('donor_email')->nullable();
+            $table->string('donor_address')->nullable();
+            $table->text('donor_payload')->nullable();
+            $table->string('donor_phone')->nullable();
+
             $table->timestamps();
             $table->softDeletes();
 
             $table->foreign('request_id')->references('id')->on('requests');
-            $table->foreign('user_id')->references('id')->on('users');
+            // $table->foreign('transaction_id')->references('id')->on('transactions');
         });
     }
 

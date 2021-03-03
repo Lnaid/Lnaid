@@ -36,8 +36,9 @@ class Request extends Model
 
     public function currency()
     {
-        $requestCurrency = Currency::find($this->currency_id);
-        return $requestCurrency;
+        // $requestCurrency = Currency::find($this->currency_id);
+        // return $requestCurrency;
+        return $this->hasOne('App\Models\Currency', 'id', 'currency_id' );
     }
 
     public function comments()
