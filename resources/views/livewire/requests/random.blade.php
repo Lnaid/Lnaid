@@ -8,14 +8,16 @@
         <div class="col-md-8 projects__content">
              <h4 class="text-primary"><a href="{{ route('sponsor.request-single', ['id' => $request->id]) }}">{{ $request->title }}</a></h4>
             <div class="skill mb-30"> 
-            	<p class="text-secondary" >Requested: <span>: {{ $request->currency->code }} {{ number_format($request->amount, 2) }}</span></p>
+                @if($request->isFundRequest() )
+                	<p class="text-secondary" >Requested: <span>: {{ $request->currency->code }} {{ number_format($request->amount, 2) }}</span></p>
 
-                <p class="text-secondary" >Raised: <span>{{ $request->currency->code }} {{ number_format($request->getStats()->amountRaised, 2) }} </span></p>
-                <div class="progress">
-                    <div class="progress-bar" style="width: {{$request->getStats()->percentageRaised}}% " role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                        <h5> {{$request->getStats()->percentageRaised}}% </h5>
+                    <p class="text-secondary" >Raised: <span>{{ $request->currency->code }} {{ number_format($request->getStats()->amountRaised, 2) }} </span></p>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: {{$request->getStats()->percentageRaised}}% " role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                            <h5> {{$request->getStats()->percentageRaised}}% </h5>
+                        </div>
                     </div>
-                </div>
+                @endif
             </div>
             <div class="projects__content--manager">
                 <ul class="request-manager">

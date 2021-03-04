@@ -46,7 +46,13 @@ class SponsorController extends Controller
     {
         $request = RequestDb::find($id);
         $title = 'Dashboard';
-        return view('dashboard.sponsor.request-single', ['title' => $title, 'request' => $request]);
+        if($request->isFundRequest()){
+            return view('dashboard.sponsor.request-single', ['title' => $title, 'request' => $request]);
+        }else{
+            //  TODO - create another single page for non fund request, most preferable a chat screen.
+            return redirect()->back();
+        }
+        
 
         // dd($request);
     }

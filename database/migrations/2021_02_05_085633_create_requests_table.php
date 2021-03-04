@@ -21,13 +21,14 @@ class CreateRequestsTable extends Migration
             $table->string('title')->nullable();
             $table->string('slug')->nullable();
             $table->unsignedBigInteger('amount')->nullable();
-            $table->string('category_id')->nullable();
+            $table->integer('category_id')->nullable();
+            $table->boolean('is_fund_request');
 
             $table->string('priority')->nullable()->defualt('low'); //low, medium, high
             $table->boolean('is_featured')->nullable();
             $table->string('visibility')->nullable()->defualt('university'); //private or public - private defualts to university domain
             $table->text('description')->nullable();
-            $table->string('currency_id');
+            $table->string('currency_id')->nullable();
             $table->integer('status')->default(0)->comment('0 = pending, 1 = successful, 2 = failed');
             $table->timestamps();
 

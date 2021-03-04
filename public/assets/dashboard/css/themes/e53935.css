@@ -26204,7 +26204,7 @@ blockquote {
   flex-direction: inherit;
 }
 
-.section-title span{
+.section-title .title{
   background: #263238;
   padding: 10px 30px;
   border-radius: 30px;

@@ -21,16 +21,18 @@
                                 </div>
                             </div>
                         <div class="skill mb-20">
-                            <p class="skill-para mb-5">
-                                <p class="mb-2"> Requested: {{ $request->currency->code }} {{ number_format($request->amount, 2) }} </p> 
-                                <p class="mb-0"> Raised: {{ $request->currency->code }} {{ number_format($request->getStats()->amountRaised, 2) }} </p> 
-                            </p>
-                            <div class="progress">
-                                <div style="width: {{$request->getStats()->percentageRaised}}%" class="progress-bar" role="progressbar" aria-valuenow="{{$request->getStats()->percentageRaised}}%"
-                                    aria-valuemin="0" aria-valuemax="100">
-                                    <h5>{{$request->getStats()->percentageRaised}}%</h5>
+                            @if($request->isFundRequest() )
+                                <p class="skill-para mb-5">
+                                    <p class="mb-2"> Requested: {{ $request->currency->code }} {{ number_format($request->amount, 2) }} </p> 
+                                    <p class="mb-0"> Raised: {{ $request->currency->code }} {{ number_format($request->getStats()->amountRaised, 2) }} </p> 
+                                </p>
+                                <div class="progress">
+                                    <div style="width: {{$request->getStats()->percentageRaised}}%" class="progress-bar" role="progressbar" aria-valuenow="{{$request->getStats()->percentageRaised}}%"
+                                        aria-valuemin="0" aria-valuemax="100">
+                                        <h5>{{$request->getStats()->percentageRaised}}%</h5>
+                                    </div>
                                 </div>
-                            </div>
+                            @endif
                         </div>
                         <ul class="cart-list d-sm-flex align-items-center">
                             <li class="mx-auto">

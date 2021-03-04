@@ -9,27 +9,32 @@
             </div>
 
             <div class="projects__content">
-                <h4><a href="request-video.html">Gen3 Airoha Air Pro 3 TWS
-                        Cancel Headphone</a></h4>
+                <h4 class="text-primary"><a href="{{ route('sponsor.request-single', ['id' => $request->id]) }}">{{ $request->title }}</a></h4>
                 <div class="skill mb-30">
-                    <p>Raised <span>$2535</span></p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="95">
-                            <h5>95%</h5>
-                        </div>
-                    </div>
+                    @if($request->isFundRequest() ) 
+                        <p class="text-secondary" >Requested: <span>: {{ $request->currency->code }} {{ number_format($request->amount, 2) }}</span></p>
+
+                        <p class="text-secondary" >Raised: <span>{{ $request->currency->code }} {{ number_format($request->getStats()->amountRaised, 2) }} </span></p>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: {{$request->getStats()->percentageRaised}}% " role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                                <h5> {{$request->getStats()->percentageRaised}}% </h5>
+                            </div>
+                         </div>
+                    @endif
                 </div>
                 <div class="projects__content--manager">
-                    <ul class="request-manager">
-                        <li><a href="#"><img src=" {{ url('storage/files/avatars/01.png') }} " alt="">
-                                <span>Somalia</span></a></li>
-                        <li>
-                            <p class="time"><i class="far fa-clock"></i> 7 Days Left</p>
-                        </li>
-                    </ul>
-                </div>
+                <ul class="request-manager">
+                    <li><a href="#">
+                        <img src=" {{ $request->studentDetails()->photo }} " alt="">
+                        <span>{{ $request->studentDetails()->name }}</span></a></li>
+                    <li>
+                        <p class="time"><i class="far fa-clock"></i>{{ $request->created_at->diffForHumans() }}</p>
+                    </li>
+                </ul>
+            </div>
             </div>
         </div>
     </div>
     @endforeach
+    <!-- {{ $recommendedRequests->links('partials.pagination') }} -->
 </div>

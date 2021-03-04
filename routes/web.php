@@ -93,8 +93,8 @@ Route::group(['prefix' => 'sponsor', 'middleware' => ['auth:sanctum',  /*'sponso
 	Route::get('/requests/{id}','SponsorController@singleRequest' )->name('sponsor.request-single');
 
 	Route::get('/req', function(){
-		$requests = App\Models\Request::find(1);
-		dd($requests->currency()->code);
+		$requests = App\Models\Request::find(9);
+		dd($requests->student->school);
 	});
 });
 

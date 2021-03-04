@@ -59,6 +59,14 @@ class Request extends Model
 
     }
 
+    public function isFundRequest()
+    {
+        if($this->is_fund_request){
+            return true;
+        }
+
+    }
+
 
 
 }

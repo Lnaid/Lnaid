@@ -32,13 +32,13 @@ trait FundRequestTrait {
 
      public static function featuredRequests($total = null, $perPage = null) {
         // return RequestDb::where('is_featured', true)->take($total)->paginate($perPage);
-        return RequestDb::all();
+       return RequestDb::orderBy('created_at', 'DESC')->take($total)->paginate($perPage);
 
     }
 
     public static function recommendedRequests($total = null, $perPage = null) {
         // TODO write logic to pull request from schools the spoonsor is following
-        return RequestDb::all();
+        return RequestDb::orderBy('created_at', 'DESC')->take($total)->paginate($perPage);
     }
 
     public static function favoriteSchoolRequests($total = null, $perPage = null) {
