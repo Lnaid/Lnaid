@@ -15,6 +15,7 @@ use App\Models\StudentVerification;
 use App\Models\Currency;
 use App\Models\Donation;
 use File;
+use Storage;
 use App\Http\Traits\HasValidationScore;
 
 class StudentController extends Controller
@@ -73,10 +74,10 @@ class StudentController extends Controller
 
         if($request->hasFile('attachment')){
 
-            $pp = time().'_'.Auth::user()->username;
-            $filepath = $fileName."_message.".$request->transcript->extension();
-            $request->transcript->move(public_path('uploads/messaging'), $filepath);
-            $msg->attachment = $filepath;
+            $pp = time().'_'.Auth::user()->username.'_message';
+            $msg->attachment = $request->file('attachment')->storeAs(
+                'uploads/messaging', $pp
+            );   
         }
 
         if($msg->save()){
@@ -105,15 +106,14 @@ class StudentController extends Controller
 
         if($request->hasFile('profile_photo_path')){
 
-            if(File::exists(public_path('uploads/profile'.$user->profile_photo_path))){
-                File::delete(public_path('uploads/profile'.$user->profile_photo_path));
+            if(Storage::exists($user->profile_photo_path)){
+                Storage::delete($user->profile_photo_path);
             }
 
-            $pp = time().'_'.Auth::user()->username;
-            $filepath = $fileName."_profile_picture.".$request->transcript->extension();
-            $request->transcript->move(public_path('uploads/profile'), $filepath);
-
-            $user->profile_photo_path = $filepath;
+            $pp = time().'_'.Auth::user()->username.'_profile_picture';
+            $user->profile_photo_path = $request->file('attachment')->storeAs(
+                'uploads/profile', $pp
+            );
         }
 
         if($user->save()){
@@ -170,25 +170,25 @@ class StudentController extends Controller
 
         if ($request->hasFile('admission_letter') && $request->hasFile('idcard') && $request->hasFile('transcript')) {
 
-            $user = time().'_'.Auth::user()->username;
-            $filepathAdm = $fileName."_admission_letter.".$request->admission_letter->extension();
-            $request->admission_letter->move(public_path('uploads/verification'), $filepathAdm);
+            $pp = time().'_'.Auth::user()->username.'_admission_letters';
 
-            $user = time().'_'.Auth::user()->username;
-            $filepathCard = $fileName."_school_id_card.".$request->idcard->extension();
-            $request->idcard->move(public_path('uploads/verification'), $filepath);
+            $ppp = time().'_'.Auth::user()->username.'_school_id_card';
 
-            $user = time().'_'.Auth::user()->username;
-            $filepathTran = $fileName."_transcript.".$request->transcript->extension(); 
-            $request->transcript->move(public_path('uploads/verification'), $filepath);
+            $pppp = time().'_'.Auth::user()->username.'_transcript';
 
 
             $student = Student::where('user_id', Auth::user()->id)->first();
             $student->student_id = $request->student_id;
             $student->user_id = Auth::user()->id;
-            $student->school_id_path = $filepathCard;
-            $student->admission_letter_path = $filepathAdm;
-            $student->transcript_path = $filepathTran;
+            $student->school_id_path = $request->file('idcard')->storeAs(
+                'uploads/verification', $ppp
+            );
+            $student->admission_letter_path = $request->file('admission_letter')->storeAs(
+                'uploads/verification', $pp
+            );
+            $student->transcript_path = $request->file('transcript')->storeAs(
+                'uploads/verification', $pppp
+            );
 
             if($student->save()){
                 return back()->with('success','Verification submitted successfully');
@@ -262,7 +262,10 @@ class StudentController extends Controller
             'currency' => 'required'
         ]);
 
-        if(StudentVerification::where('user_id', Auth::user()->id)->exists() == false){
+
+        $verifyStatus = StudentVerification::where('user_id', Auth::user()->id)->first();
+
+        if($verifyStatus == null && !$verifyStatus->bvn_verify || !$verifyStatus->nin_verify || !$verifyStatus->school_id_verify || !$verifyStatus->admission_letter_verify){
             return back()->with('error', 'Please complete your verification');
         }
 
@@ -277,14 +280,14 @@ class StudentController extends Controller
         $req->save();
 
         if ($request->hasFile('attachment')) {
-            $fileName = time().'_'.Auth::user()->username;
-            $filepath = $fileName.'.'.$request->attachment->extension();  
-            $request->attachment->move(public_path('uploads'), $filepath);
+            $pp = time().'_'.Auth::user()->username.'_request';
 
             $req_media = new RequestMedia;
             $req_media->request_id = $req->id;
-            $req_media->name = $fileName;
-            $req_media->alt = $filepath;
+            $req_media->name = $pp;
+            $req_media->alt = $request->file('attachment')->storeAs(
+                'uploads/request', $pp
+            );
             $req_media->type = $request->attachment->extension(); 
             $req_media->save();
         }
@@ -313,14 +316,14 @@ class StudentController extends Controller
         $req->save();
 
         if ($request->hasFile('attachment')) {
-            $fileName = time().'_'.Auth::user()->username;
-            $filepath = $fileName.'.'.$request->attachment->extension();  
-            $request->attachment->move(public_path('uploads/request_media'), $filepath);
+            $pp = time().'_'.Auth::user()->username.'_request';
 
             $req_media = new RequestMedia;
             $req_media->request_id = $req->id;
-            $req_media->name = $fileName;
-            $req_media->alt = $filepath;
+            $req_media->name = $pp;
+            $req_media->alt = $request->file('attachment')->storeAs(
+                'uploads/request', $pp
+            );
             $req_media->type = $request->attachment->extension(); 
             $req_media->save();
         }
@@ -340,8 +343,8 @@ class StudentController extends Controller
             if(RequestMedia::where('request_id', $req->id)->exists()){
                 $media = RequestMedia::where('request_id', $req->id)->first();
 
-                if(File::exists(public_path('uploads/request_media'.$media->alt))){
-                    File::delete(public_path('uploads/request_media'.$media->alt));
+                if(Storage::exists($media->alt)){
+                    Storage::delete($media->alt);
                 }
 
                 $media->delete();
