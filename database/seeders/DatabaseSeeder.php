@@ -19,6 +19,10 @@ class DatabaseSeeder extends Seeder
 	        SchoolSeeder::class,
 	        RbacRoleSeeder::class,
             CurrencySeeder::class,
+            UserSeeder::class,
+            StudentSeeder::class,
+            SponsorSeeder::class,
+            RequestSeeder::class
 	    ]);
     }
 }

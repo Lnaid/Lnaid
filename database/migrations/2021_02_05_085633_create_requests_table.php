@@ -26,12 +26,13 @@ class CreateRequestsTable extends Migration
             $table->string('priority')->nullable()->defualt('low'); //low, medium, high
             $table->string('visibility')->nullable()->defualt('university'); //private or public - private defualts to university domain
             $table->string('description')->nullable();
-            $table->string('currency_id');
+            $table->unsignedBigInteger('currency_id');
             $table->integer('status')->default(0)->comment('0 = pending, 1 = successful, 2 = failed');
             $table->timestamps();
 
             $table->softDeletes();
             $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
+            $table->foreign('currency_id')->references('id')->on('currencies');
             $table->foreign('school_id')->references('id')->on('schools');
         });
     }
