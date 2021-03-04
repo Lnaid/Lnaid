@@ -1,9 +1,4 @@
-# MIDDLEWARE
-
-**This directory is not required, you can delete it if you don't want to use it.**
-
-This directory contains your database migrations.
-Migrations let you define database schema in a very consistent manner.
+# Changelog
 
 **Changelog**
 #Airon
