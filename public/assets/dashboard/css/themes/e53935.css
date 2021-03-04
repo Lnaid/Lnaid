@@ -26203,3 +26203,13 @@ blockquote {
 .feature-request-area .card{
   flex-direction: inherit;
 }
+
+.section-title span{
+  background: #263238;
+  padding: 10px 30px;
+  border-radius: 30px;
+  color: white;
+  margin: 15px 5px;
+  font-size: 20px;
+}
+}

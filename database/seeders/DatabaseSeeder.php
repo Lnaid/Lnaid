@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
 	        SchoolSeeder::class,
 	        RbacRoleSeeder::class,
             CurrencySeeder::class,
+            RequestsSeeder::class,
 	    ]);
     }
 }

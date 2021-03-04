@@ -27,36 +27,21 @@ trait FundRequestTrait {
     }
 
     public static function getTopRequests($total = null, $perPage = null) {
-       try {
-          return;
-       } catch (\Exception $e) {
-         return $e;
-       }
+       
     }
 
      public static function featuredRequests($total = null, $perPage = null) {
-       try {
-          
-       } catch (\Exception $e) {
-         return $e;
-       }
+        // return RequestDb::where('is_featured', true)->take($total)->paginate($perPage);
+        return RequestDb::all();
 
     }
 
     public static function recommendedRequests($total = null, $perPage = null) {
-       try {
-          
-       } catch (\Exception $e) {
-         return $e;
-       }
-
+        // TODO write logic to pull request from schools the spoonsor is following
+        return RequestDb::all();
     }
 
     public static function favoriteSchoolRequests($total = null, $perPage = null) {
-       try {
-          
-       } catch (\Exception $e) {
-         return $e;
-       }
+       
     }
 }

@@ -13,7 +13,7 @@ class RequestComments extends Migration
      */
     public function up()
     {
-        Schema::create('request_comment', function (Blueprint $table) {
+        Schema::create('request_comments', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('request_id');
             $table->unsignedBigInteger('user_id');
@@ -33,6 +33,6 @@ class RequestComments extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('request_comment');
+        Schema::dropIfExists('request_comments');
     }
 }
