@@ -35,7 +35,12 @@
                                 <tr>
                                     <th scope="row">{{ $sn }}</th>
                                     <td>{{$request->title}}</td>
-                                    <td>{{$request->currency->code}} {{$request->amount}}</td>
+                                    <td>
+                                        @if($request->isFundRequest)
+                                            {{$request->currency->code}} {{$request->amount}}
+                                        @endif
+
+                                    </td>
                                     <td>
 
                                     </td>
