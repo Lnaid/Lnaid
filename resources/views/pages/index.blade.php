@@ -146,7 +146,7 @@
 
     
         <!-- Testimonial section -->
-        @include('partials.main-testimonial')
+        <!-- include('partials.main-testimonial') -->
         <!-- Testimonial End -->
 
     @endSection
