@@ -265,7 +265,7 @@ class StudentController extends Controller
 
         $verifyStatus = StudentVerification::where('user_id', Auth::user()->id)->first();
 
-        if($verifyStatus == null && !$verifyStatus->bvn_verify || !$verifyStatus->nin_verify || !$verifyStatus->school_id_verify || !$verifyStatus->admission_letter_verify){
+        if($verifyStatus != null && !$verifyStatus->bvn_verify || !$verifyStatus->nin_verify || !$verifyStatus->school_id_verify || !$verifyStatus->admission_letter_verify){
             return back()->with('error', 'Please complete your verification');
         }
 
