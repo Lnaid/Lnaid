@@ -21,9 +21,9 @@ class DatabaseSeeder extends Seeder
             CurrencySeeder::class,
 
             UsersSeeder::class,
-            RequestsSeeder::class,
             StudentSeeder::class,
             SponsorSeeder::class,
+            RequestsSeeder::class,
 
 	    ]);
     }
