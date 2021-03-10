@@ -44,20 +44,20 @@ Route::group(['middleware' => ['web']], function(){
 });
 
 // Dashboard gracefull Redirects
-// Route::group(['middleware' =>['web', 'auth']], function(){
-// 	Route::get('/dashboard', function(){
-// 		$user = request()->user();
-// 	  	if(Bouncer::is($user)->a('admin')){
-// 	     	return redirect()->route('admin.dashboard');
-// 	   	} elseif(Bouncer::is($user)->a('sponsor')){
-// 	      	return redirect()->route('sponsor.dashboard');
-// 	 	}elseif(Bouncer::is($user)->a('student')){
-// 	      	return redirect()->route('student.dashboard');
-// 	 	}else{
-// 	     	return redirect()->back()->with('error', 'Prohibited');
-// 	    }
-// 	})->name('dashboard');
-// });
+Route::group(['middleware' =>['web', 'auth']], function(){
+	Route::get('/dashboard', function(){
+		$user = request()->user();
+	  	if(Bouncer::is($user)->a('admin')){
+	     	return redirect()->route('admin.dashboard');
+	   	} elseif(Bouncer::is($user)->a('sponsor')){
+	      	return redirect()->route('sponsor.dashboard');
+	 	}elseif(Bouncer::is($user)->a('student')){
+	      	return redirect()->route('student.dashboard');
+	 	}else{
+	     	return redirect()->back()->with('error', 'Prohibited');
+	    }
+	})->name('dashboard');
+});
 
 
 // STUDENT Routes
@@ -84,15 +84,15 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth:sanctum',  'student'
 
 
 // Sponsor Routes
-Route::group([ 'middleware' => ['auth:sanctum',  /*'sponsor' */ ], 'namespace' => 'App\Http\Controllers'], function(){
+Route::group(['prefix' => 'sponsor', 'middleware' => ['auth:sanctum',  /*'sponsor' */ ], 'namespace' => 'App\Http\Controllers'], function(){
 	// Route::get('/test', function () {
  //    	return view('dashboard.sponsor.unused');
 	// });
-	Route::get('sponsor/', 'SponsorController@index' )->name('sponsor.dashboard');
-	Route::get('sponsor/requests', 'SponsorController@allRequest')->name('sponsor.request');
-	Route::get('sponsor/requests/{id}','SponsorController@singleRequest' )->name('sponsor.request-single');
+	Route::get('/', 'SponsorController@index' )->name('sponsor.dashboard');
+	Route::get('/requests', 'SponsorController@allRequest')->name('sponsor.request');
+	Route::get('/requests/{id}','SponsorController@singleRequest' )->name('sponsor.request-single');
 
-	Route::get('sponsor/req', function(){
+	Route::get('/req', function(){
 		$requests = App\Models\Request::find(9);
 		dd($requests->student->school);
 	});
