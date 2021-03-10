@@ -22,11 +22,11 @@ class CreateRequestsTable extends Migration
             $table->string('slug')->nullable();
             $table->unsignedBigInteger('amount')->nullable();
             $table->integer('category_id')->nullable();
-            $table->boolean('is_fund_request')->defualt(1);
+            $table->boolean('is_fund_request')->default(1);
 
-            $table->string('priority')->nullable()->defualt('low'); //low, medium, high
+            $table->string('priority')->nullable()->default('low'); //low, medium, high
             $table->boolean('is_featured')->nullable();
-            $table->string('visibility')->nullable()->defualt('university'); //private or public - private defualts to university domain
+            $table->string('visibility')->nullable()->default('university'); //private or public - private defualts to university domain
 
             $table->text('description')->nullable();
 
