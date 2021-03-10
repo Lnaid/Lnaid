@@ -92,7 +92,7 @@ Route::group(['prefix' => 'sponsor', 'middleware' => ['auth:sanctum',  /*'sponso
 	Route::get('/requests', 'SponsorController@allRequest')->name('sponsor.request');
 	Route::get('/requests/{id}','SponsorController@singleRequest' )->name('sponsor.request-single');
 
-	Route::get('/req/{id}', function(){
+	Route::get('/req/{id}', function($id){
 		$requests = App\Models\Request::find($id);
 		dd($requests->student->school);
 	});
