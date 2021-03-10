@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Support\Carbon;
+use App\Models\Student;
 use App\Models\Request as RequestDB;
 
 class RequestsSeeder extends Seeder
@@ -154,7 +155,7 @@ class RequestsSeeder extends Seeder
                 // 'category_id' => 1,
                 // 'priority' => 1,
                 'description' => "I need Learning Resource for Software Development I need Learning Resource for Software DevelopmentI need Learning Resource for Software DevelopmentI need Learning Resource for Software DevelopmentI need Learning Resource for Software DevelopmentI need Learning Resource for Software DevelopmentI need Learning Resource for Software DevelopmentI need Learning Resource for Software DevelopmentI need Learning Resource for Software DevelopmentI need Learning Resource for Software DevelopmentI need Learning Resource for Software DevelopmentI need Learning Resource for Software DevelopmentI need Learning Resource for Software Development",
-                // 'currency_id' => 1,
+                'currency_id' => 1,
                 'is_fund_request' => false,
                 'status' => 1,
               ],
@@ -168,18 +169,31 @@ class RequestsSeeder extends Seeder
                 // 'category_id' => 1,
                 // 'priority' => 1,
                 'description' => "Intern Position in an IT firm for IT Intern Position in an IT firm for ITIntern Position in an IT firm for ITIntern Position in an IT firm for ITIntern Position in an IT firm for ITIntern Position in an IT firm for ITIntern Position in an IT firm for ITIntern Position in an IT firm for ITIntern Position in an IT firm for ITIntern Position in an IT firm for ITIntern Position in an IT firm for ITIntern Position in an IT firm for ITIntern Position in an IT firm for IT",
-                // 'currency_id' => 1,
+                'currency_id' => 1,
                 'is_fund_request' => false,
                 'status' => 1,
               ],
         ];
 
-        foreach ($requests as $request) {
-            $existingRequest = RequestDB::where('slug', $request['slug'])->get();
+        $students = Student::all();
+        $i = 0;
+        foreach ($students as $student) {
+           $existingRequest = RequestDB::where('slug', $requests[$i]['slug'])->get();
             if( !$existingRequest->isEmpty() ){
                 continue;
             }
-           RequestDB::create($request);
-        }
+            RequestDB::create([
+                'student_id' => $student->id,
+                'school_id' => $student->school->id,
+                'title' => $requests[$i]['title'],
+                'slug' => $requests[$i]['slug'],
+                'amount' => $requests[$i]['amount'],
+                'description' => $requests[$i]['description'],
+                'currency_id' => $requests[$i]['currency_id'],
+                'is_fund_request' => $requests[$i]['is_fund_request'],
+                'status' => $requests[$i]['status'],
+            ]);
+            $i++;
+         }
     }
 }
