@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Support\Carbon;
 use App\Models\Student;
+use App\Models\Currency;
 use App\Models\Request as RequestDB;
 
 class RequestsSeeder extends Seeder
@@ -18,6 +19,7 @@ class RequestsSeeder extends Seeder
      */
     public function run()
     {
+        $currency = Currency::all()->first();
         $requests = [
         	  [
         	  	'student_id' => 1 ,
@@ -28,7 +30,7 @@ class RequestsSeeder extends Seeder
         	  	// 'category_id' => 1,
         	  	// 'priority' => 1,
         	  	'description' => 'Final year project Final year project Final year project Final year projectFinal year project Final year projectFinalFinal year projectFinal year projectFinal year projectFinal year project',
-        	  	'currency_id' => 1,
+        	  	'currency_id' => $currency->id,
                 'is_fund_request' => true,
         	  	'status' => 1,
         	  ],
@@ -42,7 +44,7 @@ class RequestsSeeder extends Seeder
                 // 'category_id' => 1,
                 // 'priority' => 1,
                 'description' => 'Please help with 2021 Session tuition, Please help with 2021 Session tuition,Please help with 2021 Session tuitionPlease help with 2021 Session tuitionPlease help with 2021 Session tuitionPlease help with 2021 Session tuitionPlease help with 2021 Session tuitionPlease help with 2021 Session tuitionPlease help with 2021 Session tuition',
-                'currency_id' => 1,
+                'currency_id' =>  $currency->id,
                  'is_fund_request' => true,
                 'status' => 1,
               ],
@@ -56,7 +58,7 @@ class RequestsSeeder extends Seeder
                 // 'category_id' => 1,
                 // 'priority' => 1,
                 'description' => 'Please help with 2021 Session tuition, Please help with 2021 Session tuition,Please help with 2021 Session tuitionPlease help with 2021 Session tuitionPlease help with 2021 Session tuitionPlease help with 2021 Session tuitionPlease help with 2021 Session tuitionPlease help with 2021 Session tuitionPlease help with 2021 Session tuition',
-                'currency_id' => 1,
+                'currency_id' =>  $currency->id,
                 'is_fund_request' => true,
                 'status' => 1,
               ],
@@ -70,7 +72,7 @@ class RequestsSeeder extends Seeder
                 // 'category_id' => 1,
                 // 'priority' => 1,
                 'description' => 'Please help Resource for Academic ResearchResource for Academic ResearchResourceResource for Academic ResearchResource for Academic ResearchResource for Academic ResearchResource for Academic ResearchResource for Academic ResearchResource for Academic ResearchResource for Academic ResearchResource for Academic ResearchResource for Academic ResearchResource for Academic ResearchResource for Academic ResearchResource for Academic ResearchResource for Academic ResearchResource for Academic Research',
-                'currency_id' => 1,
+                'currency_id' =>  $currency->id,
                 'is_fund_request' => true,
                 'status' => 1,
               ],
@@ -84,7 +86,7 @@ class RequestsSeeder extends Seeder
                 // 'category_id' => 1,
                 // 'priority' => 1,
                 'description' => 'Please help with a good Laptop for Academic ResearchResource for Academic ResearchResourceResource for Academic ResearchResource for Academic ResearchResource for Academic ResearchResource for Academic ResearchResource for Academic ResearchResource for Academic ResearchResource for Academic ResearchResource for Academic ResearchResource for Academic ResearchResource for Academic ResearchResource for Academic ResearchResource for Academic ResearchResource for Academic ResearchResource for Academic Research',
-                'currency_id' => 2,
+                'currency_id' =>  $currency->id,
                  'is_fund_request' => true,
                 'status' => 1,
               ],
@@ -98,7 +100,7 @@ class RequestsSeeder extends Seeder
                 // 'category_id' => 1,
                 // 'priority' => 1,
                 'description' => "Kindly help!!! - I'm having accommodation issues at school I'm having accommodation issues at schoolI'm having accommodation issues at school_id I'm having accommodation issues at schoolI'm having accommodation issues at schoolI'm having accommodation issues at schoolI'm having accommodation issues at school",
-                'currency_id' => 1,
+                'currency_id' => $currency->id,
                  'is_fund_request' => true,
                 'status' => 1,
               ],
@@ -113,7 +115,7 @@ class RequestsSeeder extends Seeder
                 // 'category_id' => 1,
                 // 'priority' => 1,
                 'description' => "I will appreciate every help!!! - I need money to resume at schoolI need money to resume at schoolI need money to resume at schoolI need money to resume at schoolI need money to resume at schoolI need money to resume at schoolI need money to resume at schoolI need money to resume at schoolI need money to resume at schoolI need money to resume at schoolI need money to resume at schoolI need money to resume at schoolI need money to resume at schoolI need money to resume at school",
-                'currency_id' => 1,
+                'currency_id' =>  $currency->id,
                  'is_fund_request' => true,
                 'status' => 1,
               ],
@@ -127,7 +129,7 @@ class RequestsSeeder extends Seeder
                 // 'category_id' => 1,
                 // 'priority' => 1,
                 'description' => "I urgently need help with tuition I urgently need help with tuitionPleaseI urgently need help with tuitionI urgently need help with tuitionI urgently need help with tuitionI urgently need help with tuitionI urgently need help with tuitionI urgently need help with tuitionI urgently need help with tuitionI urgently need help with tuitionI urgently need help with tuitionI urgently need help with tuitionI urgently need help with tuitionI urgently need help with tuitionI urgently need help with tuitionI urgently need help with tuitionI urgently need help with tuitionI urgently need help with tuitionI urgently need help with tuitionI urgently need help with tuitionI urgently need help with tuitionI urgently need help with tuitionI urgently need help with tuition ",
-                'currency_id' => 1,
+                'currency_id' =>  $currency->id,
                  'is_fund_request' => true,
                 'status' => 1,
               ],
@@ -141,7 +143,7 @@ class RequestsSeeder extends Seeder
                 // 'category_id' => 1,
                 // 'priority' => 1,
                 'description' => "Am unable to pay 2021 tuition at schoolAm unable to pay 2021 tuition at schoolAm unable to pay 2021 tuition at schoolAm unable to pay 2021 tuition at schoolAm unable to pay 2021 tuition at schoolAm unable to pay 2021 tuition at schoolI Am unable to pay 2021 tuition at schoolAm unable to pay 2021 tuition at schoolAm unable to pay 2021 tuition at schoolAm unable to pay 2021 tuition at schoolAm unable to pay 2021 tuition at schoolAm unable to pay 2021 tuition at school ",
-                'currency_id' => 1,
+                'currency_id' =>  $currency->id,
                  'is_fund_request' => true,
                 'status' => 1,
               ],
@@ -155,7 +157,7 @@ class RequestsSeeder extends Seeder
                 // 'category_id' => 1,
                 // 'priority' => 1,
                 'description' => "I need Learning Resource for Software Development I need Learning Resource for Software DevelopmentI need Learning Resource for Software DevelopmentI need Learning Resource for Software DevelopmentI need Learning Resource for Software DevelopmentI need Learning Resource for Software DevelopmentI need Learning Resource for Software DevelopmentI need Learning Resource for Software DevelopmentI need Learning Resource for Software DevelopmentI need Learning Resource for Software DevelopmentI need Learning Resource for Software DevelopmentI need Learning Resource for Software DevelopmentI need Learning Resource for Software Development",
-                'currency_id' => 1,
+                'currency_id' =>  $currency->id,
                 'is_fund_request' => false,
                 'status' => 1,
               ],
@@ -169,7 +171,7 @@ class RequestsSeeder extends Seeder
                 // 'category_id' => 1,
                 // 'priority' => 1,
                 'description' => "Intern Position in an IT firm for IT Intern Position in an IT firm for ITIntern Position in an IT firm for ITIntern Position in an IT firm for ITIntern Position in an IT firm for ITIntern Position in an IT firm for ITIntern Position in an IT firm for ITIntern Position in an IT firm for ITIntern Position in an IT firm for ITIntern Position in an IT firm for ITIntern Position in an IT firm for ITIntern Position in an IT firm for ITIntern Position in an IT firm for IT",
-                'currency_id' => 1,
+                'currency_id' => $currency->id,
                 'is_fund_request' => false,
                 'status' => 1,
               ],
