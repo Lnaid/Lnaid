@@ -20,10 +20,10 @@ class DatabaseSeeder extends Seeder
 	        RbacRoleSeeder::class,
             CurrencySeeder::class,
 
-            // UsersSeeder::class,
+            UsersSeeder::class,
             // RequestsSeeder::class,
-            // StudentSeeder::class,
-            // SponsorSeeder::class,
+            StudentSeeder::class,
+            SponsorSeeder::class,
 
 	    ]);
     }
