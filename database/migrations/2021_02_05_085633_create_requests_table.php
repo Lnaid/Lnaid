@@ -25,7 +25,7 @@ class CreateRequestsTable extends Migration
             $table->boolean('is_fund_request');
 
             $table->string('priority')->nullable()->defualt('low'); //low, medium, high
-            $table->boolean('is_featured')->nullable();
+            $table->boolean('is_featured')->nullable()->defualt(1);
             $table->string('visibility')->nullable()->defualt('university'); //private or public - private defualts to university domain
 
             $table->text('description')->nullable();
