@@ -33,8 +33,8 @@ class SponsorController extends Controller
     {
         $allRequests = FundRequestTrait::getAllRequests($total = null, $perpage = 2);
         $data['title'] = 'Dashboard';
-        dd($allRequests);
-        // return view('dashboard.sponsor.request-index')->with(['data' => $data, 'request' => $allRequests]);
+        // dd($allRequests);
+        return view('dashboard.sponsor.request-index')->with(['title' => 'Request', 'request' => $allRequests]);
     }
 
     /**

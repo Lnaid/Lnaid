@@ -89,7 +89,7 @@ Route::group(['prefix' => 'sponsor', 'middleware' => ['auth:sanctum',  /*'sponso
  //    	return view('dashboard.sponsor.unused');
 	// });
 	Route::get('/', 'SponsorController@index' )->name('sponsor.dashboard');
-	Route::get('/requests', 'SponsorController@allRequest')->name('sponsor.request');
+	Route::get('/requests', 'SponsorController@allRequest')->name('sponsor.requests');
 	Route::get('/requests/{id}','SponsorController@singleRequest' )->name('sponsor.request-single');
 
 	Route::get('/req/{id}', function($id){
@@ -107,6 +107,10 @@ Route::group(['prefix' => 'donations', 'middleware' => ['auth:sanctum',  /*'spon
 
 	// via Flutterwave rave
 	Route::post('/pay/rave', 'RaveController@initialize')->name('donations.pay.rave');
+	// handle method not allowed
+	Route::get('/pay/rave', function(){
+		return redirect()->route('dashboard');
+	});
 	Route::get('/rave/callback', 'RaveController@callback')->name('rave.callback');
 
 	Route::get('confirmed', 'DonationController@sayThanks' )->name('donations.confirmed');
