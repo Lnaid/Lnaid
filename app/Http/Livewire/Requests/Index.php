@@ -5,9 +5,12 @@ namespace App\Http\Livewire\Requests;
 use Livewire\Component;
 use Log;
 use App\Models\Request as RequestModel;
+use Livewire\WithPagination;
 
 class Index extends Component
-{
+{	
+
+	use WithPagination;
 
     public $objects = []; 
 
@@ -25,14 +28,14 @@ class Index extends Component
 
     public $filter = [
         "search" => "",
-        "status" => "",
-        "order_field" => "",
+        "school" => "",
+        "category" => "",
         "order_type" => "",
     ];
 
     protected $updatesQueryString = ['page'];
     
-    public function mount(){
+    public function hydrate(){
         $this->loadList();
     }
 
