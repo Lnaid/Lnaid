@@ -6,7 +6,7 @@
            <!-- <img class="fit" src="{{ $request->getRequestMediaUrlAttribute() }}" alt=""> -->
         </div>
         <div class="col-md-8 projects__content">
-             <h4 class="text-primary"><a href="{{ route('sponsor.request-single', ['id' => $request->id]) }}">{{ $request->title }}</a></h4>
+             <h4 class="text-primary"><a href="{{ route('sponsor.request-single', ['slug' => $request->slug]) }}">{{ $request->title }}</a></h4>
             <div class="skill mb-30"> 
                 @if($request->isFundRequest() )
                 	<p class="text-secondary" >Requested: <span>: {{ $request->currency->code }} {{ number_format($request->amount, 2) }}</span></p>

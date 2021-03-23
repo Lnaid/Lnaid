@@ -42,9 +42,9 @@ class SponsorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function singleRequest($id)
+    public function singleRequest($slug)
     {
-        $request = RequestDb::find($id);
+        $request = RequestDb::where('slug', $slug)->first();
         $title = 'Dashboard';
         if($request->isFundRequest()){
             return view('dashboard.sponsor.request-single', ['title' => $title, 'request' => $request]);
