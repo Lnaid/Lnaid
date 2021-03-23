@@ -8,41 +8,7 @@
         <div class="main-content">
             @include('partials.breadcrumb')
             <div class="separator-breadcrumb border-top"></div>
-            <div class="row">
-                <div class="col-lg-12 col-md-12">
-                    <!-- CARD ICON-->
-                    <div class="row">
-                         <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="card card-icon-big mb-4">
-                                <div class="card-body text-center"><i class="i-Money-2"></i>
-                                    <p class="line-height-1 text-title text-18 mt-2 mb-0">4021</p>
-                                </div>
-                            </div>
-                        </div>
-                         <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="card card-icon-big mb-4">
-                                <div class="card-body text-center"><i class="i-Money-2"></i>
-                                    <p class="line-height-1 text-title text-18 mt-2 mb-0">4021</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="card card-icon-big mb-4">
-                                <div class="card-body text-center"><i class="i-Money-2"></i>
-                                    <p class="line-height-1 text-title text-18 mt-2 mb-0">4021</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="card card-icon-big mb-4">
-                                <div class="card-body text-center"><i class="i-Gear"></i>
-                                    <p class="line-height-1 text-title text-18 mt-2 mb-0">4021</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
             <!-- end of row-->
             <div class="row">
                 <div class="col-md-12">
