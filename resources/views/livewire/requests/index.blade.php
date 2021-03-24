@@ -8,8 +8,9 @@
         .filter-container{
             margin-bottom: 15px;
             padding: 25px;
-            background: #979596;
-            color: white;
+            background: white;
+            color: black;
+            font-size: 16px;
         }
 
         .filter-container > .row{

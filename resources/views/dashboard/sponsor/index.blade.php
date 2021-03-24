@@ -147,7 +147,7 @@
                     <!-- include('partials.request.grid3') -->
 
                      <div class="white-bg section-title text-center mt-60 wow fadeInUp2  animated" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp2;">
-                       <h5 class="left-line pl-75 pr-75"><span class="title">Recent Requests</span></h5>
+                       <h5 class="left-line"><span class="title">Recent Requests</span></h5>
                         <h6 class="p-3">Most Recent Requests from all Universities</h6>
                     </div>
                      <livewire:requests.recent />
@@ -158,7 +158,7 @@
                     <!-- include('partials.request.grid2') -->
 
                     <div class="white-bg section-title text-center mb-20 mt-60 wow fadeInUp2  animated" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp2;">
-                       <h5 class="left-line pl-75 pr-75"><span class="title">Featured Requests</span></h5>
+                       <h5 class="left-line"><span class="title">Featured Requests</span></h5>
                         <h6 class="p-3">Featured and high priority requests from all Universities</h6>
                     </div>
 
@@ -167,7 +167,7 @@
 
                 <div class="col-md-12">
                     <div class="white-bg section-title text-center mb-20 mt-60 wow fadeInUp2  animated" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp2;">
-                       <h5 class="left-line pl-75 pr-75"><span class="title">Recommended Requests</span></h5>
+                       <h5 class="left-line"><span class="title">Recommended Requests</span></h5>
                         <h6 class="p-3">Requests from the Universities you follow</h6>
                     </div>
 

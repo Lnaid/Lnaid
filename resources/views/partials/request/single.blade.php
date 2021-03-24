@@ -54,7 +54,7 @@
 
             <div class=" our-overview-area pos-rel  wow fadeInUp2 animated" data-wow-delay='.1s'">
                 <div class="col-xl-12">
-                    <ul class="nav nav-tabs nav-tabs-02" id="myTab" role="tablist">
+                    <ul class="nav nav-tabs nav-tabs-01 tabs_01" id="myTab" role="tablist">
                         <li class="nav-item">
                           <a class="nav-link theme_btn active" id="home-tab" data-toggle="tab" href="#home-01" role="tab" aria-controls="home-01" aria-selected="true">Description</a>
                         </li>
@@ -74,8 +74,7 @@
                                         <div class="col-xl-8 col-lg-8 col-md-12">
                                             <div class="image-content-left">
                                                 <div class="left-content-box mb-45">
-                                                    <h3 class="img-title mb-10">Best Smart Headphone In 2020</h3>
-                                                    <p class="mb-40">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatu</p>
+                                                    <p class="mb-40">{{ $request->description }}</p>
                                                     <div class="image-content-thumb">
                                                         <img src="assets/img/request/20.jpg" alt="">
                                                     </div>
@@ -88,10 +87,10 @@
                                                 <div class="widget">
                                                     <div class=" widget-donate-box pos-rel text-center">
                                                         <i class="fa fa-quote-left" style="font-size: 80px; color: #fed857;"></i>
-                                                        <h5 >Help</h5>
-                                                        <h4>An investment in knpwledge pays the best</h4>
+                                                        <h5 >Lnaid</h5>
+                                                        <h4>An investment in knowledge pays the best</h4>
                                                             <a class="theme_btn theme_btn_bg"
-                                                            data-animation="fadeInLeft" data-delay=".5s" data-toggle="modal" data-target="#donateModal">donate now <i
+                                                            data-animation="fadeInLeft" data-delay=".5s" data-toggle="modal" data-target="#donateModal">donate<i
                                                                 class="far fa-arrow-right"></i></a>
                                                     </div>
                                                 </div>
@@ -109,7 +108,7 @@
                                     <thead>
                                       <tr>
                                         <th scope="col">Name</th>
-                                        <th scope="col">Donate Amount</th>
+                                        <th scope="col">Amount</th>
                                         <th scope="col">Date</th>
                                       </tr>
                                     </thead>
@@ -154,26 +153,10 @@
                             <div class="row">
                                 <div class="col-xl-10">
                                     <div class="review-box pt-50">
-                                        <h5 class="mb-35">1 Review For Women Winter Dress</h5>
-                                        <div class="reviewer d-sm-flex">
-                                            <div class="reviewer__img">
-                                                <img src=" {{ url('storage/files/avatars/01.png') }} " alt="">
-                                            </div>
-                                            <div class="reviewer__content">
-                                                <p>Alexzender,<span>25 Janu 2019</span></p>
-                                                <div class="review-icon">
-                                                    <a href="#"><i class="fas fa-star"></i></a>
-                                                    <a href="#"><i class="fas fa-star"></i></a>
-                                                    <a href="#"><i class="fas fa-star"></i></a>
-                                                    <a href="#"><i class="fas fa-star"></i></a>
-                                                    <a href="#"><i class="fas fa-star"></i></a>
-                                                </div>
-                                                <span>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master.</span>
-                                            </div>
-                                        </div>
+                                        
                                     </div>
                                     <div class="post-form-area review-form pt-50 pb-120">
-                                        <h5 class="review-title mb-15">Add a Review</h5>
+                                        <h5 class="review-title mb-15">Add a comment</h5>
                                         <div class="row">
                                             <div class="col-xl-6">
                                                 <div class="input-box">
@@ -191,14 +174,6 @@
                                             </div>
                                             <div class="col-xl-12">
                                                 <div class="input-box mb-25">
-                                                    <div class="review-icon">
-                                                        <span>Your Rating :</span>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                    </div>
                                                     <div class="input-text input-message">
                                                         <textarea name="message" id="message" cols="30" rows="10" placeholder="Your Review"></textarea>
                                                     </div>
@@ -319,7 +294,7 @@
                             <ul class="cart-list d-flex align-items-center">
                                 <li>
                                     <div class="plus-minus pos-rel">
-                                        <input placeholder="Enter here" style="font-size: 14px; width: 230px; border-radius: 0px" type="text" name="amount" id="amount" value="">
+                                        <input placeholder="Enter here" style="font-size: 14px; width: 100%; border-radius: 0px" type="text" name="amount" id="amount" value="">
                                     </div>
                                 </li>
 
@@ -354,8 +329,8 @@
 
                 <div class="modal-footer">
                     <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-                    <button class="btn btn-default btn-block btn-lg" type="submit" value="Pay Now!">
-                        <i class="fa fa-plus-circle fa-lg"></i> Pay Now!
+                    <button class="btn btn-primary btn-block btn-lg" type="submit" value="Pay Now!">
+                        <i class="fa fa-money fa-lg"></i> Pay Now!
                     </button>
                     <button class="btn btn-default btn-lg" data-dismiss="modal">
                         <i class="fa fa-cancel fa-lg"></i> Close

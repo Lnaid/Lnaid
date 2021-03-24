@@ -1400,6 +1400,10 @@
        .projects__thumb {
           height: 200px;
       }
+
+      .projects__content {
+        margin-left: 15px;
+      }
     }
 
     .projects__content {
