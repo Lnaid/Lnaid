@@ -67,8 +67,9 @@
         $('.intro_slides').owlCarousel({
             items: 1,
             autoplay: true,
-            autoplayTimeout: 3000,
+            // autoplayTimeout: 3000,
             loop: true,
+            smartSpeed: 3000,
             responsive: {
                 0: {
                     items: 1

@@ -49,7 +49,7 @@
                             <div class="banner-video">
                                 <div class="video-btn-container">
                                     <div class="video-icon">
-                                        <a href="https://www.youtube.com/watch?v=gbXEPHsTkgU" class="btn info-btn video-btn" id="videobtn"><i class="fa fa-play"></i></a>
+                                        <a href="{{ route('dashboard') }}" class="btn info-btn video-btn" id="videobtn"><i class="fa fa-play"></i></a>
                                     </div>
                                 </div>
                             </div>

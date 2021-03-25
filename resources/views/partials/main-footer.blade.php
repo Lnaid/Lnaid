@@ -56,7 +56,7 @@
                             <h5>CONTACT US</h5>
                             <p>Minna Niger State, Nigeria</p>
                             <p>+234 7080010807</p>
-                            <p>lnaid.app@gmail.com.com</p>
+                            <p>lnaid.app@gmail.com</p>
                         </div>
                     </div>
                 </div>
