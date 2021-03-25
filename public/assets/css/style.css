@@ -764,7 +764,7 @@ nav{-webkit-transition: padding-top .3s,padding-bottom .3s;
  .shrink {
     animation: .3s ease-in-out;
     animation-name: fadeInDown;
-    background-color: rgb(215, 223, 239);
+    background-color: rgb(242 232 228);
 }
 
 @-webkit-keyframes fadeInDown {
@@ -786,7 +786,7 @@ nav{-webkit-transition: padding-top .3s,padding-bottom .3s;
 /* mobile view */
 @media (max-width:500px)
 {
-    .navbar{ background: rgb(215, 223, 239);}
+    .navbar{ background: #f2e8e4;}
     .navbar-nav{
         border-top:1px solid #fed136;
         color:#fff;
@@ -803,8 +803,8 @@ nav{-webkit-transition: padding-top .3s,padding-bottom .3s;
 .navbar-dark .navbar-toggler,
 .navbar-white .navbar-toggler,
 .navbar-cyan .navbar-toggler{
-    background: #086bfe ;
-    border-color: #333
+    background: #9E9E9E ;
+    /*border-color: #333*/
 }
 .navbar-white .navbar-toggler-icon{
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E")
@@ -819,7 +819,7 @@ nav{-webkit-transition: padding-top .3s,padding-bottom .3s;
         padding: 5px 12px;
         color: #333
     }
-    .navbar-expand-lg.navbar-dark {background: rgb(215, 223, 239);}
+    .navbar-expand-lg.navbar-dark {background: #f2e8e4;}
     .navbar-collapse{
         padding-top: 20px;
         background: rgb(215, 223, 239)
@@ -1714,6 +1714,8 @@ p.artficial:before{
 .about-us-area {
     position: relative;
     z-index: 1;
+    /*airon*/
+    background: #f3e9e6;
 }
 .about-us-area.bg{
     background: url('../img/bg-img/about-sec.html') no-repeat top right;
@@ -4036,7 +4038,7 @@ textarea:required {
 }
 .footer-content-area.spec{
     background: url(../img/bg-img/footer-back.png) no-repeat center !important;
-    margin-top: 100px;
+  /*  margin-top: 100px;*/
     background-size: cover !important;
 }
 .footer-content-area.demo{

@@ -1,11 +1,37 @@
 @extends('layouts.main')
     @push('css')
         <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" /> -->
+        <style type="text/css">
+            
+            .owl-carousel{
+                overflow: hidden;
+            }
+
+            @media (max-width: 575.98px) {
+              .owl-carousel{
+                    overflow: hidden;
+                    max-width: 420px;
+                }
+            }
+
+            @media (max-width: 375.98px) {
+              .owl-carousel{
+                    overflow: hidden;
+                    max-width: 300px;
+                }
+            }
+
+            .owl-item{
+               float: left;
+            }
+
+        </style>
+        
     @endPush
    @section('content')
 
         <!-- ##### Welcome Area Start ##### -->
-        <section class="hero-section ai1 relative" id="home">
+        <section class="p-5 hero-section ai1 relative" id="home">
            <div class="overlay"></div>
             <!-- Hero Content -->
             <div class="hero-section-content">
@@ -34,7 +60,7 @@
         </section>
         <!-- ##### Welcome Area End ##### -->
 
-        <section class="about-us-area section-padding-70-70">
+        <section class="p-5 d-none d-md-block about-us-area section-padding-70-70">
             
             <div class="container">
                 <div class="row align-items-center">
@@ -93,7 +119,7 @@
         </section>
 
         <!-- Creative Facts - Start -->
-        <section class="creative-facts section-padding">
+        <section class="p-5 creative-facts section-padding">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-sm-12">

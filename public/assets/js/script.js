@@ -64,34 +64,30 @@
         });
 
 
-        // Main intro slides
-        $(".intro_slides").owlCarousel({
-            responsive: {
-            0: {
-                items: 1
-            },
-            991: {
-                    items: 1
-                },
-            767:{
-                    items: 1
-                },
-            },
-            loop: true,
+        $('.intro_slides').owlCarousel({
+            items: 1,
             autoplay: true,
-            smartSpeed: 1000,
-            dots: false
-        });
-
-        var dot = $('.intro_slides .owl-dot');
-        dot.each(function () {
-            var index = $(this).index() + 1;
-            if (index < 10) {
-                $(this).html('0').append(index);
-            } else {
-                $(this).html(index);
+            autoplayTimeout: 3000,
+            loop: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                479: {
+                    items: 1
+                },
+                768: {
+                    items: 1
+                },
+                979: {
+                    items: 1
+                },
+                1199: {
+                    items: 1
+                }
             }
-        });
+        }).addClass("owl-carousel-init");
+
     }
 
     // :: Magnific-popup Video Active Code
