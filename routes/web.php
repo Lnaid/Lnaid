@@ -123,7 +123,9 @@ Route::group(['prefix' => 'donations', 'middleware' => ['auth:sanctum',  /*'spon
 
 // ADMIN ENDPOINTS GROUP
 Route::group(['prefix' => 'admin',  'namespace' => 'App\Http\Controllers\Admin', 'middleware' => ['auth:sanctum', /*'admin' */]], function () {
-
+	Route::get('/', function () {
+    	return view('dashboard.admin.index', ['title' => 'Dashboard']);
+	});
 	Route::get('/test', function () {
     	return view('dashboard.admin.unused');
 	});
