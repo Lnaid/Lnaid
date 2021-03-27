@@ -18,6 +18,13 @@
                             </div>
                         </div>
                     </li>
+                    <li>
+                        <div>
+                            <div>
+                                <a href="{{ route('sponsor.requests') }}"><i class="nav-icon mr-2 i-Speach-Bubble-3"></i>Messaging</a>
+                            </div>
+                        </div>
+                    </li>
                     <!-- end ui kits-->
                     <li>
                         <div>

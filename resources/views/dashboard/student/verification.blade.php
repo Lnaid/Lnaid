@@ -140,7 +140,6 @@
                                     </div>
                                 </div>
                             </form>
-
                         </div>
                         <div class="tab-pane fade @if($student->school_id_path != null) active show @endif" id="contactPIll" role="tabpanel" aria-labelledby="contact-icon-pill">
                             <form action="{{route('student.verify.step3')}}" method="POST" enctype="multipart/form-data">

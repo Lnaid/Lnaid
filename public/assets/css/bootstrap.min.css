@@ -6834,9 +6834,13 @@ button.bg-dark:hover {
     align-items: flex-end!important
 }
 
-.align-items-center {
-    -ms-flex-align: center!important;
-    align-items: center!important
+
+@media and screen (width: ){
+    .align-items-center {
+        width: 100vw;
+        -ms-flex-align: center!important;
+        align-items: center!important;
+    }
 }
 
 .align-items-baseline {

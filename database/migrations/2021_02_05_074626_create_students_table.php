@@ -45,9 +45,9 @@ class CreateStudentsTable extends Migration
 
             $table->string('bvn')->nullable();
             $table->string('nin')->nullable();
-            $table->string('school_id_path')->nullable()->default(false);
-            $table->string('admission_letter_path')->nullable()->default(false);
-            $table->string('transcript_letter_path')->nullable()->default(false);
+            $table->string('school_id_path')->nullable();
+            $table->string('admission_letter_path')->nullable();
+            $table->string('transcript_letter_path')->nullable();
 
 
             $table->timestamps();

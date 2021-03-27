@@ -70,5 +70,6 @@ class Kernel extends HttpKernel
         'admin' => \App\Http\Middleware\Admin::class,
         'student' => \App\Http\Middleware\Student::class,
         'sponsor' => \App\Http\Middleware\Sponsor::class,
+        'student_verification' => \App\Http\Middleware\CheckStudentVerification::class,
     ];
 }
