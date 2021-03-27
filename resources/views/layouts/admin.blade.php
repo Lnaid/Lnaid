@@ -17,6 +17,7 @@
         <link href="{{ asset('assets/css/plugins/perfect-scrollbar.min.css') }}" rel="stylesheet" />
 
         @stack('css')
+        @livewireStyles
 
     </head>
 
@@ -49,18 +50,18 @@
         <script src="{{ asset('assets/dashboard/js/plugins/perfect-scrollbar.min.js') }}"></script>
         <script src="{{ asset('assets/dashboard/js/scripts/script.min.js') }}"></script>
         <script src="{{ asset('assets/dashboard/js/scripts/sidebar.large.script.min.js') }}"></script>
-        <!-- <script src="{{ asset('assets/dashboard/js/plugins/echarts.min.js') }}"></script> -->
-        <!-- <script src="{{ asset('assets/dashboard/js/scripts/echart.options.min.js') }}"></script> -->
+        <script src="{{ asset('assets/dashboard/js/plugins/echarts.min.js') }}"></script>
+        <script src="{{ asset('assets/dashboard/js/scripts/echart.options.min.js') }}"></script>
         <script src="{{ asset('assets/dashboard/js/plugins/datatables.min.js') }}"></script>
         <script src="{{ asset('assets/dashboard/js/scripts/dashboard.v4.script.min.js') }}"></script>
-        <!-- <script src="{{ asset('assets/dashboard/js/scripts/widgets-statistics.min.js') }}"></script> -->
-        <!-- <script src="{{ asset('assets/dashboard/js/plugins/apexcharts.min.js') }}"></script> -->
-        <!-- <script src="{{ asset('assets/dashboard/js/scripts/apexSparklineChart.script.min.js') }}"></script> -->
+        <script src="{{ asset('assets/dashboard/js/scripts/widgets-statistics.min.js') }}"></script>
+        <script src="{{ asset('assets/dashboard/js/plugins/apexcharts.min.js') }}"></script>
+        <script src="{{ asset('assets/dashboard/js/scripts/apexSparklineChart.script.min.js') }}"></script>
 
 
 
         @stack('modals')
-
+        @livewireScripts
         @stack('js')
 
         <!-- livewireScripts -->

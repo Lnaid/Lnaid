@@ -10,17 +10,43 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
+        <style type="text/css">
+            .hero-section.ai1{
+                background: url('{{ asset('assets/img/bg-img/ai1.png') }}') no-repeat top left;
+                background-size: cover;
+            }
+            .hero-section.ai2{
+                background: url('{{ asset('assets/img/bg-img/footer-back.png') }}') no-repeat top center;
+                background-size: cover;
+            }
 
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ mix('assets/css/app.css') }}">
+            @media (max-width: 1200px){
+                .hero-section.ai2{
+                    background-position: top left
+                }
+            }
+            .hero-section.ai3{
+                background: url('{{ asset('assets/img/bg-img/bg1.png') }}') no-repeat center;
+                background-size: cover;
+            }
+            
+        </style>
 
-        <!-- Scripts -->
         
+        <!-- Styles -->
+        <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
+        <!-- Scripts -->
         <script src="{{ mix('assets/js/app.js') }}" defer></script>
+
     </head>
     <body>
-        <div class="font-sans text-gray-900 antialiased">
+        <div class="hero-section ai2">
+
+            <!-- Page Content -->
             @yield('content')
+
+            <!-- include('partials.main-footer') -->
+
         </div>
     </body>
 </html>
