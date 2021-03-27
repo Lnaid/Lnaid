@@ -57,4 +57,16 @@ class Student extends Model
     {
         return $this->hasMany(Request::class, 'student_id');
     }
+
+    public function verificationScore()
+    {
+        $score = 0;
+        $verification = \App\Models\StudentVerification::where('student_id', $this->id)->first();
+        if(!empty($verification)){
+           if($verification->bvn_verify){
+                $score +=20;
+            } 
+        }
+        return $score;
+    }
 }

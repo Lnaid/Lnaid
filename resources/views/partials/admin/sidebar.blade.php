@@ -2,34 +2,34 @@
 <div class="side-content-wrap">
     <div class="sidebar-left open rtl-ps-none" data-perfect-scrollbar="" data-suppress-scroll-x="true">
         <ul class="navigation-left">
-            <li class="nav-item" data-item="dashboard"><a class="nav-item-hold" href="#"><i class="nav-icon i-Bar-Chart"></i><span class="nav-text">Dashboard</span></a>
+            <li class="nav-item {{  Route::is('admin.index') ? 'active' : ''  }}"><a class="nav-item-hold" href="{{ route('admin.index') }}"><i class="nav-icon i-Bar-Chart"></i><span class="nav-text">Dashboard</span></a>
                 <div class="triangle"></div>
             </li>
-            <li class="nav-item" data-item="uikits"><a class="nav-item-hold" href="#"><i class="nav-icon i-Library"></i><span class="nav-text">Students</span></a>
+            <li class="nav-item {{  Route::is('admin.students') ? 'active' : ''  }}"><a class="nav-item-hold" href="{{ route('admin.students') }}"><i class="nav-icon i-Library"></i><span class="nav-text">Students</span></a>
                 <div class="triangle"></div>
             </li>
-            <li class="nav-item" data-item="extrakits"><a class="nav-item-hold" href="#"><i class="nav-icon i-Suitcase"></i><span class="nav-text">Sponsors</span></a>
+            <li class="nav-item"><a class="nav-item-hold" href="#"><i class="nav-icon i-Suitcase"></i><span class="nav-text">Sponsors</span></a>
                 <div class="triangle"></div>
             </li>
-            <li class="nav-item" data-item="apps"><a class="nav-item-hold" href="#"><i class="nav-icon i-Computer-Secure"></i><span class="nav-text">Requests</span></a>
+            <li class="nav-item"><a class="nav-item-hold" href="#"><i class="nav-icon i-Computer-Secure"></i><span class="nav-text">Requests</span></a>
                 <div class="triangle"></div>
             </li>
-            <li class="nav-item" data-item="widgets"><a class="nav-item-hold" href="#"><i class="nav-icon i-Computer-Secure"></i><span class="nav-text">Users</span></a>
+            <li class="nav-item"><a class="nav-item-hold" href="#"><i class="nav-icon i-Computer-Secure"></i><span class="nav-text">Users</span></a>
                 <div class="triangle"></div>
             </li>
-            <li class="nav-item" data-item="charts"><a class="nav-item-hold" href="#"><i class="nav-icon i-File-Clipboard-File--Text"></i><span class="nav-text">Offers</span></a>
+            <li class="nav-item"><a class="nav-item-hold" href="#"><i class="nav-icon i-File-Clipboard-File--Text"></i><span class="nav-text">Offers</span></a>
                 <div class="triangle"></div>
             </li>
-            <li class="nav-item" data-item="forms"><a class="nav-item-hold" href="#"><i class="nav-icon i-File-Clipboard-File--Text"></i><span class="nav-text">Scholarships</span></a>
+            <li class="nav-item"><a class="nav-item-hold" href="#"><i class="nav-icon i-File-Clipboard-File--Text"></i><span class="nav-text">Scholarships</span></a>
                 <div class="triangle"></div>
             </li>
             <li class="nav-item"><a class="nav-item-hold" href="datatables.html"><i class="nav-icon i-File-Horizontal-Text"></i><span class="nav-text">Accounts</span></a>
                 <div class="triangle"></div>
             </li>
-            <li class="nav-item" data-item="sessions"><a class="nav-item-hold" href="#"><i class="nav-icon i-Administrator"></i><span class="nav-text">Donations</span></a>
+            <li class="nav-item"><a class="nav-item-hold" href="#"><i class="nav-icon i-Administrator"></i><span class="nav-text">Donations</span></a>
                 <div class="triangle"></div>
             </li>
-            <li class="nav-item active" data-item="others"><a class="nav-item-hold" href="#"><i class="nav-icon i-Double-Tap"></i><span class="nav-text">Others</span></a>
+            <li class="nav-item"><a class="nav-item-hold" href="#"><i class="nav-icon i-Double-Tap"></i><span class="nav-text">Others</span></a>
                 <div class="triangle"></div>
             </li>
             <li class="nav-item"><a class="nav-item-hold" href="http://demos.ui-lib.com/gull-html-doc/" target="_blank"><i class="nav-icon i-Safe-Box1"></i><span class="nav-text">Doc</span></a>

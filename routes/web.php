@@ -30,7 +30,7 @@ Route::group(['middleware'=>['web', 'guest'], 'namespace' => 'App\Http\Controlle
 Route::group(['middleware' => ['web']], function(){
 	Route::get('/', function () {
     	return view('pages.index');
-	});
+	})->name('home');
 
 	Route::get('/testboard', function () {
     	return view('dashboard.default');
@@ -125,7 +125,11 @@ Route::group(['prefix' => 'donations', 'middleware' => ['auth:sanctum',  /*'spon
 Route::group(['prefix' => 'admin',  'namespace' => 'App\Http\Controllers\Admin', 'middleware' => ['auth:sanctum', /*'admin' */]], function () {
 	Route::get('/', function () {
     	return view('dashboard.admin.index', ['title' => 'Dashboard']);
-	});
+	})->name('admin.index');
+	Route::get('/students', function () {
+    	return view('dashboard.admin.students', ['title' => 'Dashboard']);
+	})->name('admin.students');
+
 	Route::get('/test', function () {
     	return view('dashboard.admin.unused');
 	});

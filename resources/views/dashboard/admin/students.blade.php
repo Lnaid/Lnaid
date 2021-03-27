@@ -9,8 +9,8 @@
         <div class="main-content">
             @include('partials.breadcrumb')
             <div class="separator-breadcrumb border-top"></div>
-            <div class="row">
-                @include('partials.admin.stats')
+            <div class="">
+                 <livewire:students.index />
             </div>
         </div>
 
