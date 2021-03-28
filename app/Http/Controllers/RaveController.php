@@ -96,7 +96,7 @@ class RaveController extends Controller
 
         // send txMeta whih contains request_id, slug and other usefull data what will be usedfull in the thank you page
         // return redirect()->route('donations.confirmed')->with(['donation' => $donation, 'txMeta' => $txMeta]);
-        return redirect()->route('sponsor.request-single', ['id'=> $txMeta['request_id'] ]);
+        return redirect()->route('sponsor.request-single', ['slug'=> $txMeta['request_slug'] ])->with(['success' => 'Thanks for your kind donation']);
       }else {
           return redirect('/failed');
     }
