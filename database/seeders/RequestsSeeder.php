@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Support\Carbon;
 use App\Models\Student;
+use App\Models\School;
 use App\Models\Currency;
 use App\Models\Request as RequestDB;
 
@@ -22,8 +23,6 @@ class RequestsSeeder extends Seeder
         $currency = Currency::all()->first();
         $requests = [
         	  [
-        	  	'student_id' => 1 ,
-        	  	'school_id' => 1 , 
         	  	'title' => 'Final year project', 
         	  	'slug' => Str::Slug('Final year project'),
         	  	'amount' => 50000,
@@ -36,8 +35,6 @@ class RequestsSeeder extends Seeder
         	  ],
 
               [
-                'student_id' => 1 ,
-                'school_id' => 1 , 
                 'title' => 'Postgraduate Research Thesis', 
                 'slug' => Str::Slug('Postgraduate Research Thesis'),
                 'amount' => 135000,
@@ -50,8 +47,6 @@ class RequestsSeeder extends Seeder
               ],
 
               [
-                'student_id' => 1 ,
-                'school_id' => 1 , 
                 'title' => '2021 Session tuition', 
                 'slug' => Str::Slug('2021 Session tuition'),
                 'amount' => 150000,
@@ -64,8 +59,6 @@ class RequestsSeeder extends Seeder
               ],
 
               [
-                'student_id' => 2 ,
-                'school_id' => 2 , 
                 'title' => 'Resource for Academic Research', 
                 'slug' => Str::Slug('Resource for Academic Research'),
                 'amount' => 15000,
@@ -78,8 +71,6 @@ class RequestsSeeder extends Seeder
               ],
 
               [
-                'student_id' => 2 ,
-                'school_id' => 2 , 
                 'title' => 'Laptop for Virtual Leraning', 
                 'slug' => Str::Slug('Laptop for Virtual Leraning'),
                 'amount' => 250,
@@ -92,8 +83,6 @@ class RequestsSeeder extends Seeder
               ],
 
               [
-                'student_id' => 3 ,
-                'school_id' => 3 , 
                 'title' => "I'm having accommodation issues at school", 
                 'slug' => Str::Slug("I'm having accommodation issues at school"),
                 'amount' => 52500,
@@ -107,8 +96,6 @@ class RequestsSeeder extends Seeder
 
 
               [
-                'student_id' => 3 ,
-                'school_id' => 3 , 
                 'title' => "I need money to resume at school", 
                 'slug' => Str::Slug('I need money to resume at school'),
                 'amount' => 85000,
@@ -121,8 +108,6 @@ class RequestsSeeder extends Seeder
               ],
 
               [
-                'student_id' => 2,
-                'school_id' => 2 , 
                 'title' => "I urgently need help with tuition", 
                 'slug' => Str::Slug('I urgently need help with tuition'),
                 'amount' => 95000,
@@ -135,8 +120,6 @@ class RequestsSeeder extends Seeder
               ],
 
               [
-                'student_id' => 2 ,
-                'school_id' => 2 , 
                 'title' => "Am unable to pay 2021 tuition at school", 
                 'slug' => Str::Slug('Am unable to pay 2021 tuition at school'),
                 'amount' => 125000,
@@ -149,8 +132,6 @@ class RequestsSeeder extends Seeder
               ],
 
               [
-                'student_id' => 2 ,
-                'school_id' => 2 , 
                 'title' => "I need Learning Resource for Software Development", 
                 'slug' => Str::Slug('I need Learning Resource for Software Development'),
                 // 'amount' => 12000,
@@ -163,8 +144,6 @@ class RequestsSeeder extends Seeder
               ],
 
               [
-                'student_id' => 3 ,
-                'school_id' => 3 , 
                 'title' => "Intern Position in an IT firm for IT", 
                 'slug' => Str::Slug('Intern Position in an IT firm for IT'),
                 // 'amount' => 12000,
@@ -177,25 +156,17 @@ class RequestsSeeder extends Seeder
               ],
         ];
 
-        $students = Student::all();
-        $i = 0;
-        foreach ($students as $student) {
-           $existingRequest = RequestDB::where('slug', $requests[$i]['slug'])->get();
+        $students = Student::all()->toArray();
+        foreach ($requests as $request) {
+           $existingRequest = RequestDB::where('slug', 'LIKE', $request['slug'] . '%'   )->get();
             if( !$existingRequest->isEmpty() ){
                 continue;
             }
-            RequestDB::create([
-                'student_id' => $student->id,
-                'school_id' => $student->school->id,
-                'title' => $requests[$i]['title'],
-                'slug' => $requests[$i]['slug'],
-                'amount' => $requests[$i]['amount'],
-                'description' => $requests[$i]['description'],
-                'currency_id' => $requests[$i]['currency_id'],
-                'is_fund_request' => $requests[$i]['is_fund_request'],
-                'status' => $requests[$i]['status'],
-            ]);
-            $i++;
+
+            $student = $students[array_rand($students)];
+            $request['student_id'] = $student['id'];
+            $request['school_id'] = $student['school_id'];
+            RequestDB::create($request);
          }
     }
 }
