@@ -28,7 +28,7 @@ class StudentSeeder extends Seeder
             $student = Student::create([
                 'user_id' => $user->id,
                 'phone' => $user->phone,
-                'school_id' => $schools[array_rand($schools)];
+                'school_id' => $schools[array_rand($schools)]
             ]);
 
             Bouncer::assign('student')->to($user);

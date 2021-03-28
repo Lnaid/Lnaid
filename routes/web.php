@@ -17,7 +17,10 @@ use App\Helpers\fxExchange;
 
 // get latest rates - this will be moved to schedule
 Route::get('/get-rates', function(){
-	return fxExchange::getRates();
+	// return fxExchange::getRates();
+	$students = App\Models\Student::all()->toArray();
+	return $students[array_rand($students)]['id'];
+	// return $schools;
 });
 
 // Guest Routes
