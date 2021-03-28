@@ -50,7 +50,7 @@ class Student extends Model
 
     public function school()
     {
-        return $this->hasOne(School::class, 'id');
+        return $this->hasOne(School::class, 'id', 'school_id');
     }
 
     public function requests()

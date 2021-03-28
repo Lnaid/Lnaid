@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Silber\Bouncer\BouncerFacade as Bouncer;
+use App\Helpers\fxExchange;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,11 @@ use Silber\Bouncer\BouncerFacade as Bouncer;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// get latest rates - this will be moved to schedule
+Route::get('/get-rates', function(){
+	return fxExchange::getRates();
+});
 
 // Guest Routes
 Route::group(['middleware'=>['web', 'guest'], 'namespace' => 'App\Http\Controllers'], function(){

@@ -6,6 +6,7 @@ use Livewire\Component;
 use Log;
 use App\Models\Student;
 use App\Models\School;
+use App\Models\StudentVerification;
 use Livewire\WithPagination;
 
 class Index extends Component
@@ -17,6 +18,8 @@ class Index extends Component
     public $schools = []; 
 
     public $paginator = [];
+
+    public $currentStudentID = "";
 
     public $page = 1;
 
@@ -123,53 +126,40 @@ class Index extends Component
         $this->isOpen = 0;
     }
 
-    public function resetInputFields(){
-        $this->title = '';
-        $this->description = '';
-        $this->privacy = '';
-        $this->status = '';
-        $this->is_published = '';
-        $this->won_by = '';
-    }
-
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    public function store()
-    {
-        $this->validate([
-            'title' => 'required',
-            'description' => 'required',
-        ]);
-   
-        Acronym::updateOrCreate(['id' => $this->acronym_id], [
-            'title' => $this->title,
-            'description' => $this->description,
-            'created_by' => auth()->user()->id
-        ]);
-  
-        session()->flash('message', 
-        $this->acronym_id ? 'Acronym Updated Successfully.' : 'Acronym Created Successfully.');
-  
-        $this->closeModal();
-        $this->resetInputFields();
-    }
-
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    public function edit($id){
-        $acronym = Acronym::findOrFail($id);
-        $this->acronym_id = $id;
-        $this->title = $acronym->title;
-        $this->description = $acronym->description;
-
+    public function openVerify($id){
+        $verification = StudentVerification::where('student_id', $id)->first();
+        if($verification){
+             $this->currentStudentID = $id;
+        }else{
+            StudentVerification::create([
+                'student_id' => $id,
+                'user_id' => Student::find($id)->user_id,
+                'bvn_verify' => false,
+                'nin_verify'  => false, 
+                'school_id_verify' => false,
+                'admission_letter_verify' => false,
+                'transcript_letter_verify' => false
+            ]);
+        }
         $this->openModal();
+    }
+
+    public function verifyBVN(){
+        $verification = StudentVerification::where('student_id', $this->currentStudentID )->first();
+        if($verification){
+            if($verification->bvn_verify == false){
+                $verification->bvn_verify = true;
+                $verification->save();
+            }else {
+               $verification->bvn_verify = false;
+                $verification->save();
+            }
+       }
     }
 
 

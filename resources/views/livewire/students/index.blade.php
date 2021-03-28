@@ -12,10 +12,70 @@
             font-size: 16px;
         }
 
+        .mdal{
+			box-shadow: 1px 1px 5px gray; transition: ease-out;
+			transition-duration: 400; "
+			transition: ease-out;
+		}
+
+		input[type=checkbox]{
+			height: 0;
+			width: 0;
+			visibility: hidden;
+		}
+
+		#verify_switch label {
+			cursor: pointer;
+			text-indent: -9999px;
+			width: 100px;
+			height: 30px;
+			background: grey;
+			display: block;
+			border-radius: 100px;
+			position: relative;
+		}
+
+		#verify_switch label:after {
+			content: '';
+			position: absolute;
+			top: 5px;
+			left: 5px;
+			width: 22px;
+			height: 22px;
+			background: #fff;
+			border-radius: 90px;
+			transition: 0.3s;
+		}
+
+		#verify_switch input:checked + label {
+			background: #F44336;
+		}
+
+		#verify_switch input:checked + label:after {
+			left: calc(100% - 5px);
+			transform: translateX(-100%);
+		}
+
+		#verify_switch label:active:after {
+			width: 130px;
+		}
+
+		/*body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+*/
     </style>
+
+
         
  @endpush
 
+@if($isOpen)
+	@include('livewire.students.verify')
+@endif
 <div class="content">
 	<div class="row">                
 	    <div class="col-md-3 col-lg-3">
@@ -75,7 +135,7 @@
 	    </div>
   	</div>	
 
-	<div class="overflow-hidden  sm:rounded-lg px-4 py-4" style="background: #10163a">
+	<div class="overflow-hidden  sm:rounded-lg px-4 py-4" >
 		@if (session()->has('message'))
 		<div class="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md my-3" role="alert">
 			<div class="flex">
@@ -179,7 +239,8 @@
                                                 <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 33px, 0px); top: 0px; left: 0px; will-change: transform;">
                                                 	<a class="dropdown-item ul-widget__link--font" href="#"><i class="i-Bar-Chart-4"> </i> View</a>
                                                 	<a class="dropdown-item ul-widget__link--font" href="#"> <i class="i-Data-Save"></i> Edit</a>
-                                                    <a class="dropdown-item ul-widget__link--font" href="#"><i class="i-Folder-Download"></i> Verify</a>
+
+                                                    <a class="dropdown-item ul-widget__link--font" href="" wire:click.prevent="openVerify({{ $student->id }})" ><i class="i-Folder-Download"></i> Verify</a>
                                                 </div>
                                             </td>
                                         </tr>
