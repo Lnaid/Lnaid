@@ -21,7 +21,7 @@
                     <li>
                         <div>
                             <div>
-                                <a href="{{ route('sponsor.requests') }}"><i class="nav-icon mr-2 i-Speach-Bubble-3"></i>Messaging</a>
+                                <a href="{{ route('sponsor.messaging') }}"><i class="nav-icon mr-2 i-Speach-Bubble-3"></i>Messaging</a>
                             </div>
                         </div>
                     </li>

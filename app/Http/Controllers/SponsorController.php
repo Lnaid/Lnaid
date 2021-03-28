@@ -36,6 +36,13 @@ class SponsorController extends Controller
         // dd($allRequests);
         return view('dashboard.sponsor.request-index')->with(['title' => 'Request', 'request' => $allRequests]);
     }
+    public function messaging()
+    {
+        $allRequests = FundRequestTrait::getAllRequests($total = null, $perpage = 2);
+        $data['title'] = 'Messaging';
+        // dd($allRequests);
+        return view('dashboard.sponsor.messaging')->with(['title' => 'Messaging', 'request' => $allRequests]);
+    }
 
     /**
      * Display a listing of the resource.

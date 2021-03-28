@@ -91,6 +91,7 @@ Route::group(['prefix' => 'sponsor', 'middleware' => ['auth:sanctum',  /*'sponso
 	Route::get('/', 'SponsorController@index' )->name('sponsor.dashboard');
 	Route::get('/requests', 'SponsorController@allRequest')->name('sponsor.requests');
 	Route::get('/requests/{slug}','SponsorController@singleRequest' )->name('sponsor.request-single');
+	Route::get('/messaging', 'SponsorController@messaging' )->name('sponsor.messaging');
 
 	Route::get('/req/{id}', function($id){
 		$requests = App\Models\Request::find($id);

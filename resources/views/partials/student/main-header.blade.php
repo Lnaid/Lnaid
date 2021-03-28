@@ -90,7 +90,7 @@
                     <div class="dropdown-header">
                         <i class="i-Lock-User mr-1"></i> {{ Auth::user()->username }}
                     </div>
-                    <a class="dropdown-item">Settings</a>
+                    <a class="dropdown-item" href="{{ route('student.profile') }}">Profile</a>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <a class="dropdown-item"  href="{{ route('logout') }}"
