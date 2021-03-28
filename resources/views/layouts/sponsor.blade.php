@@ -64,7 +64,6 @@
 
 
         @stack('modals')
-
         @stack('js')
 
 

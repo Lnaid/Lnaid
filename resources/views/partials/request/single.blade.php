@@ -15,7 +15,7 @@
                 <div class="requests request-cart white-bg mb-30">
                     <div class="projects__content">
                         <a href="#" class="new-tag">Misc</a>
-                        <h3><a href="request-video.html">{{ $request->title }}</a></h3>
+                        <h3><a href="#">{{ $request->title }}</a></h3>
                             <div class="projects__manager d-sm-flex align-items-center mb-40">
                                 <div class="manager-img mr-20">
                                     <img src=" {{ $request->studentDetails()->photo }} " alt="">
