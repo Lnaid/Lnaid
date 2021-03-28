@@ -24,6 +24,8 @@ class CreateStudentsTable extends Migration
             $table->string('state')->nullable();
             $table->string('country')->nullable();
 
+            $table->double('wallet_balance', 8,2)->default(0);
+
             //$table->string('course')->nullable();
             $table->string('department')->nullable();
             $table->string('falculty')->nullable();

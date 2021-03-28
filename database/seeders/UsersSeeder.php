@@ -56,6 +56,14 @@ class UsersSeeder extends Seeder
                 "password" => "12345678",
                 "account_type" => "sponsor"
             ],
+            [
+                "name" => "Admin",
+                "email" => 'admin@lnaid.com',
+                "username" => "Mujeeb",
+                "phone" => "0811100100",
+                "password" => "12345678",
+                "account_type" => "admin"
+            ],
         ];
 
     	foreach ($users as $user) {
