@@ -19,4 +19,13 @@ class StudentVerification extends Model
     protected $hidden = [
         'id'
     ];
+
+     /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $guarded = [
+        'id'
+    ];
 }
