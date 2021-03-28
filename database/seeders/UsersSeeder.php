@@ -17,25 +17,25 @@ class UsersSeeder extends Seeder
         //
         $users = [
             [
-                "name" => "Taiwo Rasheed",
+                "name" => "Taiwo Lima",
                 "email" => 'taiwo@lnaid.com',
-                "username" => "Rasheed",
+                "username" => "Taiwo",
                 "phone" => "0900000000",
                 "password" => "12345678",
                 "account_type" => "student"
             ],
             [
-                "name" => "Isah Audu",
-                "email" => 'audu@lnaid.com',
+                "name" => "Aushi Atahiro",
+                "email" => 'aushi@lnaid.com',
                 "username" => "Audu",
                 "phone" => "0810000000",
                 "password" => "12345678",
                 "account_type" => "student"
             ],
             [
-                "name" => "Segun Olaniyan",
-                "email" => 'segun@lnaid.com',
-                "username" => "Segun",
+                "name" => "Dorathy Epkemi",
+                "email" => 'epkemi@lnaid.com',
+                "username" => "Epkemi",
                 "phone" => "0910000000",
                 "password" => "12345678",
                 "account_type" => "student"

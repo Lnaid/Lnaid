@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Student;
+use App\Models\School;
 use Illuminate\Support\Str;
 use Silber\Bouncer\BouncerFacade as Bouncer;
 
@@ -18,6 +19,7 @@ class StudentSeeder extends Seeder
     public function run()
     {
     	$users = User::where('account_type', 'student')->get();
+        $schools = School::all()->pluck('id')->toArray();
     	foreach ($users as $user) {
             $existingStudent = Student::where('user_id', $user->id)->get();
             if( !$existingStudent->isEmpty() ){
@@ -26,7 +28,7 @@ class StudentSeeder extends Seeder
             $student = Student::create([
                 'user_id' => $user->id,
                 'phone' => $user->phone,
-                'school_id' => rand(1,3)
+                'school_id' => $schools[array_rand($schools)];
             ]);
 
             Bouncer::assign('student')->to($user);

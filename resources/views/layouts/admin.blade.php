@@ -21,7 +21,8 @@
 
     </head>
 
-    <body class="text-left dark-theme ">
+    <body class="text-left ">
+        <!-- dark-theme -->
         <!-- Preloader -->
         <!-- <div id="preloader">
             <div class="preload-content">

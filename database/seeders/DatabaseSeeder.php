@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             StudentSeeder::class,
             SponsorSeeder::class,
             RequestsSeeder::class,
+            ExchangeRateSeeder::class
 
 	    ]);
     }
