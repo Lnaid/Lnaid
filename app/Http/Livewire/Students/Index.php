@@ -152,12 +152,12 @@ class Index extends Component
     public function verifyBVN(){
         $verification = StudentVerification::where('student_id', $this->currentStudentID )->first();
         if($verification){
-            if($verification->bvn === false){
-                $verification->bvn = true;
-                $verification->save;
+            if($verification->bvn_verify == false){
+                $verification->bvn_verify = true;
+                $verification->save();
             }else {
-               $verification->bvn = false;
-                $verification->save;
+               $verification->bvn_verify = false;
+                $verification->save();
             }
        }
     }
