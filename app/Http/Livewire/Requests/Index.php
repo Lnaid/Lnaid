@@ -34,6 +34,26 @@ class Index extends Component
     ];
 
     protected $updatesQueryString = ['page'];
+
+    public function approve($id){
+
+        $rq = RequestModel::find($id);
+        $rq->status = 1;
+        $rq->save();
+
+        session()->flash('success', 'Request approved successfully');
+
+    }
+
+    public function reject($id){
+
+        $rq = RequestModel::find($id);
+        $rq->status = 2;
+        $rq->save();
+
+        session()->flash('success', 'Request rejected successfully');
+
+    }
     
     public function hydrate(){
         $this->loadList();

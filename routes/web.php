@@ -137,6 +137,10 @@ Route::group(['prefix' => 'admin',  'namespace' => 'App\Http\Controllers\Admin',
     	return view('dashboard.admin.students', ['title' => 'Dashboard']);
 	})->name('admin.students');
 
+	Route::get('/requests', function () {
+    	return view('dashboard.admin.requests', ['title' => 'Requests']);
+	})->name('admin.request');
+
 	Route::get('/profile', 'ProfileController@index')->name('admin.profile');
 	Route::post('/profile/edit', 'ProfileController@edit')->name('admin.profile.edit');
 
