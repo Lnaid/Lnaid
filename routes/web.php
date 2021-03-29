@@ -118,7 +118,6 @@ Route::group(['prefix' => 'admin',  'namespace' => 'App\Http\Controllers\Admin',
     	return view('dashboard.admin.students', ['title' => 'Students']);
 	})->name('admin.students');
 
-
 	Route::get('/verification-requests', function () {
     	return view('dashboard.admin.verification-requests', ['title' => 'Verification Request']);
 	})->name('admin.verification.requests');
