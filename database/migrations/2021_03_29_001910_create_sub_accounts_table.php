@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSubaccountsTable extends Migration
+class CreateSubAccountsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateSubaccountsTable extends Migration
      */
     public function up()
     {
-        Schema::create('subaccounts', function (Blueprint $table) {
+        Schema::create('sub_accounts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('student_id');
-            $table->unsignedBigInteger('subaccount_id')->nullable()->comment('from rave');
-            $table->unsignedBigInteger('account_id')->nullable()->comment('from rave');
+            
+            $table->string('rave_subaccount_id')->nullable()->comment('from rave');
+            $table->unsignedBigInteger('rave_account_id')->nullable()->comment('from rave');
 
             $table->string('account_bank')->nullable(); // bank code - list available online
             $table->string('account_number')->nullable();
@@ -49,6 +50,6 @@ class CreateSubaccountsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('subaccounts');
+        Schema::dropIfExists('sub_accounts');
     }
 }

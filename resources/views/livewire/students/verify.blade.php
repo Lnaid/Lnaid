@@ -67,17 +67,17 @@
 
 	                           	<div class="ul-widget2__info ul-widget4__users-info">
 	                           		<a class="ul-widget2__title" href="#">Sub Account ID</a>
-	                           		<span class="ul-widget2__username" href="#">{{ $currentStudent->bank_name }}</span>
+	                           		<span class="ul-widget2__username" href="#">{{ $currentStudent->subaccount->rave_subaccount_id }}</span>
 	                           	</div>
 
 	                           	<div class="ul-widget2__info ul-widget4__users-info">
 	                           		<a class="ul-widget2__title" href="#">Account ID</a>
-	                           		<span class="ul-widget2__username" href="#">{{ $currentStudent->bank_name }}</span>
+	                           		<span class="ul-widget2__username" href="#">{{ $currentStudent->subaccount->rave_account_id }}</span>
 	                           	</div>
 
 	                          	<div class="ul-widget2__info ul-widget4__users-info">
 	                           		<a class="ul-widget2__title" href="#">Country</a>
-	                           		<span class="ul-widget2__username" href="#">{{ $currentStudent->account_name }}</span>
+	                           		<span class="ul-widget2__username" href="#">{{ $currentStudent->country }}</span>
 	                           	</div>
 	                       	</div>
 
@@ -86,17 +86,17 @@
 
 	                           	<div class="ul-widget2__info ul-widget4__users-info">
 	                           		<a class="ul-widget2__title" href="#">Split Value</a>
-	                           		<span class="ul-widget2__username" href="#">{{ $currentStudent->bank_name }}</span>
+	                           		<span class="ul-widget2__username" href="#">{{ $currentStudent->subaccount->split_value }}</span>
 	                           	</div>
 
 	                          	<div class="ul-widget2__info ul-widget4__users-info">
 	                           		<a class="ul-widget2__title" href="#">Split Type</a>
-	                           		<span class="ul-widget2__username" href="#">{{ $currentStudent->account_name }}</span>
+	                           		<span class="ul-widget2__username" href="#">{{ $currentStudent->subaccount->split_type }}</span>
 	                           	</div>
 
 	                          	<div class="ul-widget2__info ul-widget4__users-info">
 	                           		<a class="ul-widget2__title" href="#">Business Name</a>
-	                           		<span class="ul-widget2__username" href="#">{{ $currentStudent->account_number }}</span>
+	                           		<span class="ul-widget2__username" href="#">{{ $currentStudent->subaccount->business_name }}</span>
 	                           	</div>
 	                       	</div>
 
@@ -106,17 +106,17 @@
 
 	                           	<div class="ul-widget2__info ul-widget4__users-info">
 	                           		<a class="ul-widget2__title" href="#">Business Mobile</a>
-	                           		<span class="ul-widget2__username" href="#">{{ $currentStudent->bank_name }}</span>
+	                           		<span class="ul-widget2__username" href="#">{{ $currentStudent->subaccount->business_mobile }}</span>
 	                           	</div>
 
 	                          	<div class="ul-widget2__info ul-widget4__users-info">
 	                           		<a class="ul-widget2__title" href="#">Business Email</a>
-	                           		<span class="ul-widget2__username" href="#">{{ $currentStudent->account_name }}</span>
+	                           		<span class="ul-widget2__username" href="#">{{ $currentStudent->subaccount->business_email }}</span>
 	                           	</div>
 
 	                          	<div class="ul-widget2__info ul-widget4__users-info">
 	                           		<a class="ul-widget2__title" href="#">Business Name</a>
-	                           		<span class="ul-widget2__username" href="#">{{ $currentStudent->account_number }}</span>
+	                           		<span class="ul-widget2__username" href="#">{{ $currentStudent->subaccount->business_name }}</span>
 	                           	</div>
 	                       	</div>
 

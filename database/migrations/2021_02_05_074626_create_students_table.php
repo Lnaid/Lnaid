@@ -17,7 +17,6 @@ class CreateStudentsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('school_id')->nullable();
-            $table->unsignedBigInteger('subaccount_id')->nullable(); // flutterwave subaccount for user
 
             $table->string('gender')->nullable();
             $table->string('pronoun')->nullable();

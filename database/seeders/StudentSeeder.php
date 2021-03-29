@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Student;
 use App\Models\School;
+use App\Models\SubAccount;
 use Illuminate\Support\Str;
 use Silber\Bouncer\BouncerFacade as Bouncer;
 
@@ -32,7 +33,9 @@ class StudentSeeder extends Seeder
             ]);
 
             Bouncer::assign('student')->to($user);
-
+            SubAccount::create([
+                'student_id' => $student->id
+            ]);
         }
         //
     }
