@@ -37,16 +37,6 @@ Route::group(['middleware' => ['web']], function(){
 	Route::get('/', function () {
     	return view('pages.index');
 	})->name('home');
-
-	Route::get('/testboard', function () {
-    	return view('dashboard.default');
-	});
-
-	Route::get('/test-ajax', function(){
-		session()->put('success', 'hmmm');
-		session()->save();
-		return;
-	});
 });
 
 // Dashboard gracefull Redirects
@@ -90,19 +80,12 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth:sanctum',  'student'
 
 
 // Sponsor Routes
-Route::group(['prefix' => 'sponsor', 'middleware' => ['auth:sanctum',  /*'sponsor' */ ], 'namespace' => 'App\Http\Controllers'], function(){
-	// Route::get('/test', function () {
- //    	return view('dashboard.sponsor.unused');
-	// });
+Route::group(['prefix' => 'sponsor', 'middleware' => ['auth:sanctum',  'sponsor' ], 'namespace' => 'App\Http\Controllers'], function(){
 	Route::get('/', 'SponsorController@index' )->name('sponsor.dashboard');
 	Route::get('/requests', 'SponsorController@allRequest')->name('sponsor.requests');
 	Route::get('/requests/{slug}','SponsorController@singleRequest' )->name('sponsor.request-single');
 	Route::get('/messaging', 'SponsorController@messaging' )->name('sponsor.messaging');
 
-	Route::get('/req/{id}', function($id){
-		$requests = App\Models\Request::find($id);
-		dd($requests->student->school);
-	});
 });
 
 
@@ -122,31 +105,32 @@ Route::group(['prefix' => 'donations', 'middleware' => ['auth:sanctum',  /*'spon
 
 	Route::get('confirmed', 'DonationController@sayThanks' )->name('donations.confirmed');
 
-	Route::get('/customers', function(){
-		return App\Helpers\fxExchange::dollarToNaira(566);
-	});
 });
 
 
 // ADMIN ENDPOINTS GROUP
-Route::group(['prefix' => 'admin',  'namespace' => 'App\Http\Controllers\Admin', 'middleware' => ['auth:sanctum', /*'admin' */]], function () {
+Route::group(['prefix' => 'admin',  'namespace' => 'App\Http\Controllers\Admin', 'middleware' => ['auth:sanctum', 'admin' ]], function () {
 	Route::get('/', function () {
     	return view('dashboard.admin.index', ['title' => 'Dashboard']);
-	})->name('admin.index');
+	})->name('admin.dashboard');
+
 	Route::get('/students', function () {
-    	return view('dashboard.admin.students', ['title' => 'Dashboard']);
+    	return view('dashboard.admin.students', ['title' => 'Students']);
 	})->name('admin.students');
+
+
+	Route::get('/verification-requests', function () {
+    	return view('dashboard.admin.verification-requests', ['title' => 'Verification Request']);
+	})->name('admin.verification.requests');
 
 	Route::get('/requests', function () {
     	return view('dashboard.admin.requests', ['title' => 'Requests']);
 	})->name('admin.request');
 
+
 	Route::get('/profile', 'ProfileController@index')->name('admin.profile');
 	Route::post('/profile/edit', 'ProfileController@edit')->name('admin.profile.edit');
 
-	Route::get('/test', function () {
-    	return view('dashboard.admin.unused');
-	});
 
 // RBAC
     //get all roles

@@ -2,7 +2,7 @@
 <div class="side-content-wrap">
     <div class="sidebar-left open rtl-ps-none" data-perfect-scrollbar="" data-suppress-scroll-x="true">
         <ul class="navigation-left">
-            <li class="nav-item {{  Route::is('admin.index') ? 'active' : ''  }}"><a class="nav-item-hold" href="{{ route('admin.index') }}"><i class="nav-icon i-Bar-Chart"></i><span class="nav-text">Dashboard</span></a>
+            <li class="nav-item {{  Route::is('admin.dashboard') ? 'active' : ''  }}"><a class="nav-item-hold" href="{{ route('admin.dashboard') }}"><i class="nav-icon i-Bar-Chart"></i><span class="nav-text">Dashboard</span></a>
                 <div class="triangle"></div>
             </li>
             <li class="nav-item {{  Route::is('admin.students') ? 'active' : ''  }}"><a class="nav-item-hold" href="{{ route('admin.students') }}"><i class="nav-icon i-Library"></i><span class="nav-text">Students</span></a>
@@ -29,7 +29,7 @@
             <li class="nav-item"><a class="nav-item-hold" href="#"><i class="nav-icon i-Administrator"></i><span class="nav-text">Donations</span></a>
                 <div class="triangle"></div>
             </li>
-            <li class="nav-item"><a class="nav-item-hold" href="#"><i class="nav-icon i-Double-Tap"></i><span class="nav-text">Others</span></a>
+            <li class="nav-item {{  Route::is('admin.verification.requests') ? 'active' : ''  }}"><a class="nav-item-hold" href="{{ route('admin.verification.requests') }}"><i class="nav-icon i-Double-Tap"></i><span class="nav-text">Verification Requests</span></a>
                 <div class="triangle"></div>
             </li>
             <li class="nav-item"><a class="nav-item-hold" href="http://demos.ui-lib.com/gull-html-doc/" target="_blank"><i class="nav-icon i-Safe-Box1"></i><span class="nav-text">Doc</span></a>
