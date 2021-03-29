@@ -1,0 +1,77 @@
+Email address *
+	airondev@gmail.com
+
+Team Name *
+	Lnaid DSCFUTMinna
+
+Team Member #2 - Email Address (if applicable)
+	mujeeb.muhideen@gmail.com
+
+Team Member #3 - Email Address (if applicable)
+	kkd
+
+Which Developer Student Club (DSC) are you a part of? *
+
+What do your team members consist of? *
+	DSC Lead
+	Core team member (you help facilitate/plan for the club)
+	Member (you have participated in workshops or project building activities)
+
+Are you part of a DSC at your own university or are you joining the nearest one? *
+	Yes - the DSC that I am a part of is at my university
+
+Please share which DSC related activities you participated in.
+	Android Study Jam
+	DSC Workshops
+	Web Bootcamp
+
+When was this project started? *
+	02/02/2021
+
+Solution Name *
+	Lnaid
+
+Which United Nations' Sustainable Development Goals (SDGs) is your solution solving for? *
+	Goal 4: Quality Education
+
+Share your GitHub project link *
+	https://github.com/Lnaid/Lnaid
+
+Please select one or more products/platforms utilized in your solution: *
+	Google Cloud Platform
+
+YouTube demo link. Please show a demonstration of your working solution and how the user will interact with it. Please also show how your solution uses the Google products/platforms you chose and the value it provides the users. [2 minutes maximum] *
+	dfl;df;dfl;
+	
+Please clearly describe the United Nations' Sustainable Development goal(s) AND target(s) you are looking to solve with technology. What inspired you to select these specific goal(s) AND target(s)? *
+
+	Undergraduate students in Nigeria and Africa at large have difficulties accessing aids. Challenges faced by students include but not limited to Tuition, Learning Resource, Accommodation, Feeding, Internet Access etc.  Stakeholders, NGOs,  Individuals and Alumni of higher institutions who may wish to give back to the society by way of assisting an undergraduate student; don't have a means of sending these aids across.
+
+	One thing that has always been relegated to the background is an inquiry into why some students perform poorly, a student who is not emotionally stable can not perform well, imagine having to worry about food, accommodation, tuition and learning resource, this concerns can so easily lead to mental breakdown which will inadvertently affect academic performance. We certainly have Individuals, Corporate Bodies and Government Agencies who can  assist in solving  some the this  challenges.
+
+
+How does your solution address the challenge you are looking to solve for? *
+	#Lnaid
+	Lnaid is designed to foster quality education and promote acadamic excellence by creating a single robust system through which Individuals, NGOs, Agencies can create offers for students, manage schorlarship awards, fund school projects and and make donations.  This will close the disconnect between students and the general public and create a sense of accountability.  - We believe there are kind individuals, NGOs, Agencies etc. Who will be more than willing to give back to the society by way of supporting a student. Our job is to ensure that the aid goes to the person who truly needs it.
+
+What do you see as the future / next steps for your project? How will you expand your solution to reach a larger audience?
+	We are hoping to scale Lnaid into becoming a single portal for managing Scholarships Schemes, Research Funding and Student Merit Awards etc. Lnaid will provide robust tools for Individuals, Corporate Bodies and Government Agencies to easily create and manage funding for students.
+
+Walk us through the steps you took to test your solution. Can you provide three specific feedback points you received from users that tested out your solution? 
+	We had two test series, comprising of 15 student account and 7 sponsors account holders- the first results highlighted major bugs that needed to be fixed, and also some implementation design with regards to student verification process etc.
+	The second batch had less bugs but however highlighted some minor glitches such page load time and sometimes multiple redirects. 
+
+Please share the outcome of your testing strategy. What are three specific things you implemented and improved for your solution based on the feedback from users? *
+	Our initial conditions for student verification were very strict and cumbersome, we understant that people especially are very sensitive when it comes to giving out information such as NIN, BVN etc. Also since Lnaid is (*will) not be limited to a particular region/country we had to look for alternative verification parameters. So based on concerns  we deviced other means of still getting students verified on the platoform with or without the security numbers. We currently give priority to school issued ID
+
+Technical components - Backend, Frontend, Technologies, Programming languages and Tools used
+	Architecture: Due to time constriant we opted for a Fullstack Monolith Laravel Application. We ensured  best practices by using loosely coupled interfaces and traits. 
+	Framework: Laravel 8
+	Programming languages: PHP
+	Frontend: Livewore, Tailwind CSS, HTML, Bootstrap CSS	
+
+Highlight one challenge you faced while building your code, including detail on how you addressed the issue and the technical decisions and implementations you had to make. *
+	One major decision we had to make was on how to handle donations - we had to decide either to maintain an ewallet for each student to hold donations recieved from which they can request a payout or setup a system wereby donations made will go directly to the beneficiaries bank account. We opted for the latter, since it will promote more transparency and quick settlements into beneficiaries local account. 
+
+[Optional] Do you have feedback for the Google products/platforms you used? Are there any features you would like to add for those technologies?
+	no
