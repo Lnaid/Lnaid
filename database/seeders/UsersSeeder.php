@@ -51,7 +51,7 @@ class UsersSeeder extends Seeder
             [
                 "name" => "Muhideen Mujeeb",
                 "email" => 'mujeeb@lnaid.com',
-                "username" => "Mujeeb",
+                "username" => "Mujeeba",
                 "phone" => "0811100000",
                 "password" => "12345678",
                 "account_type" => "sponsor"
