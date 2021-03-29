@@ -1,7 +1,6 @@
 @extends('layouts.admin')
-    @push('css')
-        
-        
+   @push('css')
+       
     @endPush
    @section('content')
 
@@ -16,10 +15,6 @@
 
     @endSection
     @push('js')
-        <!-- <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script> -->
-
-        <!-- include('partials.error', ['position' => 'toast-bottom-left' ]) -->
-        <!-- include('partials.flash', ['position' => 'toast-bottom-left', 'timeout' => 1000 ]) -->
-
+        
     @endPush
 

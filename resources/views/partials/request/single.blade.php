@@ -1,8 +1,5 @@
 <!-- request-area start-->
 <section class="request-image-area  pt-0 pb-0" >
-    @if(session('success'))
-        <p class="alert success">{{ session('success') }}</p>
-    @endif
     <div class="">
         <div class="card row no-gutters" style="flex-direction: inherit;">
 

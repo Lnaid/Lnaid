@@ -17,6 +17,7 @@ class CreateStudentsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('school_id')->nullable();
+            $table->unsignedBigInteger('subaccount_id')->nullable(); // flutterwave subaccount for user
 
             $table->string('gender')->nullable();
             $table->string('pronoun')->nullable();
@@ -41,6 +42,13 @@ class CreateStudentsTable extends Migration
             $table->string('twitter')->nullable();
             $table->string('linkedin')->nullable();
             $table->string('facebook')->nullable();
+
+
+            // bank account details
+            $table->string('bank_name')->nullable();  // this should be a list
+            $table->string('bank_code')->nullable(); // added based on the bank selected
+            $table->string('account_name')->nullable();
+            $table->string('account_number')->nullable();
 
 
             $table->string('bvn')->nullable();

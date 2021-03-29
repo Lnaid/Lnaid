@@ -20,6 +20,9 @@ class Index extends Component
     public $paginator = [];
 
     public $currentStudentID = "";
+    public $currentStudentVerification = "";
+    public $currentStudent = "";
+
 
     public $page = 1;
 
@@ -133,44 +136,94 @@ class Index extends Component
      */
     public function openVerify($id){
         $verification = StudentVerification::where('student_id', $id)->first();
-        if($verification){
-             $this->currentStudentID = $id;
-        }else{
-            StudentVerification::create([
+        if(!$verification){
+            $verification = StudentVerification::create([
                 'student_id' => $id,
                 'user_id' => Student::find($id)->user_id,
-                'bvn_verify' => false,
-                'nin_verify'  => false, 
-                'school_id_verify' => false,
-                'admission_letter_verify' => false,
-                'transcript_letter_verify' => false
             ]);
         }
+       
+        $this->currentStudent = Student::find($id)->first();
+        $this->currentStudentVerification = $verification;
         $this->openModal();
     }
 
     public function verifyBVN(){
-        $verification = StudentVerification::where('student_id', $this->currentStudentID )->first();
-        if($verification){
-            if($verification->bvn_verify == false){
-                $verification->bvn_verify = true;
-                $verification->save();
-            }else {
-               $verification->bvn_verify = false;
-                $verification->save();
-            }
-       }
+        if($this->currentStudentVerification->bvn_verify == false){
+            $this->currentStudentVerification->bvn_verify = true;
+            $this->currentStudentVerification->save();
+            session()->flash('success','BVN verified successfully'); 
+        }else {
+            $this->currentStudentVerification->bvn_verify = false;
+            $this->currentStudentVerification->save();
+             session()->flash('warning','BVN set to unverified'); 
+        }
     }
 
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    public function delete($id){
-        Acronym::find($id)->delete();
-        session()->flash('message', 'Acronym Deleted Successfully');
+     public function verifyNIN(){
+        if($this->currentStudentVerification->nin_verify == false){
+            $this->currentStudentVerification->nin_verify = true;
+            $this->currentStudentVerification->save();
+            session()->flash('success','NIN verified successfully'); 
+        }else {
+            $this->currentStudentVerification->nin_verify = false;
+            $this->currentStudentVerification->save();
+            session()->flash('warning','NIN set to unverified'); 
+        }
     }
+
+    public function verifySchool(){
+        if($this->currentStudentVerification->school_verify == false){
+            $this->currentStudentVerification->school_verify = true;
+            $this->currentStudentVerification->save();
+            session()->flash('success','School verified successfully'); 
+        }else {
+            $this->currentStudentVerification->school_verify = false;
+            $this->currentStudentVerification->save();
+            session()->flash('warning','School set to unverified'); 
+        }
+    }
+
+    public function verifyBankDetails(){
+        if($this->currentStudentVerification->bank_details_verify == false){
+            $this->currentStudentVerification->bank_details_verify = true;
+            $this->currentStudentVerification->save();
+            session()->flash('success','Bank Details verified successfully'); 
+
+        }else {
+            $this->currentStudentVerification->bank_details_verify = false;
+            $this->currentStudentVerification->save();
+            session()->flash('warning','Bank Details set to unverified'); 
+        }
+    }
+
+    public function verifyAdmission(){
+        if($this->currentStudentVerification->admission_letter_verify == false){
+            $this->currentStudentVerification->admission_letter_verify = true;
+            $this->currentStudentVerification->save();
+            session()->flash('success','Admission status verified successfully'); 
+
+        }else {
+            $this->currentStudentVerification->admission_letter_verify = false;
+            $this->currentStudentVerification->save();
+            session()->flash('warning','Admission status  set unverified'); 
+
+        }
+    }
+
+    public function verifyTranscript(){
+        if($this->currentStudentVerification->transcript_letter_verify == false){
+            $this->currentStudentVerification->transcript_letter_verify = true;
+            $this->currentStudentVerification->save();
+            session()->flash('success','Transcript set to  verified'); 
+
+        }else {
+            $this->currentStudentVerification->transcript_letter_verify = false;
+            $this->currentStudentVerification->save();
+            session()->flash('warning','Transcript set to unverified'); 
+
+        }
+    }
+
 }
 

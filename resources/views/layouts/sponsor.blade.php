@@ -12,7 +12,6 @@
         <!-- Favicon -->
         <link rel="icon" href="{{ asset('assets/img/core-img/favicon.ico') }}">
 
-        <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,400i,600,700,800,900" rel="stylesheet" />
         <link href="{{ asset('assets/dashboard/css/themes/e53935.css') }}" rel="stylesheet" />
         <link href="{{ asset('assets/css/plugins/perfect-scrollbar.min.css') }}" rel="stylesheet" />
 

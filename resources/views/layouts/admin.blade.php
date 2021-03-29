@@ -12,9 +12,9 @@
         <!-- Favicon -->
         <link rel="icon" href="{{ asset('assets/img/core-img/favicon.ico') }}">
 
-        <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,400i,600,700,800,900" rel="stylesheet" />
         <link href="{{ asset('assets/dashboard/css/themes/e53935.css') }}" rel="stylesheet" />
         <link href="{{ asset('assets/css/plugins/perfect-scrollbar.min.css') }}" rel="stylesheet" />
+        <link href="{{ asset('assets/css/toastr.min.css') }}" rel="stylesheet">
 
         @stack('css')
         @livewireStyles
@@ -39,6 +39,7 @@
 
             <div class="main-content-wrap sidenav-open d-flex flex-column">
                 <!-- Page Content -->
+
                 @yield('content')
                 @include('partials.dash-footer')
             </div>
@@ -51,19 +52,13 @@
         <script src="{{ asset('assets/dashboard/js/plugins/perfect-scrollbar.min.js') }}"></script>
         <script src="{{ asset('assets/dashboard/js/scripts/script.min.js') }}"></script>
         <script src="{{ asset('assets/dashboard/js/scripts/sidebar.large.script.min.js') }}"></script>
-        <script src="{{ asset('assets/dashboard/js/plugins/echarts.min.js') }}"></script>
-        <script src="{{ asset('assets/dashboard/js/scripts/echart.options.min.js') }}"></script>
-        <script src="{{ asset('assets/dashboard/js/plugins/datatables.min.js') }}"></script>
-        <script src="{{ asset('assets/dashboard/js/scripts/dashboard.v4.script.min.js') }}"></script>
-        <script src="{{ asset('assets/dashboard/js/scripts/widgets-statistics.min.js') }}"></script>
-        <script src="{{ asset('assets/dashboard/js/plugins/apexcharts.min.js') }}"></script>
-        <script src="{{ asset('assets/dashboard/js/scripts/apexSparklineChart.script.min.js') }}"></script>
-
-
 
         @stack('modals')
         @livewireScripts
         @stack('js')
+        <script src="{{ asset('assets/js/toastr.min.js') }}"></script>
+        @include('partials.error', ['position' => 'toast-top-right' ])
+        @include('partials.flash', ['position' => 'toast-top-right', 'timeout' => 10000 ])
 
         <!-- livewireScripts -->
     </body>
