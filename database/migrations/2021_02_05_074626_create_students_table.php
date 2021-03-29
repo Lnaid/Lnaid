@@ -45,6 +45,13 @@ class CreateStudentsTable extends Migration
             $table->string('facebook')->nullable();
 
 
+            // bank account details
+            $table->string('bank_name')->nullable();  // this should be a list
+            $table->string('bank_code')->nullable(); // added based on the bank selected
+            $table->string('account_name')->nullable();
+            $table->string('account_number')->nullable();
+
+
             $table->string('bvn')->nullable();
             $table->string('nin')->nullable();
             $table->string('school_id_path')->nullable();

@@ -37,10 +37,23 @@ class Student extends Model
         'program_duration',
         'school_email',
 
+        'bvn',
+        'nin',
+        'school_id_path',
+        'admission_letter_path',
+        'transcript_letter_path',
+
+
         'phone',
         'phone_2',
         'about',
         'twitter',
+
+        'subaccount_id',
+        'bank_name',
+        'bank_code',
+        'account_name',
+        'account_number'
     ];
 
     public function user()
@@ -53,6 +66,11 @@ class Student extends Model
         return $this->hasOne(School::class, 'id', 'school_id');
     }
 
+    public function subaccount()
+    {
+        return $this->hasOne(SubAccount::class, 'student_id');
+    }
+
     public function requests()
     {
         return $this->hasMany(Request::class, 'student_id');
@@ -60,12 +78,42 @@ class Student extends Model
 
     public function verificationScore()
     {
+        /*
+            student need atleast as score of 80
+            Hint -- bvn =10, nin = 5, school_id = 30, admission_letter = 10, subaccount = 20 transcript_letter = 3, bank_details = 20
+            people are mostly skeptical about releasing their bvn - so we can manage school_id(30) and account_details(20) and  admission_proof
+
+            school_id(30) + admission_proof(10) + account_details(20) + subaccount(20) == 80
+
+            NB - no combination without school_id and account_details will give upto 80
+            NB - Account details provided must match the name on school_id and admission letter
+
+            NB - Since donations will be sent to students sub account on rave - it becomes neccessary for as student to have subaccount set up even before he's allowed to create a request. in this regard
+        */
         $score = 0;
         $verification = \App\Models\StudentVerification::where('student_id', $this->id)->first();
         if(!empty($verification)){
-           if($verification->bvn_verify){
+            if($verification->bvn_verify){
+                $score +=10;
+            }
+            if($verification->nin_verify){
+                $score +=5;
+            }
+            if($verification->school_verify){
+                $score +=30;
+            }
+            if($verification->admission_letter_verify){
+                $score +=10;
+            }   
+            if($verification->transcript_letter_verify){
+                $score +=3;
+            }
+            if($verification->bank_details_verify){
                 $score +=20;
-            } 
+            }
+            if($this->subaccount->rave_subaccount_id) {
+                $score +=20;
+            }   
         }
         return $score;
     }

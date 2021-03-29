@@ -16,10 +16,13 @@
 
     @endSection
     @push('js')
-        <!-- <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script> -->
-
-        <!-- include('partials.error', ['position' => 'toast-bottom-left' ]) -->
-        <!-- include('partials.flash', ['position' => 'toast-bottom-left', 'timeout' => 1000 ]) -->
+        <script src="{{ asset('assets/dashboard/js/plugins/echarts.min.js') }}"></script>
+        <script src="{{ asset('assets/dashboard/js/scripts/echart.options.min.js') }}"></script>
+        <script src="{{ asset('assets/dashboard/js/plugins/datatables.min.js') }}"></script>
+        <script src="{{ asset('assets/dashboard/js/scripts/dashboard.v4.script.min.js') }}"></script>
+        <script src="{{ asset('assets/dashboard/js/scripts/widgets-statistics.min.js') }}"></script>
+        <script src="{{ asset('assets/dashboard/js/plugins/apexcharts.min.js') }}"></script>
+        <script src="{{ asset('assets/dashboard/js/scripts/apexSparklineChart.script.min.js') }}"></script>
 
     @endPush
 
