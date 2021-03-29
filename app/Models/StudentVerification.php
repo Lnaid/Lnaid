@@ -21,7 +21,7 @@ class StudentVerification extends Model
     ];
 
      /**
-     * The attributes that should be hidden for arrays.
+     * The attributes that should be guarded for arrays.
      *
      * @var array
      */
