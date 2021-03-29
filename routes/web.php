@@ -118,9 +118,15 @@ Route::group(['prefix' => 'admin',  'namespace' => 'App\Http\Controllers\Admin',
     	return view('dashboard.admin.students', ['title' => 'Students']);
 	})->name('admin.students');
 
+
 	Route::get('/verification-requests', function () {
     	return view('dashboard.admin.verification-requests', ['title' => 'Verification Request']);
 	})->name('admin.verification.requests');
+
+	Route::get('/requests', function () {
+    	return view('dashboard.admin.requests', ['title' => 'Requests']);
+	})->name('admin.request');
+
 
 	Route::get('/profile', 'ProfileController@index')->name('admin.profile');
 	Route::post('/profile/edit', 'ProfileController@edit')->name('admin.profile.edit');
