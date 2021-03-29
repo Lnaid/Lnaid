@@ -11,7 +11,7 @@
             <li class="nav-item"><a class="nav-item-hold" href="#"><i class="nav-icon i-Suitcase"></i><span class="nav-text">Sponsors</span></a>
                 <div class="triangle"></div>
             </li>
-            <li class="nav-item"><a class="nav-item-hold" href="#"><i class="nav-icon i-Computer-Secure"></i><span class="nav-text">Requests</span></a>
+            <li class="nav-item {{  Route::is('admin.request') ? 'active' : ''  }}"><a class="nav-item-hold" href="{{ route('admin.request') }}"><i class="nav-icon i-Computer-Secure"></i><span class="nav-text">Requests</span></a>
                 <div class="triangle"></div>
             </li>
             <li class="nav-item"><a class="nav-item-hold" href="#"><i class="nav-icon i-Computer-Secure"></i><span class="nav-text">Users</span></a>
