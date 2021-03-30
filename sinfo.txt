@@ -41,7 +41,7 @@ Please select one or more products/platforms utilized in your solution: *
 	Google Cloud Platform
 
 YouTube demo link. Please show a demonstration of your working solution and how the user will interact with it. Please also show how your solution uses the Google products/platforms you chose and the value it provides the users. [2 minutes maximum] *
-	dfl;df;dfl;
+	http://bit.ly/lnaid-demo
 	
 Please clearly describe the United Nations' Sustainable Development goal(s) AND target(s) you are looking to solve with technology. What inspired you to select these specific goal(s) AND target(s)? *
 
