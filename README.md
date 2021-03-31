@@ -6,13 +6,12 @@ Lnaid provides a robust system through which students can reach out to Individua
 
 We ensure only geniune requests are published, every support offered goes directly to the beneficiary and we enforce transperancy via a #thankYou systeme
 
-# How to contribute to Lnaid
-
+## How to setup Lnaid
 
 ### Setup
 Make sure you have `composer and xampp/wamp` installed in your machine before you continue.
 
-### Install dependencie in laravel. 
+### Install dependencies in laravel. 
 ```
 composer install
 ```
@@ -33,7 +32,7 @@ DB_PASSWORD=
 ### Running the Applcation
 Run `php artisan serve` to start the app server.  
 
-### Deployment Details
+### Demo Details
 
 #### Url 
 [Lnaid](http://34.122.40.49/)
