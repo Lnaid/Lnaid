@@ -28,9 +28,59 @@ DB_PASSWORD=
 
 ```
 
-## Run `php artisan migrate`, to update your database, and to fill your database with dummy data run `php artisan db:seed`. 
+### Run `php artisan migrate`, to update your database, and to fill your database with dummy data run `php artisan db:seed`. 
 
-## Running the Applcation
+### Running the Applcation
 Run `php artisan serve` to start the app server.  
+
+### Deployment Details
+
+#### Url 
+[Lnaid](http://34.122.40.49/)
+
+#### Testing Account
+##### Student
+- Email: student@test-lnaid.com
+- Password: 12345678
+
+##### Sponsor
+- Email: sponsor@test-lnaid.com
+- Password: 12345678
+
+##### Admin
+- Email: admin@test-lnaid.com
+- Password: 12345678
+
+#### Testing Card for Donation
+
+##### MasterCard PIN authentication
+- Card number: 5531 8866 5214 2950
+- Cvv: 564
+- Expiry: 09/32
+- Pin: 3310
+- OTP: 12345
+
+##### Visa Card 3D-Secure authentication (VBVSECURECODE)
+- Card number: 4187 4274 1556 4246
+- cvv: 828
+- Expiry: 09/32
+- Pin: 3310
+- OTP: 12345
+
+##### MasterCard 3DSecure authentication (VBVSECURECODE)
+- Card number: 5438 8980 1456 0229
+- cvv: 564
+- Expiry: 10/31
+- Pin: 3310
+- OTP: 12345
+
+##### Verve Card (PIN)
+- Card number: 5061 4604 1012 0223 210
+- cvv: 780
+- Expiry Month: 12
+- Expiry Year: 31
+- Pin: 3310
+- OTP: 12345
+
 
 
