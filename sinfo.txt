@@ -75,3 +75,14 @@ Highlight one challenge you faced while building your code, including detail on 
 
 [Optional] Do you have feedback for the Google products/platforms you used? Are there any features you would like to add for those technologies?
 	no
+    
+    
+    
+    
+    
+    
+    
+    
+    Lnaid is a Leaning Support/Education Financing system,  It provides a robust platform through which students can reach out to the General Public, NGOs, Companies and Government Agencies for help on issues that borders on their education. We believe, there are kind hearted individuals who would love to give back to the society or more specifically their alma Mata by making contributions towards assisting students and the school in general.  
+- Sponsors can create and manage  Offers, Scholarship Schemes and Campaigns.
+- Learners (Verified Students) from various institutions  can publish a campaign to seek help on very specific issues that bothers on thier academics 
