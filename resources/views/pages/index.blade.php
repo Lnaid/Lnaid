@@ -69,15 +69,20 @@
                         <div class="col-xs-12">
                             <div class="article special">
                                 <img src="{{ asset('assets/img/icons/n3.png') }}" class="mb-10" alt="">
-                                <h3 class="article__title">Tuition</h3> 
-                                <p>Make donations towards a students tuition</p>               
+                                <h3 class="article__title">Donations</h3> 
+                                <p>
+                                    Individuals and Corporate bodies can make donations on verified request from students.
+
+                                </p>               
                             </div>
                         </div>
                         <div class="col-xs-12">
                             <div class="article special">
                                 <img src="{{ asset('assets/img/icons/n5.png') }}" class="mb-10" alt="">
-                                <h3 class="article__title">Learning Resource</h3> 
-                                <p>Help by providing learning resource</p>                
+                                <h3 class="article__title">Offers</h3> 
+                                <p>
+                                    One-time  or recurrent offers  can be created for students and learners.
+                                </p>                
                             </div>
                         </div>
                         
@@ -88,15 +93,19 @@
                         <div class="col-xs-12">
                             <div class="article special mts-50">
                                 <img src="{{ asset('assets/img/icons/n6.png') }}" class="mb-10" alt="">
-                                <h3 class="article__title">Accomodation</h3> 
-                                <p>Solve accomodation problem faced by a student</p>                
+                                <h3 class="article__title">Scholarships</h3> 
+                                <p>
+                                    Corporate bodies are provided with all the tools necessary for managing scholarship programs.
+                                </p>                
                             </div>
                         </div>
                         <div class="col-xs-12">
                             <div class="article special">
                                 <img src="{{ asset('assets/img/icons/n7.png') }}" class="mb-10" alt="">
-                                <h3 class="article__title">Misc</h3> 
-                                <p>Other challenges such as - Internet access, Electricity etc</p>               
+                                <h3 class="article__title">Campaigns</h3> 
+                                <p>
+                                   Educatotionists  can raise funds for a campaign to solve identified problems.
+                                </p>               
                             </div>
                         </div>
                         
