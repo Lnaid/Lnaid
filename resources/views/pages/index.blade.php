@@ -32,7 +32,7 @@
    @section('content')
 
         <!-- ##### Welcome Area Start ##### -->
-        <section class="p-5 hero-section ai1 relative" id="home">
+        <section class=" hero-section ai1 relative" id="home">
            <div class="overlay"></div>
             <!-- Hero Content -->
             <div class="hero-section-content">
