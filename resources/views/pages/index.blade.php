@@ -1,6 +1,6 @@
 @extends('layouts.main')
     @push('css')
-        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" /> -->
+       
         <style type="text/css">
             
             .owl-carousel{
@@ -40,7 +40,7 @@
                     <div class="row align-items-center">
                         <!-- Welcome Content -->
                         <div class="col-12 col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                            <h3 class="bold wow fadeInUp b-text" data-wow-delay="0.2s">Student Funding and Support Solution</h3>
+                            <h3 class="bold wow fadeInUp b-text" data-wow-delay="0.2s">Acadamic Crowdfunding and Student Support Solution</h3>
 
                             @include('partials.main-intro')
                  
@@ -119,54 +119,8 @@
         </section>
 
         <!-- Creative Facts - Start -->
-        <section class="p-5 creative-facts section-padding">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-sm-12">
-                        <div class="who-we-contant">
-                            <div class="promo-section">
-                                <h3 class="special-head ">Our Core Features!</h3>
-                            </div>
-                            <h4 class="d-text bold fadeInUp" data-wow-delay="0.3s">Why Lnaid</h4>
-                            <p class="fadeInUp" data-wow-delay="0.4s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at dictum risus, non suscipit arcu. Quisque aliqua.</p>
-                            <div class="services-block-four mt-30">
-                                <div class="inner-box">
-                                    <div class="icon-img-box">
-                                        <img src="{{ asset('assets/img/icons/d1.png') }}" alt="">
-                                    </div>
-                                    <h3><a href="#">Request/Donations</a></h3>
-                                    <div class="text">Direct request from students and donations from sponsors</div>
-                                    
-                                </div>
-                            </div>
-                            <div class="services-block-four">
-                                <div class="inner-box">
-                                    <div class="icon-img-box">
-                                        <img src="{{ asset('assets/img/icons/d2.png') }}" alt="">
-                                    </div>
-                                    <h3><a href="#">Scholarship Schemes</a></h3>
-                                    <div class="text">Corporate bodies can create and manage scholarship schemes</div>
-                                    
-                                </div>
-                            </div>
-                            <div class="services-block-four" style="margin-bottom:0">
-                                <div class="inner-box">
-                                    <div class="icon-img-box">
-                                        <img src=" {{ asset('assets/img/icons/d3.png')}} " alt="">
-                                    </div>
-                                    <h3><a href="#">Awards</a></h3>
-                                    <div class="text">Setup and manage one-time or re-occuring merit awards to deserving students</div>
-                                    
-                                </div>
-                            </div>
-
-                        </div>
-                        
-
-                    </div>
-                </div>
-                
-            </div>
+        <section class="p-5 section-padding">
+            <hr>    
         </section>
         <!-- Creative Facts - End -->
 
@@ -177,10 +131,7 @@
 
     @endSection
     @push('js')
-        <!-- <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script> -->
-
-        <!-- include('partials.error', ['position' => 'toast-bottom-left' ]) -->
-        <!-- include('partials.flash', ['position' => 'toast-bottom-left', 'timeout' => 1000 ]) -->
+       
 
     @endPush
 

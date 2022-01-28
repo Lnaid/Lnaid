@@ -54,7 +54,7 @@
 
         <!-- ########## All JS ########## -->
         <!-- jQuery js -->
-        <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.js') }}"></script>
         <!-- Popper js -->
         <script src="{{ asset('assets/js/popper.min.js') }}"></script>
         <!-- Bootstrap js -->
