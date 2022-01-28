@@ -21,17 +21,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">FAQ</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Blog</a>
-                        <!-- <div class="dropdown-menu">
-                            <a class="dropdown-item" href="index-blog.html">Blog Posts</a>
-                            <a class="dropdown-item" href="index-blog-with-sidebar.html">Sidebar Blog </a>
-                            <a class="dropdown-item" href="index-single-blog.html">Blog Details</a>
-                        </div> -->
-                    </li>
-                    <li class="nav-item">
+                    
+                   <!--  <li class="nav-item">
                         <a class="nav-link" href="#">Contact</a>
-                    </li>
+                    </li> -->
                     @if(Auth::check())
                     <li class="lh-55px"><a href="{{ route('dashboard') }}" class="btn login-btn ml-50">Dashboard!</a></li>
                     @else
