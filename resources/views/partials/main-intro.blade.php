@@ -4,16 +4,38 @@
             <div class="promo-section">
                 <h3 class="special-head cyan">Get the help you need</h3>
             </div>
-            <h4 class="bold wow fadeInUp b-text" data-wow-delay="0.2s">#Lnaid -Student</h4>
-            <p class="wow fadeInUp" data-wow-delay="0.3s">LNAID makes it easy for Students to request and access financial aid from Individuals, Alumni, NGOs, Companies and Agencies. </p>
+            <h4 class="bold wow fadeInUp b-text" data-wow-delay="0.2s">#Student</h4>
+            <p class="wow fadeInUp" data-wow-delay="0.3s">
+                LNAID makes it easy for Students to request and access financial aid from Individuals, Alumni, NGOs, Companies and Agencies. 
+            </p>
         </div>
 
         <div class="">
             <div class="promo-section">
-                <h3 class="special-head cyan">Help make Education affordable</h3>
+                <h3 class="special-head cyan">Do what you passionate about</h3>
             </div>
-            <h4 class="bold wow fadeInUp b-text" data-wow-delay="0.2s">#Lnaid - Sponsor</h4>
-            <p class="wow fadeInUp" data-wow-delay="0.3s">Help promote quality and access to Education in Nigeria as an Individual, NGO or Company by assiting an undergraduate student today</p>
+            <h4 class="bold wow fadeInUp b-text" data-wow-delay="0.2s">#Educationist</h4>
+            <p class="wow fadeInUp" data-wow-delay="0.3s">
+                Educationists can create campaigns towards bridging literacy gap, promoting quality education or any other common problem they have identified in the Acadamic setting.
+            </p>
+        </div>
+
+         <div class="">
+            <div class="promo-section">
+                <h3 class="special-head cyan">Get the help you need</h3>
+            </div>
+            <h4 class="bold wow fadeInUp b-text" data-wow-delay="0.2s">#Goal</h4>
+            <p class="wow fadeInUp" data-wow-delay="0.3s">
+                LNAID is developed in furtherance of United Nations Sustainable Development Goad (4)  which is aimed at ensuring inclusive and equitable quality education for all.
+            </p>
+        </div>
+
+        <div class="">
+            <div class="promo-section">
+                <h3 class="special-head cyan">Take action today</h3>
+            </div>
+            <h4 class="bold wow fadeInUp b-text" data-wow-delay="0.2s">#Sponsor</h4>
+            <p class="wow fadeInUp" data-wow-delay="0.3s">Help promote quality education and all inclusive learning in Nigeria as an Individual or Corporate body by making donations to solve student needs. </p>
         </div> 
     </div>
     <div class="info-btn-group fadeInUp" data-wow-delay="0.4s">
