@@ -13,7 +13,7 @@
         <title>{{ config('app.name', 'Lnaid - Student Aids') }}</title>
 
         <!-- Favicon -->
-        <link rel="icon" href="{{ asset('assets/img/core-img/favicon.ico') }}">
+        <link rel="icon" href="{{ asset('assets/img/core-img/favicon.png') }}">
 
         <!-- Fonts -->
         <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"> -->

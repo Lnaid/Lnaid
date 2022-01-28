@@ -516,7 +516,7 @@ ol {
     margin-bottom: 80px;
 }
 .section-heading span{
-    color: #f00016;
+    color: #ff8165;
     font-size: 18px;
     margin-bottom: 10px;
     display: inline-block;
@@ -690,7 +690,7 @@ ol {
     background-image: linear-gradient(to right, #fb525e 0%, #fb6850 51%, #fb525e 100%);
 }
 .info-btn.green-btn{
-    background: #c31e39
+    background: #ff8165
 }
 .info-btn:hover {
     background-position: right center;
@@ -754,7 +754,7 @@ ol {
 .navbar-expand-md .navbar-nav .dropdown-menu{
     border-top:3px solid #fed136;
 }
-.dropdown-item:hover{background-color:#c31e39;color:#fff;}
+.dropdown-item:hover{background-color:#ff8165;color:#fff;}
 nav{-webkit-transition: padding-top .3s,padding-bottom .3s;
     -moz-transition: padding-top .3s,padding-bottom .3s;
     transition: padding-top .3s,padding-bottom .3s;
@@ -1184,14 +1184,14 @@ nav{-webkit-transition: padding-top .3s,padding-bottom .3s;
     margin-bottom: 20px;
 }
 .special-head{
-    color: #f00016 !important;
+    color: #ff8165 !important;
     padding-left: 40px;
     font-size: 18px;
     position: relative;
 }
 .special-head:before{
     content: '';
-    background: #f00016;
+    background: #ff8165;
     position: absolute;
     top: 50%;
     left: 0;
@@ -1229,7 +1229,7 @@ nav{-webkit-transition: padding-top .3s,padding-bottom .3s;
 }
 .integration-text {
     margin: 0 7px 0 0;
-    color: #f00016  !important
+    color: #ff8165  !important
 }
 .integration-link>* {
     position: relative;
@@ -1558,7 +1558,7 @@ p.artficial:before{
     position: relative;
     z-index: 1;
     margin-top: 30px;
-    border: 5px solid #c31e39;
+    border: 5px solid #ff8165;
     border-radius: 15px;
     padding: 0px 30px 0;
 }
@@ -1910,7 +1910,7 @@ p.artficial:before{
     bottom: 0;
     width: 90%;
     height: 96%;
-    border: 10px solid #c31e39
+    border: 10px solid #ff8165
 }
 .about-sec-wrapper .article{
     background: rgba(0, 103, 218,1);
@@ -2475,7 +2475,7 @@ p.artficial:before{
 }
 
 .service_single_content.v2 .serv_icon{
-    border: 2px solid #c31e39;
+    border: 2px solid #ff8165;
     position: relative;
     margin: 0 auto;
     margin-top: 0px;
@@ -2486,7 +2486,7 @@ p.artficial:before{
 }
 .service_single_content.v2 .serv_icon:before{
     content: '';
-    border: 2px dashed #f00016;
+    border: 2px dashed #ff8165;
     position: absolute;
     left: -10%;    top: -10%;
     width: 120%;
@@ -4049,7 +4049,7 @@ textarea:required {
     margin-bottom: 15px
 }
 .footer-logo a{
-    color: #c31e39;
+    color: #ff8165;
     font-size: 20px;
     font-weight: 600
 }
@@ -4084,7 +4084,7 @@ textarea:required {
     text-align: center;
     display: inline-block;
     text-align: center;
-    background: #c31e39;
+    background: #ff8165;
 }
 
 .footer-social-info a i {
@@ -4107,7 +4107,7 @@ textarea:required {
 .contact_info_area .contact_info h5 {
     font-size: 16px;
     font-weight: 600;
-    color: #c31e39 !important;
+    color: #ff8165 !important;
 }
 
 .contact_info_area .contact_info p {
@@ -4115,7 +4115,7 @@ textarea:required {
     font-size: 14px;
 }
 .contact_info_area .contact_info a:hover p{
-    color: #c31e39 
+    color: #ff8165 
 }
 
 .con-info-wrap{
@@ -4888,7 +4888,7 @@ textarea:required {
     opacity: 1;
 }
 .contact_form.green{
-    background: #c31e39;
+    background: #ff8165;
     padding: 40px 20px
 }
 .contact_form.green input{
@@ -4903,7 +4903,7 @@ textarea:required {
 .info-faq-area dt {
     cursor: pointer;
     padding: 15px 25px;
-    background: #c31e39;
+    background: #ff8165;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     margin-bottom: 10px;
     color: #fff;
@@ -5150,7 +5150,7 @@ body.light-version {
 
 .light-version .client_slides .owl-dot.active {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-    background: #c31e39;
+    background: #ff8165;
     color: #fff
 }
 
@@ -5183,7 +5183,7 @@ body.light-version {
     color: #d4d7e1 !important
 }
 .cyan{
-    color: #f00016  !important
+    color: #ff8165  !important
 }
 .limited{
     max-width: 800px;
@@ -5258,7 +5258,7 @@ body.light-version {
 /*.multi-button button{
   height: 50px;
   width: 100px;
-  background: linear-gradient(to bottom, #c31e39, #c31e39);
+  background: linear-gradient(to bottom, #ff8165, #ff8165);
   font-weight: bold;
   color: white;
   font-size: 0.9rem;
