@@ -5,12 +5,13 @@
             
             .owl-carousel{
                 overflow: hidden;
+                max-width: 320px
             }
 
             @media (max-width: 575.98px) {
               .owl-carousel{
                     overflow: hidden;
-                    max-width: 420px;
+                    max-width: 320px;
                 }
             }
 
@@ -60,13 +61,30 @@
         </section>
         <!-- ##### Welcome Area End ##### -->
 
-        <section class="p-5 d-none d-md-block about-us-area section-padding-70-70">
+        <section class="p-5  d-md-block about-us-area section-padding-70-70">
             
             <div class="container">
                 <div class="row align-items-center">
+
+
+                    <div class="col-12 col-lg-6 offset-lg-0 col-md-10 offset-md-1">
+                        <div class="who-we-contant mt-s">
+                            <div class="promo-section">
+                                <h3 class="special-head ">Quick Overview</h3>
+                            </div>
+                            <h4 class="bl-text fadeInUp" data-wow-delay="0.3s">#Lnaid</h4>
+                            <p class="fadeInUp" data-wow-delay="0.4s">Lnaid provides a robust system through which  students can reach out to Individuals, NGOs, Companies and Government Agencies for help on issues that borders on their education. We believe, there are kind hearted individuals who would love to give back to the society or more specifically their almamata by making contributions towards education. </p>
+                            <p class="fadeInUp" data-wow-delay="0.5s">We ensure only geniune requests are published, every support offered goes directly to the beneficiary and we enforce transperancy via a #thankYou systeme</p>
+                            <a class="btn info-btn green-btn mt-30 fadeInUp" data-wow-delay="0.6s" href="#">Read More</a>
+                        </div>
+                        <hr>
+                    </div>
+
+                    
+
                     <div class="col-12 col-lg-3 col-md-12 ">
                        
-                        <div class="col-xs-12">
+                        <div class="">
                             <div class="article special">
                                 <img src="{{ asset('assets/img/icons/n3.png') }}" class="mb-10" alt="">
                                 <h3 class="article__title">Donations</h3> 
@@ -76,7 +94,7 @@
                                 </p>               
                             </div>
                         </div>
-                        <div class="col-xs-12">
+                        <div class="">
                             <div class="article special">
                                 <img src="{{ asset('assets/img/icons/n5.png') }}" class="mb-10" alt="">
                                 <h3 class="article__title">Offers</h3> 
@@ -90,7 +108,7 @@
 
                     <div class="col-12 col-lg-3 col-md-12">
                         
-                        <div class="col-xs-12">
+                        <div class="">
                             <div class="article special mts-50">
                                 <img src="{{ asset('assets/img/icons/n6.png') }}" class="mb-10" alt="">
                                 <h3 class="article__title">Scholarships</h3> 
@@ -99,7 +117,7 @@
                                 </p>                
                             </div>
                         </div>
-                        <div class="col-xs-12">
+                        <div class="">
                             <div class="article special">
                                 <img src="{{ asset('assets/img/icons/n7.png') }}" class="mb-10" alt="">
                                 <h3 class="article__title">Campaigns</h3> 
@@ -111,18 +129,7 @@
                         
                     </div>
                     
-                    <div class="col-12 col-lg-6 offset-lg-0 col-md-10 offset-md-1">
-                        <div class="who-we-contant mt-s">
-                            <div class="promo-section">
-                                <h3 class="special-head ">Quick Overview</h3>
-                            </div>
-                            <h4 class="bl-text fadeInUp" data-wow-delay="0.3s">#Lnaid</h4>
-                            <p class="fadeInUp" data-wow-delay="0.4s">Lnaid provides a robust system through which  students can reach out to Individuals, NGOs, Companies and Government Agencies for help on issues that borders on their education. We believe, there are kind hearted individuals who would love to give back to the society or more specifically their almamata by making contributions towards education. </p>
-                            <p class="fadeInUp" data-wow-delay="0.5s">We ensure only geniune requests are published, every support offered goes directly to the beneficiary and we enforce transperancy via a #thankYou systeme</p>
-                            <a class="btn info-btn green-btn mt-30 fadeInUp" data-wow-delay="0.6s" href="#">Read More</a>
-                        </div>
-                    </div>
-
+                    
                 </div>
             </div>
         </section>

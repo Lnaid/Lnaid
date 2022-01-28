@@ -822,7 +822,7 @@ nav{-webkit-transition: padding-top .3s,padding-bottom .3s;
     .navbar-expand-lg.navbar-dark {background: #f2e8e4;}
     .navbar-collapse{
         padding-top: 20px;
-        background: rgb(215, 223, 239)
+        background: rgb(242 232 228)
     }
 }
 .navbar-white.shrink .navbar-brand,
@@ -845,8 +845,9 @@ nav{-webkit-transition: padding-top .3s,padding-bottom .3s;
     background: url('../img/bg-img/header2.html') no-repeat bottom center;
     background-size: cover;
     display: flex;
-    justify-content: center;
+    /*justify-content: center;*/
     align-items: center;
+    padding-left: 10%;
 }
 .hero-section.transparent{
     background: none;
